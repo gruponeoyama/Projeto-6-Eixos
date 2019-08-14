@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<fileHeader companyName=""
+            companyURL=""
+            productName=""
+            productVersion=""
+            productKey=""
+            creationDateTime="10:58:46"
+            realtimeCicleTime="t#4ms"
+            canSyncCorrection="0"
+            useCanSyncKernelModule="true"/>
+ <contentHeader name="cnc_9axis"
+                version=""
+                author=""
+                modificationDateTime="2019-07-31T10:21:36">
+   <coordinateInfo>
+     <fbd>
+       <scaling x="0" y="0"/>
+     </fbd>
+     <ld>
+       <scaling x="0" y="0"/>
+     </ld>
+     <sfc>
+       <scaling x="0" y="0"/>
+     </sfc>
+   </coordinateInfo>
+ </contentHeader>
+ <types>
+ <dataTypes>
+    <include name="datatypes"/>
+ </dataTypes>
+ <pous>
+     <pou>
+       <include name="Main"/>
+     </pou>
+     <pou>
+       <include name="init"/>
+     </pou>
+     <pou>
+       <include name="FB_RESET_AXIS"/>
+     </pou>
+     <pou>
+       <include name="fast_io"/>
+     </pou>
+     <pou>
+       <include name="slow_operations"/>
+     </pou>
+     <pou>
+       <include name="FB_HOMING"/>
+     </pou>
+     <pou>
+       <include name="alarms"/>
+     </pou>
+     <pou>
+       <include name="sh_down"/>
+     </pou>
+     <pou>
+       <include name="FB_JOG"/>
+     </pou>
+     <pou>
+       <include name="FB_MOVE"/>
+     </pou>
+     <pou>
+       <include name="FB_TRANSFER"/>
+     </pou>
+     <pou>
+       <include name="parse_number"/>
+     </pou>
+     <pou>
+       <include name="parser_callback"/>
+     </pou>
+     <pou>
+       <include name="power_on_axis"/>
+     </pou>
+     <pou>
+       <include name="FB_AXIS_MANAGER"/>
+     </pou>
+     <pou>
+       <include name="axes_manager"/>
+     </pou>
+     <pou>
+       <include name="slow_cnc"/>
+     </pou>
+     <pou>
+       <include name="cnc_main"/>
+     </pou>
+     <pou>
+       <include name="fast_cnc"/>
+     </pou>
+ </pous>
+ </types>
+ <instances>
+  <configurations>
+     <configuration name="conf1">
+         <resource name="res1">
+             <task name="Task_StartUp" single="StartUp" interval="t#10ms" priority="1"/>
+             <task name="Task_Init" single="Init" interval="t#10ms" priority="1">
+               <pouInstance name="pou_init" typeName="init"/>
+             </task>
+             <task name="Task_System" single="System" interval="t#2ms" priority="1">
+               <pouInstance name="pou_fast_io" typeName="fast_io"/>
+               <pouInstance name="pou_alarms" typeName="alarms"/>
+               <pouInstance name="pou_fast_axis" typeName="power_on_axis"/>
+               <pouInstance name="pou_fast_cnc" typeName="fast_cnc"/>
+             </task>
+             <task name="Task_Userspace" single="Userspace" interval="t#20ms" priority="1">
+               <pouInstance name="pou_slow_operations" typeName="slow_operations"/>
+               <pouInstance name="pou_slow_cnc" typeName="slow_cnc"/>
+             </task>
+             <task name="Task_12ms" interval="t#12ms" priority="1">
+               <pouInstance name="pou_Main" typeName="Main"/>
+               <pouInstance name="pou_Axes_manager" typeName="axes_manager"/>
+               <pouInstance name="pou_cnc_main" typeName="cnc_main"/>
+             </task>
+         </resource>
+         <include_globalVars>
+           <include name="globalvars"/>
+         </include_globalVars>
+     </configuration>
+  </configurations>
+ </instances>
+ <addData>
+  <data>
+    <folders>
+    <folder name="axes movement" parent="Programs" />
+    <folder name="cnc" parent="Programs" />
+    </folders>
+  </data>
+ </addData>
+</project>

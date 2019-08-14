@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="parser_callback" pouType="function">
+     <interface>
+       <returnType>
+         <derived name ="VOID"/>
+         </returnType>
+       <localVars>
+         <variable name="position">
+          <type>
+           <USINT/>
+          </type>
+         </variable>
+         <variable name="number">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="t_word_found">
+          <type>
+           <BOOL/>
+          </type>
+          <initialValue>
+             <simpleValue value="false"/>
+          </initialValue>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="p_s" ref_to="true">
+          <type>
+           <derived name="CNC_PARSER_STRUCT"/>
+          </type>
+         </variable>
+       </inputVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* delete &apos;G69&apos; command from GCode *)
+position := find (p_s^.in, &apos;G69&apos;);
+if (position &lt;&gt; 0) then
+  p_s^.in := delete (p_s^.in, 3, position);
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

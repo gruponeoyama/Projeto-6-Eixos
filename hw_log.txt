@@ -1,0 +1,37 @@
+2019-05-08T15:10:45
+  Hardware -> "AXIS_X" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+  Hardware -> "AXIS_Y" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+  Hardware -> "AXIS_Z" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+  Hardware -> "AXIS_A" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+  Hardware -> "AXIS_B" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+  Hardware -> "AXIS_C" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+  Hardware -> "AXIS_U" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+  Hardware -> "AXIS_V" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+  Hardware -> "AXIS_W" of type "AXIS_REF_T" size changed
+    Field "QUICKSTOP" added
+
+2019-06-13T16:02:47
+  Hardware -> "SIRIUS_CANBUS_I0" of type "SIRIUS_CANBUS_T" size changed
+
+2019-06-21T14:00:10
+  Hardware -> "SIRIUS_CANBUS_I0" of type "SIRIUS_CANBUS_T" size changed
+
+2019-07-19T12:06:33
+  Hardware -> "SIRIUS_CANBUS_I0" of type "SIRIUS_CANBUS_T" size changed
+

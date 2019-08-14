@@ -1,0 +1,15 @@
+*.pro.user
+Makefile*
+*.vcxproj.filters
+*.sdf
+*.vcxproj.user
+*.log
+*.ilk
+*.pdb
+*.lib
+*.suo
+ipch
+debug
+release
+src
+*.opensdf

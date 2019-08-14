@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="Main" pouType="program">
+     <interface>
+       <localVars>
+         <variable name="old_moving">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="flush_sram">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="r_trig_auto">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+         <variable name="f_trig_man">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+       </localVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* wait for atomatic cicle start *)
+r_trig_auto(clk := g_b_start_auto);
+if r_trig_auto.q then
+  (* stop button pressed ? *)
+  if not g_b_stop_auto then
+     g_b_alarm_stop_auto := true;
+  else
+     (* all axes are in standstill Motion state *)
+     if (fb_reset_axis_x.fb_status.standstill and
+         fb_reset_axis_y.fb_status.standstill and
+         fb_reset_axis_z.fb_status.standstill and
+         fb_reset_axis_a.fb_status.standstill and
+         fb_reset_axis_b.fb_status.standstill and
+         fb_reset_axis_c.fb_status.standstill) then
+        g_b_reset_stop_causes := true;
+        g_b_reset_alarms      := true;
+        (*
+          when we are in GUI axes pages that manage axes :
+           - g_b_on_auto_? is true
+             - x_management.ui -&gt; qhmisetwidgetstate
+           - g_b_homing_? is true we want to command an homing cicle 
+             - x_management.ui -&gt; qHmiSwitch_2
+           - g_b_homing_? is false we want to command a transfer cicle 
+             - x_management.ui -&gt; qHmiSwitch_2
+        *)
+        if g_b_on_auto_x then
+           if g_b_homing_x then
+              g_axis_manager_x.b_homed        := false;
+              g_axis_manager_x.b_start_homing := true;
+           else
+              g_axis_manager_x.b_start_transf := true;
+           end_if;
+          g_b_auto := true;
+        elsif g_b_on_auto_y then
+           if g_b_homing_y then
+              g_axis_manager_y.b_homed        := false;
+              g_axis_manager_y.b_start_homing := true;
+           else
+              g_axis_manager_y.b_start_transf := true;
+           end_if;
+          g_b_auto := true;
+        elsif g_b_on_auto_z then
+           if g_b_homing_z then
+              g_axis_manager_z.b_homed        := false;
+              g_axis_manager_z.b_start_homing := true;
+           else
+              g_axis_manager_z.b_start_transf := true;
+           end_if;
+          g_b_auto := true;
+        elsif g_b_on_auto_a then
+           if g_b_homing_a then
+              g_axis_manager_a.b_homed        := false;
+              g_axis_manager_a.b_start_homing := true;
+           else
+              g_axis_manager_a.b_start_transf := true;
+           end_if;
+          g_b_auto := true;
+        elsif g_b_on_auto_b then
+           if g_b_homing_b then
+              g_axis_manager_b.b_homed        := false;
+              g_axis_manager_b.b_start_homing := true;
+           else
+              g_axis_manager_b.b_start_transf := true;
+           end_if;
+          g_b_auto := true;
+        elsif g_b_on_auto_c then
+           if g_b_homing_c then
+              g_axis_manager_c.b_homed        := false;
+              g_axis_manager_c.b_start_homing := true;
+           else
+              g_axis_manager_c.b_start_transf := true;
+           end_if;
+          g_b_auto := true;
+        else
+          g_b_start_cnc := true;                  
+          g_b_auto := true;
+        end_if;
+     else
+        g_b_alarm_moving := true;
+    end_if;
+  end_if;
+end_if;
+           
+(* wait for atomatic cicle stop *)
+f_trig_man(clk := g_b_stop_auto);
+if f_trig_man.q then
+  g_b_auto      := false;
+  g_b_start_cnc := false;
+  
+  g_axis_manager_x.b_start_homing := false;
+  g_axis_manager_x.b_start_transf := false;
+  g_axis_manager_y.b_start_homing := false;
+  g_axis_manager_y.b_start_transf := false;
+  g_axis_manager_z.b_start_homing := false;
+  g_axis_manager_z.b_start_transf := false;
+  g_axis_manager_a.b_start_homing := false;
+  g_axis_manager_a.b_start_transf := false;
+  g_axis_manager_b.b_start_homing := false;
+  g_axis_manager_b.b_start_transf := false;
+  g_axis_manager_c.b_start_homing := false;
+  g_axis_manager_c.b_start_transf := false;
+  
+  g_b_stop_auto_triggered := true;
+end_if;
+
+flush_sram := false;
+(* hold X axis moving condition *)
+old_moving := g_b_moving_x;
+if (axis_x.realspeed &lt;&gt; 0.0) then
+   g_r_gui_x_spd := ABS(axis_x.realspeed) * 60.0;
+   g_b_moving_x := true;
+else
+    g_r_gui_x_spd := 0.0;
+   g_b_moving_x := false;
+end_if;
+flush_sram := flush_sram or (old_moving &lt;&gt; g_b_moving_x);
+
+(* hold Y axis moving condition *)
+old_moving := g_b_moving_y;
+if (axis_y.realspeed &lt;&gt; 0.0) then
+   g_r_gui_y_spd := ABS(axis_y.realspeed) * 60.0;
+   g_b_moving_y := true;
+else
+    g_r_gui_y_spd := 0.0;
+   g_b_moving_y := false;
+end_if;
+flush_sram := flush_sram or (old_moving &lt;&gt; g_b_moving_y);
+
+(* hold Z axis moving condition *)
+old_moving := g_b_moving_z;
+if (axis_z.realspeed &lt;&gt; 0.0) then
+   g_r_gui_z_spd := ABS(axis_z.realspeed) * 60.0;
+   g_b_moving_z := true;
+else
+    g_r_gui_z_spd := 0.0;
+   g_b_moving_z := false;
+end_if;
+flush_sram := flush_sram or (old_moving &lt;&gt; g_b_moving_z);
+
+(* hold A axis moving condition *)
+old_moving := g_b_moving_a;
+if (axis_y.realspeed &lt;&gt; 0.0) then
+   g_r_gui_a_spd := ABS(axis_a.realspeed) * 60.0;
+   g_b_moving_a := true;
+else
+    g_r_gui_a_spd := 0.0;
+   g_b_moving_a := false;
+end_if;
+flush_sram := flush_sram or (old_moving &lt;&gt; g_b_moving_a);
+
+(* hold B axis moving condition *)
+old_moving := g_b_moving_b;
+if (axis_b.realspeed &lt;&gt; 0.0) then
+   g_r_gui_b_spd := ABS(axis_b.realspeed) * 60.0;
+   g_b_moving_b := true;
+else
+    g_r_gui_b_spd := 0.0;
+   g_b_moving_b := false;
+end_if;
+flush_sram := flush_sram or (old_moving &lt;&gt; g_b_moving_b);
+
+(* hold C axis moving condition *)
+old_moving := g_b_moving_c;
+if (axis_c.realspeed &lt;&gt; 0.0) then
+   g_r_gui_c_spd := ABS(axis_c.realspeed) * 60.0;
+   g_b_moving_c := true;
+else
+    g_r_gui_c_spd := 0.0;
+   g_b_moving_c := false;
+end_if;
+flush_sram := flush_sram or (old_moving &lt;&gt; g_b_moving_c);
+
+if flush_sram then
+   flush_sram := false;
+   (* force static ram refresh *)
+   retainFlush();
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

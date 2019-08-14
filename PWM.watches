@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<watches>
+<watch name="CONF1_SIO15_RPDO.PULSES_OUT.PULSE_1" type="UINT" />
+<watch name="CONF1_SIO15_RPDO.PULSES_OUT.PULSE_2" type="UINT" />
+<watch name="CONF1_SIO15_RPDO.PULSES_OUT.PULSE_3" type="UINT" />
+<watch name="CONF1_SIO15_RPDO.PULSES_OUT.PULSE_4" type="UINT" />
+<watch name="CONF1_SIO15_TPDO.PULSES_IN.PULSE_1" type="UINT" />
+<watch name="CONF1_SIO15_TPDO.PULSES_IN.PULSE_2" type="UINT" />
+<watch name="CONF1_SIO15_TPDO.PULSES_IN.PULSE_3" type="UINT" />
+<watch name="CONF1_SIO15_TPDO.PULSES_IN.PULSE_4" type="UINT" />
+</watches>

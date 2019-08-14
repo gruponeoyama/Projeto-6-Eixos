@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="FB_RESET_AXIS" pouType="functionBlock">
+     <interface>
+       <localVars>
+         <variable name="FB_POWER">
+          <type>
+           <derived name="MC_POWER"/>
+          </type>
+         </variable>
+         <variable name="FB_RESET">
+          <type>
+           <derived name="MC_RESET"/>
+          </type>
+         </variable>
+         <variable name="r_trig_reset">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+         <variable name="FB_STATUS">
+          <type>
+           <derived name="MC_READSTATUS"/>
+          </type>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="axis_ref" ref_to="true">
+          <type>
+           <derived name="AXIS_REF_T"/>
+          </type>
+         </variable>
+         <variable name="b_reset">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_power">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </inputVars>
+       <outputVars>
+         <variable name="axis_ok">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="sStatus">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="stMessage">
+          <type>
+           <string/>
+          </type>
+         </variable>
+       </outputVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+if (axis_ref &lt;&gt; null) then
+   r_trig_reset(clk := b_reset);
+
+   fb_reset.axis := axis_ref^.axisidx;
+   fb_reset.execute := r_trig_reset.q;
+   fb_reset();
+
+   fb_status.axis := axis_ref^.axisidx;
+   fb_status.enable := true;
+   fb_status();
+   axis_ok := true;
+   if fb_status.valid then
+      if fb_status.errorstop then
+         axis_ok := false;
+         sstatus := &apos;errorstop&apos;;
+      elsif fb_status.disabled then
+         axis_ok := false;
+         sstatus := &apos;disabled&apos;;
+      elsif fb_status.stopping then
+         sstatus := &apos;stopping&apos;;
+      elsif fb_status.homing then
+         sstatus := &apos;homing&apos;;
+      elsif fb_status.discretemotion then
+         sstatus := &apos;discretemotion&apos;;
+      elsif fb_status.continuousmotion then
+         sstatus := &apos;continuousmotion&apos;;
+      elsif fb_status.synchronizedmotion then
+         sstatus := &apos;synchronizedmotion&apos;;
+      elsif fb_status.standstill then
+         sstatus := &apos;standstill&apos;;
+      else
+         axis_ok := false;
+         sstatus := &apos;???????????&apos;;
+      end_if;
+   else
+       sstatus := &apos;invalid&apos;;
+   end_if;
+
+   fb_power.axis := axis_ref^.axisidx;
+   fb_power.enablenegative := true;
+   fb_power.enablepositive := true;
+   fb_power.enable := not fb_status.errorstop and b_power;
+   fb_power();
+end_if;
+
+stmessage := mc_getaxiserrorstring(axis_ref^.axisidx, true);
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

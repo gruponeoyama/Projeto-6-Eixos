@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="FB_MOVE" pouType="functionBlock">
+     <interface>
+       <localVars>
+         <variable name="FB_Stop">
+          <type>
+           <derived name="MC_STOP"/>
+          </type>
+         </variable>
+         <variable name="FB_MoveAbs">
+          <type>
+           <derived name="MC_MOVEABSOLUTE"/>
+          </type>
+         </variable>
+         <variable name="i_State">
+          <type>
+           <INT/>
+          </type>
+          <initialValue>
+             <simpleValue value="0"/>
+          </initialValue>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="axis_ref" ref_to="true">
+          <type>
+           <derived name="AXIS_REF_T"/>
+          </type>
+         </variable>
+         <variable name="b_run">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="r_acceleration">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_deceleration">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_velocity">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="b_abs">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="r_match">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="b_axisOk">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </inputVars>
+       <outputVars>
+         <variable name="s_status">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="b_done">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_active">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </outputVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+if (axis_ref &lt;&gt; null) then
+   s_status := &apos;&apos;;
+  
+   fb_moveabs.axis  := axis_ref^.axisidx;
+   fb_stop.axis     := axis_ref^.axisidx;
+  
+   (* refresh variables, velocity can be an analog input such potentiometer *)
+   fb_moveabs.acceleration     := r_acceleration;
+   fb_moveabs.deceleration     := r_deceleration;
+   if (axis_ref^.MODULE &lt;&gt; 0.0) then
+     FB_MoveAbs.DIRECTION := 2;
+   else
+     FB_MoveAbs.DIRECTION := 1;
+   end_if;
+   if (r_velocity &gt; axis_ref^.MAXSPEED) then
+      r_velocity := axis_ref^.MAXSPEED;
+   end_if;
+   fb_moveabs.velocity         := r_velocity;
+   fb_moveabs.continuousupdate := true;
+   fb_stop.deceleration        := fb_moveabs.deceleration;
+
+   if i_state &gt; 1 then
+     if (not b_axisok or fb_moveabs.error or fb_stop.error) then
+       b_active := false;
+       b_done  := false;
+     end_if;
+   end_if;
+
+   case i_state of
+   0:
+     if (not b_run) then
+       i_state := 1;
+     end_if;
+ 
+   1:
+     if b_run then
+       if b_abs then               (* absolute position *)
+         fb_moveabs.position       := r_match;
+       else                        (* relative position *)
+         fb_moveabs.position       := lreal_to_real(axis_ref^.abspos) + r_match;
+       end_if;
+    
+       if (axis_ref^.MODULE = 0.0) then
+          if (fb_moveabs.position &gt; axis_ref^.POSFW) then
+             fb_moveabs.position := axis_ref^.POSFW;
+          elsif (fb_moveabs.position &lt; axis_ref^.POSRV) then
+             fb_moveabs.position := axis_ref^.POSRV;
+          end_if;
+       end_if;
+     
+       (* give busy for at least one cicle, like plcopen want *)
+       b_done  := false;
+       b_active := true;
+       i_state := 2;
+     end_if;
+ 
+   2:
+     (* aftern the busy cicle, test if we really can do the job *)
+     fb_moveabs.execute := true;
+     i_state := 3;
+ 
+   3:
+     if not fb_moveabs.active then
+       b_done  := true;
+       b_active := false;
+       i_state := 0;
+     elsif (not b_run) then
+       fb_stop.execute := true;
+       i_state := 4;
+     end_if;
+ 
+   4:
+     if fb_stop.done then
+       b_done  := false;
+       b_active := false;
+       i_state := 0;
+     end_if;
+   end_case;
+
+   fb_moveabs();
+   (* kill execute input *)
+   fb_moveabs.execute := false;
+   fb_moveabs();
+ 
+   fb_stop();
+   (* kill execute input *)
+   fb_stop.execute := false;
+   fb_stop();
+else
+   s_status := &apos;axis_ref = null&apos;;
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

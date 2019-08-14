@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="parse_number" pouType="function">
+     <interface>
+       <returnType>
+         <STRING/>
+         </returnType>
+       <localVars>
+         <variable name="char">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="finish">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="p_s" ref_to="true">
+          <type>
+           <derived name="CNC_PARSER_STRUCT"/>
+          </type>
+         </variable>
+         <variable name="current">
+          <type>
+           <USINT/>
+          </type>
+         </variable>
+       </inputVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+while (not finish) do
+  char := mid(p_s^.in, 1, current + 1);
+  if (char = &apos;0&apos;) or
+     (char = &apos;1&apos;) or
+     (char = &apos;2&apos;) or
+     (char = &apos;3&apos;) or
+     (char = &apos;4&apos;) or
+     (char = &apos;5&apos;) or
+     (char = &apos;6&apos;) or
+     (char = &apos;7&apos;) or
+     (char = &apos;8&apos;) or
+     (char = &apos;9&apos;) or
+     (char = &apos;+&apos;) or
+     (char = &apos;-&apos;) or
+     (char = &apos;.&apos;) then
+     parse_number := concat(parse_number, char);
+     current := current + 1;
+  else
+    finish := true;
+  end_if;
+
+p_s^.POSITION := current; 
+
+end_while;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

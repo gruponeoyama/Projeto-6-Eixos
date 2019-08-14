@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="FB_TRANSFER" pouType="functionBlock">
+     <interface>
+       <localVars>
+         <variable name="i_state">
+          <type>
+           <INT/>
+          </type>
+          <initialValue>
+             <simpleValue value="0"/>
+          </initialValue>
+         </variable>
+         <variable name="str_pos">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="fb_move_axis">
+          <type>
+           <derived name="FB_MOVE"/>
+          </type>
+         </variable>
+         <variable name="r_trig_start">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="start">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="mode_abs">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="r_match">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_offs">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="axis_ref" ref_to="true">
+          <type>
+           <derived name="AXIS_REF_T"/>
+          </type>
+         </variable>
+         <variable name="r_acceleration">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_deceleration">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_velocity">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="recupero_giochi">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+       </inputVars>
+       <outputVars>
+         <variable name="b_done">
+          <type>
+           <BOOL/>
+          </type>
+          <initialValue>
+             <simpleValue value="true"/>
+          </initialValue>
+         </variable>
+         <variable name="b_active">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="rel_pos">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+       </outputVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+if (axis_ref &lt;&gt; null) then
+  r_trig_start(CLK := start);
+  case i_state of
+    0: (* start *)
+      if r_trig_start.q then
+         b_done := false;
+         b_active := true;
+         str_pos := lreal_to_real(axis_ref^.abspos);
+         fb_move_axis.b_axisok := true;
+         fb_move_axis.b_abs := mode_abs;
+         fb_move_axis.r_acceleration := r_acceleration;
+         fb_move_axis.r_deceleration := r_deceleration;
+         if (r_velocity &gt; axis_ref^.MAXSPEED) then
+            r_velocity := axis_ref^.MAXSPEED;
+         end_if;
+         fb_move_axis.r_velocity := r_velocity;
+         
+         if mode_abs then
+           fb_move_axis.r_match := r_match;
+
+           if (((str_pos &lt; r_match) and (recupero_giochi &gt; 0.0))  or 
+               ((str_pos &gt; r_match) and (recupero_giochi &lt; 0.0))) then
+             fb_move_axis.r_match := fb_move_axis.r_match + recupero_giochi;
+             i_state := 1;
+           else
+             i_state := 2;
+           end_if;
+         else
+           if r_match &gt;= 0.0 then
+             fb_move_axis.r_match := r_match + r_offs;
+           else
+             fb_move_axis.r_match := r_match - r_offs;
+           end_if;
+           
+           if (((r_match &gt;= 0.0) and (recupero_giochi &gt; 0.0))  or 
+               ((r_match  &lt; 0.0) and (recupero_giochi &lt; 0.0))) then
+             fb_move_axis.r_match := fb_move_axis.r_match + recupero_giochi;
+             i_state := 1;
+           else
+             i_state := 2;
+           end_if;
+         end_if;
+         fb_move_axis.b_run := true;
+      end_if;
+
+    1:
+      if not start then
+         i_state := 0;
+         fb_move_axis.b_run := false;
+      end_if;
+
+      if fb_move_axis.b_done then
+         fb_move_axis.b_run := false;
+         fb_move_axis();
+         if mode_abs then
+            fb_move_axis.r_match := fb_move_axis.r_match - recupero_giochi; 
+         else
+            fb_move_axis.r_match := -recupero_giochi;
+         end_if;
+         fb_move_axis.b_run := true;
+         i_state := 2;
+      elsif (not fb_move_axis.b_active) then
+         fb_move_axis.b_run := false;
+         i_state := 0;
+      end_if;
+
+    2:
+      if not start then
+         i_state := 0;
+         fb_move_axis.b_run := false;
+      end_if;
+
+      if fb_move_axis.b_done then
+         fb_move_axis.b_run := false;
+         i_state := 0;
+         b_done := fb_move_axis.b_done;
+         b_active := false;
+      elsif (not fb_move_axis.b_active) then
+         fb_move_axis.b_run := false;
+         i_state := 0;
+      end_if;
+  end_case;
+
+  rel_pos := lreal_to_real(axis_ref^.abspos) - str_pos;
+end_if;
+fb_move_axis.axis_ref := axis_ref;
+fb_move_axis();
+b_active := i_state &lt;&gt; 0;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

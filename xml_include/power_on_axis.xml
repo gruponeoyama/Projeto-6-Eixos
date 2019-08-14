@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="power_on_axis" pouType="program">
+     <addData>
+        <parentFolder name="axes movement" />
+     </addData>
+     <interface>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* Axes drivers enable *)
+g_b_driversEnable :=  g_b_machineOk;
+
+(* MOTION : X axis reset and power on management *)
+fb_reset_axis_x.b_power := g_b_driversEnable;
+fb_reset_axis_x.b_reset := g_b_reset_axis;
+fb_reset_axis_x();
+axis_x.en_enc    := TARGET_DEB_I0.DEBOK;
+axis_x.recvPower := g_b_driverXOk;
+axis_x.recvReset := axis_x.sendReset;
+axis_x.drvok     := g_b_driverXOk;
+
+(* MOTION : Y axis reset and power on management *)
+fb_reset_axis_y.b_power := g_b_driversEnable;
+fb_reset_axis_y.b_reset := g_b_reset_axis;
+fb_reset_axis_y();
+axis_y.en_enc    := TARGET_DEB_I0.DEBOK;
+axis_y.recvPower := g_b_driverYOk;
+axis_y.recvReset := axis_y.sendReset;
+axis_y.drvok     := g_b_driverYOk;
+
+(* MOTION : Z axis reset and power on management *)
+fb_reset_axis_z.b_power := g_b_driversEnable;
+fb_reset_axis_z.b_reset := g_b_reset_axis;
+fb_reset_axis_z();
+axis_z.en_enc    := TARGET_DEB_I0.DEBOK;
+axis_z.recvPower := g_b_driverZOk;
+axis_z.recvReset := axis_z.sendReset;
+axis_z.drvok     := g_b_driverZOk;
+
+(* MOTION : A axis reset and power on management *)
+fb_reset_axis_a.b_power := g_b_driversEnable;
+fb_reset_axis_a.b_reset := g_b_reset_axis;
+fb_reset_axis_a();
+axis_a.en_enc    := TARGET_DEB_I0.DEBOK;
+axis_a.recvPower := g_b_driverAOk;
+axis_a.recvReset := axis_a.sendReset;
+axis_a.drvok     := g_b_driverAOk;
+
+(* MOTION : B axis reset and power on management *)
+fb_reset_axis_b.b_power := g_b_driversEnable;
+fb_reset_axis_b.b_reset := g_b_reset_axis;
+fb_reset_axis_b();
+axis_b.en_enc    := TARGET_DEB_I0.DEBOK;
+axis_b.recvPower := g_b_driverBOk;
+axis_b.recvReset := axis_b.sendReset;
+axis_b.drvok     := g_b_driverBOk;
+
+(* MOTION : C axis reset and power on management *)
+fb_reset_axis_c.b_power := g_b_driversEnable;
+fb_reset_axis_c.b_reset := g_b_reset_axis;
+fb_reset_axis_c();
+axis_c.en_enc    := TARGET_DEB_I0.DEBOK;
+axis_c.recvPower := g_b_driverCOk;
+axis_c.recvReset := axis_c.sendReset;
+axis_c.drvok     := g_b_driverCOk;
+
+if g_b_reset_axis then
+   g_b_reset_stop_causes := g_b_reset_axis;
+end_if;   
+g_b_reset_axis := false;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

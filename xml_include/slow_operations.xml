@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="slow_operations" pouType="program">
+     <interface>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* Motion verbose level *)
+axis_x.verbose := g_si_verbose;
+axis_y.verbose := g_si_verbose;
+axis_z.verbose := g_si_verbose;
+axis_a.verbose := g_si_verbose;
+axis_b.verbose := g_si_verbose;
+axis_c.verbose := g_si_verbose;
+
+(* check for automatic terminated cicles *)
+if g_b_auto then
+  if ((not g_axis_manager_x.b_start_homing) and (not g_axis_manager_x.b_start_transf) and
+      (not g_axis_manager_y.b_start_homing) and (not g_axis_manager_y.b_start_transf) and
+      (not g_axis_manager_z.b_start_homing) and (not g_axis_manager_z.b_start_transf) and
+      (not g_axis_manager_a.b_start_homing) and (not g_axis_manager_a.b_start_transf) and
+      (not g_axis_manager_b.b_start_homing) and (not g_axis_manager_b.b_start_transf) and
+      (not g_axis_manager_c.b_start_homing) and (not g_axis_manager_c.b_start_transf) and
+      (not cnc_exec_fb.active)              and (not g_b_start_cnc))                  then
+    g_b_auto     := false;
+    g_b_homing_x := false;
+    g_b_homing_y := false;
+    g_b_homing_z := false;
+    g_b_homing_a := false;
+    g_b_homing_b := false;
+    g_b_homing_c := false;
+  end_if;
+end_if;           
+
+g_b_man := not g_b_auto and g_b_machineOk;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<watches>
+<watch name="CONF1_G_B_POWEROK" type="BOOL" />
+<watch name="CONF1_G_B_RESET_ALARMS" type="BOOL" />
+<watch name="CONF1_G_B_RESET_AXIS" type="BOOL" />
+<watch name="CONF1_G_B_RESET_STOP_CAUSES" type="BOOL" />
+<watch name="CONF1_G_B_START_AUTO" type="BOOL" />
+<watch name="CONF1_G_B_STOP_AUTO" type="BOOL" />
+<watch name="CONF1_SIO15_RPDO.PULSES_OUT.PULSE_1" type="UINT" />
+<watch name="CONF1_SIO15_RPDO.PULSES_OUT.PULSE_2" type="UINT" />
+<watch name="CONF1_SIO15_RPDO.PULSES_OUT.PULSE_3" type="UINT" />
+<watch name="CONF1_SIO15_RPDO.PULSES_OUT.PULSE_4" type="UINT" />
+<watch name="CONF1__G_AXIS_MANAGER_X.B_HOME_PROBE" type="BOOL" />
+</watches>

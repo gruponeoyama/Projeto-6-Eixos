@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="sh_down" pouType="function">
+     <interface>
+       <returnType>
+         <BOOL/>
+         </returnType>
+       <localVars>
+         <variable name="error_msg">
+          <type>
+           <string/>
+          </type>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="error_code">
+          <type>
+           <INT/>
+          </type>
+         </variable>
+         <variable name="verbose">
+          <type>
+           <SINT/>
+          </type>
+         </variable>
+       </inputVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+if verbose &lt;&gt; 0 then
+   (* force a program stop if debugger is present *)
+   debugBreak();
+   error_msg := CONCAT(IN1 := &apos;sh_down &apos;, IN2 := INT_TO_STRING(error_code));
+   (* display an error message on IEC editor and HMI *)
+  (* guiMsg(STR := error_msg);*)
+   GUIMSG(TEXT := error_msg);
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

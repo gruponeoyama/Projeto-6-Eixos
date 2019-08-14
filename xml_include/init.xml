@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="init" pouType="program">
+     <interface>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* PLC is running in &quot;simulation&quot; mode ? *)
+g_b_simulation := sir_get_plcsimulation();
+
+(* profile mode 0=position mode, 1=velocity mode *)
+axis_x.modeProf      := 0;
+(* Max speed units per seconds, 20000 millmeters = 20 meters per second *)
+axis_x.maxSpeed      := 20000.0 / 60.0;
+(* Maximum acceleration *)
+axis_x.maxAcc        := 2000.0;
+(* Tolerance on position, one millimeter *) 
+axis_x.istPos        := 1.0;
+(* Maximum following error and static error *)
+axis_x.errDin        := 5.0;
+(* Encoder coefficient, one millimeter = encoder pulse * coefficient *)
+if ((axis_x.coe_enc &lt;= 0.0) or (axis_x.coe_enc &gt; 0.0)) then
+  axis_x.coe_enc := 0.001;
+end_if;
+(* turn off simulation on axis *)
+axis_x.simul         := false;
+(* setting up cubic interpolation *)
+axis_x.intrate       := 5;
+axis_x.segtime       := 0.02;
+(* set point, target position *)
+axis_x.ref_to_rawOut := ref(g_di_rawOutX);
+(* actual position *)
+axis_x.ref_to_rawIn  := ref(g_di_rawInX);
+(* global function block to manage axis reset and power ON *)
+fb_reset_axis_x.axis_ref  := ref(axis_x);
+g_axis_manager_x.axis_ref := ref(axis_x);
+(* software limit switch *)
+axis_x.posRv := -2000.0;
+axis_x.posFw := 2000.0;
+(* check for axis acceleration value *)
+if g_axis_manager_x.r_homing_acc &lt;= 0.0 then
+   g_axis_manager_x.r_homing_acc := axis_x.maxacc;
+end_if;
+if g_axis_manager_x.r_homing_dec &lt;= 0.0 then
+   g_axis_manager_x.r_homing_dec := axis_x.maxacc;
+end_if;
+if g_axis_manager_x.r_homing_vel &lt;= 0.0 then
+   g_axis_manager_x.r_homing_vel := axis_x.maxspeed * 0.05;
+end_if;
+if g_axis_manager_x.r_transf_acc &lt;= 0.0 then
+   g_axis_manager_x.r_transf_acc := axis_x.maxacc;
+end_if;
+if g_axis_manager_x.r_transf_dec &lt;= 0.0 then
+   g_axis_manager_x.r_transf_dec := axis_x.maxacc;
+end_if;
+if g_axis_manager_x.r_transf_vel &lt;= 0.0 then
+   g_axis_manager_x.r_transf_vel := axis_x.maxspeed;
+end_if;
+if g_axis_manager_x.r_jog_acc &lt;= 0.0 then
+   g_axis_manager_x.r_jog_acc := axis_x.maxacc;
+end_if;
+if g_axis_manager_x.r_jog_dec &lt;= 0.0 then
+   g_axis_manager_x.r_jog_dec := axis_x.maxacc;
+end_if;
+if g_axis_manager_x.r_jog_vel &lt;= 0.0 then
+   g_axis_manager_x.r_jog_vel := axis_x.maxspeed;
+end_if;
+if g_b_moving_x then
+   (* force re-homing *)
+   g_axis_manager_x.b_homed := false;
+end_if;
+
+(* profile mode 0=position mode, 1=velocity mode *)
+axis_y.modeProf      := 0;
+(* Max speed units per seconds, 20000 millmeters = 20 meters per second *)
+axis_y.maxSpeed      := 20000.0 / 60.0;
+(* Maximum acceleration *)
+axis_y.maxAcc        := 2000.0;
+(* Tolerance on position, one millimeter *) 
+axis_y.istPos        := 1.0;
+(* Maximum following error and static error *)
+axis_y.errDin        := 5.0;
+(* Encoder coefficient, one millimeter = encoder pulse * coefficient *)
+if ((axis_y.coe_enc &lt;= 0.0) or (axis_y.coe_enc &gt; 0.0)) then
+  axis_y.coe_enc := 0.001;
+end_if;
+(* turn off simulation on axis *)
+axis_y.simul         := false;
+(* setting up cubic interpolation *)
+axis_y.intrate       := 5;
+axis_y.segtime       := 0.02;
+(* set point, target position *)
+axis_y.ref_to_rawOut := ref(g_di_rawOutY);
+(* actual position *)
+axis_y.ref_to_rawIn  := ref(g_di_rawInY);
+(* global function block to manage axis reset and power ON *)
+fb_reset_axis_y.axis_ref  := ref(axis_y);
+g_axis_manager_y.axis_ref := ref(axis_y);
+(* software limit switch *)
+axis_y.posRv := -2000.0;
+axis_y.posFw := 2000.0;
+(* check for axis acceleration value *)
+if g_axis_manager_y.r_homing_acc &lt;= 0.0 then
+   g_axis_manager_y.r_homing_acc := axis_y.maxacc;
+end_if;
+if g_axis_manager_y.r_homing_dec &lt;= 0.0 then
+   g_axis_manager_y.r_homing_dec := axis_y.maxacc;
+end_if;
+if g_axis_manager_y.r_homing_vel &lt;= 0.0 then
+   g_axis_manager_y.r_homing_vel := axis_y.maxspeed * 0.05;
+end_if;
+if g_axis_manager_y.r_transf_acc &lt;= 0.0 then
+   g_axis_manager_y.r_transf_acc := axis_y.maxacc;
+end_if;
+if g_axis_manager_y.r_transf_dec &lt;= 0.0 then
+   g_axis_manager_y.r_transf_dec := axis_y.maxacc;
+end_if;
+if g_axis_manager_y.r_transf_vel &lt;= 0.0 then
+   g_axis_manager_y.r_transf_vel := axis_y.maxspeed;
+end_if;
+if g_axis_manager_y.r_jog_acc &lt;= 0.0 then
+   g_axis_manager_y.r_jog_acc := axis_y.maxacc;
+end_if;
+if g_axis_manager_y.r_jog_dec &lt;= 0.0 then
+   g_axis_manager_y.r_jog_dec := axis_y.maxacc;
+end_if;
+if g_axis_manager_y.r_jog_vel &lt;= 0.0 then
+   g_axis_manager_y.r_jog_vel := axis_y.maxspeed;
+end_if;
+if g_b_moving_y then
+   (* force re-homing *)
+   g_axis_manager_y.b_homed := false;
+end_if;
+
+(* profile mode 0=position mode, 1=velocity mode *)
+axis_z.modeProf      := 0;
+(* Max speed units per seconds, 20000 millmeters = 20 meters per second *)
+axis_z.maxSpeed      := 20000.0 / 60.0;
+(* Maximum acceleration *)
+axis_z.maxAcc        := 2000.0;
+(* Tolerance on position, one millimeter *) 
+axis_z.istPos        := 1.0;
+(* Maximum following error and static error *)
+axis_z.errDin        := 5.0;
+(* Encoder coefficient, one millimeter = encoder pulse * coefficient *)
+if ((axis_z.coe_enc &lt;= 0.0) or (axis_z.coe_enc &gt; 0.0)) then
+  axis_z.coe_enc := 0.001;
+end_if;
+(* turn off simulation on axis *)
+axis_z.simul         := false;
+(* setting up cubic interpolation *)
+axis_z.intrate       := 5;
+axis_z.segtime       := 0.02;
+(* set point, target position *)
+axis_z.ref_to_rawOut := ref(g_di_rawOutZ);
+(* actual position *)
+axis_z.ref_to_rawIn  := ref(g_di_rawInZ);
+(* global function block to manage axis reset and power ON *)
+fb_reset_axis_z.axis_ref  := ref(axis_z);
+g_axis_manager_z.axis_ref := ref(axis_z);
+(* software limit switch *)
+axis_z.posRv := -20000.0;
+axis_z.posFw := 20000.0;
+(* check for axis acceretation value *)
+if g_axis_manager_z.r_homing_acc &lt;= 0.0 then
+   g_axis_manager_z.r_homing_acc := axis_z.maxacc;
+end_if;
+if g_axis_manager_z.r_homing_dec &lt;= 0.0 then
+   g_axis_manager_z.r_homing_dec := axis_z.maxacc;
+end_if;
+if g_axis_manager_z.r_homing_vel &lt;= 0.0 then
+   g_axis_manager_z.r_homing_vel := axis_z.maxspeed * 0.05;
+end_if;
+if g_axis_manager_z.r_transf_acc &lt;= 0.0 then
+   g_axis_manager_z.r_transf_acc := axis_z.maxacc;
+end_if;
+if g_axis_manager_z.r_transf_dec &lt;= 0.0 then
+   g_axis_manager_z.r_transf_dec := axis_z.maxacc;
+end_if;
+if g_axis_manager_z.r_transf_vel &lt;= 0.0 then
+   g_axis_manager_z.r_transf_vel := axis_z.maxspeed;
+end_if;
+if g_axis_manager_z.r_jog_acc &lt;= 0.0 then
+   g_axis_manager_z.r_jog_acc := axis_z.maxacc;
+end_if;
+if g_axis_manager_z.r_jog_dec &lt;= 0.0 then
+   g_axis_manager_z.r_jog_dec := axis_z.maxacc;
+end_if;
+if g_axis_manager_z.r_jog_vel &lt;= 0.0 then
+   g_axis_manager_z.r_jog_vel := axis_z.maxspeed;
+end_if;
+if g_b_moving_z then
+   (* force re-homing *)
+   g_axis_manager_z.b_homed := false;
+end_if;
+
+(* profile mode 0=position mode, 1=velocity mode *)
+axis_a.modeProf      := 0;
+(* Max speed units per seconds, 100 rpm *)   
+axis_a.maxSpeed      := 100.0 * 360.0 / 60.0;
+(* Maximum acceleration *)
+axis_a.maxAcc        := 2000.0;
+(* Tolerance on position, one millimeter *) 
+axis_a.istPos        := 1.0;
+(* Maximum following error and static error *)
+axis_a.errDin        := 5.0;
+(* Encoder coefficient, one millimeter = encoder pulse * coefficient *)
+if ((axis_a.coe_enc &lt;= 0.0) or (axis_a.coe_enc &gt; 0.0)) then
+  axis_a.coe_enc := 0.001;
+end_if;
+(* turn off simulation on axis *)
+axis_a.simul         := false;
+(* setting up cubic interpolation *)
+axis_a.intrate       := 5;
+axis_a.segtime       := 0.02;
+(* set point, target position *)
+axis_a.ref_to_rawOut := ref(g_di_rawOutA);
+(* actual position *)
+axis_a.ref_to_rawIn  := ref(g_di_rawInA);
+(* global function block to manage axis reset and power ON *)
+fb_reset_axis_a.axis_ref  := ref(axis_a);
+g_axis_manager_a.axis_ref := ref(axis_a);
+(* software limit switch *)
+axis_a.posRv := -9999999.0;
+axis_a.posFw := +9999999.0;
+(* check for axis acceleration value *)
+if g_axis_manager_a.r_homing_acc &lt;= 0.0 then
+   g_axis_manager_a.r_homing_acc := axis_a.maxacc;
+end_if;
+if g_axis_manager_a.r_homing_dec &lt;= 0.0 then
+   g_axis_manager_a.r_homing_dec := axis_a.maxacc;
+end_if;
+if g_axis_manager_a.r_homing_vel &lt;= 0.0 then
+   g_axis_manager_a.r_homing_vel := axis_a.maxspeed * 0.05;
+end_if;
+if g_axis_manager_a.r_transf_acc &lt;= 0.0 then
+   g_axis_manager_a.r_transf_acc := axis_a.maxacc;
+end_if;
+if g_axis_manager_a.r_transf_dec &lt;= 0.0 then
+   g_axis_manager_a.r_transf_dec := axis_a.maxacc;
+end_if;
+if g_axis_manager_a.r_transf_vel &lt;= 0.0 then
+   g_axis_manager_a.r_transf_vel := axis_a.maxspeed;
+end_if;
+if g_axis_manager_a.r_jog_acc &lt;= 0.0 then
+   g_axis_manager_a.r_jog_acc := axis_a.maxacc;
+end_if;
+if g_axis_manager_a.r_jog_dec &lt;= 0.0 then
+   g_axis_manager_a.r_jog_dec := axis_a.maxacc;
+end_if;
+if g_axis_manager_a.r_jog_vel &lt;= 0.0 then
+   g_axis_manager_a.r_jog_vel := axis_a.maxspeed;
+end_if;
+if g_b_moving_a then
+   (* force re-homing *)
+   g_axis_manager_a.b_homed := false;
+end_if;
+
+(* profile mode 0=position mode, 1=velocity mode *)
+axis_b.modeProf      := 0;
+(* Max speed units per seconds, 100 rpm *)   
+axis_b.maxSpeed      := 100.0 * 360.0 / 60.0;
+(* Maximum acceleration *)
+axis_b.maxAcc        := 2000.0;
+(* Tolerance on position, one millimeter *) 
+axis_b.istPos        := 1.0;
+(* Maximum following error and static error *)
+axis_b.errDin        := 5.0;
+(* Encoder coefficient, one millimeter = encoder pulse * coefficient *)
+if ((axis_b.coe_enc &lt;= 0.0) or (axis_b.coe_enc &gt; 0.0)) then
+  axis_b.coe_enc := 0.001;
+end_if;
+(* turn off simulation on axis *)
+axis_b.simul         := false;
+(* setting up cubic interpolation *)
+axis_b.intrate       := 5;
+axis_b.segtime       := 0.02;
+(* set point, target position *)
+axis_b.ref_to_rawOut := ref(g_di_rawOutB);
+(* actual position *)                    
+axis_b.ref_to_rawIn  := ref(g_di_rawInB);
+(* global function block to manage axis reset and power ON *)
+fb_reset_axis_b.axis_ref  := ref(axis_b);
+g_axis_manager_b.axis_ref := ref(axis_b);
+(* software limit switch *)
+axis_b.posRv  := -9999999.0;
+axis_b.posFw  := +9999999.0;
+(* check for axis acceleration value *)
+if g_axis_manager_b.r_homing_acc &lt;= 0.0 then
+   g_axis_manager_b.r_homing_acc := axis_b.maxacc;
+end_if;
+if g_axis_manager_b.r_homing_dec &lt;= 0.0 then
+   g_axis_manager_b.r_homing_dec := axis_b.maxacc;
+end_if;
+if g_axis_manager_b.r_homing_vel &lt;= 0.0 then
+   g_axis_manager_b.r_homing_vel := axis_b.maxspeed * 0.05;
+end_if;
+if g_axis_manager_b.r_transf_acc &lt;= 0.0 then
+   g_axis_manager_b.r_transf_acc := axis_b.maxacc;
+end_if;
+if g_axis_manager_b.r_transf_dec &lt;= 0.0 then
+   g_axis_manager_b.r_transf_dec := axis_b.maxacc;
+end_if;
+if g_axis_manager_b.r_transf_vel &lt;= 0.0 then
+   g_axis_manager_b.r_transf_vel := axis_b.maxspeed;
+end_if;
+if g_axis_manager_b.r_jog_acc &lt;= 0.0 then
+   g_axis_manager_b.r_jog_acc := axis_b.maxacc;
+end_if;
+if g_axis_manager_b.r_jog_dec &lt;= 0.0 then
+   g_axis_manager_b.r_jog_dec := axis_b.maxacc;
+end_if;
+if g_axis_manager_b.r_jog_vel &lt;= 0.0 then
+   g_axis_manager_b.r_jog_vel := axis_b.maxspeed;
+end_if;
+if g_b_moving_b then
+   (* force re-homing *)
+   g_axis_manager_b.b_homed := false;
+end_if;
+
+(* profile mode 0=position mode, 1=velocity mode *)
+axis_c.modeProf      := 0;
+(* Max speed units per seconds, 100 rpm *)   
+axis_c.maxSpeed      := 100.0 * 360.0 / 60.0;
+(* Maximum acceleration *)
+axis_c.maxAcc        := 2000.0;
+(* Tolerance on position, one millimeter *) 
+axis_b.istPos        := 1.0;
+(* Maximum following error and static error *)
+axis_c.errDin        := 5.0;
+(* Encoder coefficient, one millimeter = encoder pulse * coefficient *)
+if ((axis_c.coe_enc &lt;= 0.0) or (axis_c.coe_enc &gt; 0.0)) then
+  axis_c.coe_enc := 0.001;
+end_if;
+(* turn off simulation on axis *)
+axis_c.simul         := false;
+(* setting up cubic interpolation *)
+axis_c.intrate       := 5;
+axis_c.segtime       := 0.02;
+(* set point, target position *)
+axis_c.ref_to_rawOut := ref(g_di_rawOutC);
+(* actual position *)                    
+axis_c.ref_to_rawIn  := ref(g_di_rawInC);
+(* global function block to manage axis reset and power ON *)
+fb_reset_axis_c.axis_ref  := ref(axis_c);
+g_axis_manager_c.axis_ref := ref(axis_c);
+(* software limit switch *)
+axis_c.posRv  := -9999999.0;
+axis_c.posFw  := +9999999.0;
+(* check for axis acceleration value *)
+if g_axis_manager_c.r_homing_acc &lt;= 0.0 then
+   g_axis_manager_c.r_homing_acc := axis_c.maxacc;
+end_if;
+if g_axis_manager_c.r_homing_dec &lt;= 0.0 then
+   g_axis_manager_c.r_homing_dec := axis_c.maxacc;
+end_if;
+if g_axis_manager_c.r_homing_vel &lt;= 0.0 then
+   g_axis_manager_c.r_homing_vel := axis_c.maxspeed * 0.05;
+end_if;
+if g_axis_manager_c.r_transf_acc &lt;= 0.0 then
+   g_axis_manager_c.r_transf_acc := axis_c.maxacc;
+end_if;
+if g_axis_manager_c.r_transf_dec &lt;= 0.0 then
+   g_axis_manager_c.r_transf_dec := axis_c.maxacc;
+end_if;
+if g_axis_manager_c.r_transf_vel &lt;= 0.0 then
+   g_axis_manager_c.r_transf_vel := axis_c.maxspeed;
+end_if;
+if g_axis_manager_c.r_jog_acc &lt;= 0.0 then
+   g_axis_manager_c.r_jog_acc := axis_c.maxacc;
+end_if;
+if g_axis_manager_c.r_jog_dec &lt;= 0.0 then
+   g_axis_manager_c.r_jog_dec := axis_c.maxacc;
+end_if;
+if g_axis_manager_c.r_jog_vel &lt;= 0.0 then
+   g_axis_manager_c.r_jog_vel := axis_c.maxspeed;
+end_if;
+if g_b_moving_c then
+   (* force re-homing *)
+   g_axis_manager_c.b_homed := false;
+end_if;
+
+if g_b_simulation then
+   g_b_driverXOk := true;
+   g_b_driverYOk := true;
+   g_b_driverZOk := true;
+   g_b_driverAOk := true;
+   g_b_driverBOk := true;
+   g_b_driverCOk := true;
+
+   g_axis_manager_x.b_homed := true;
+   g_axis_manager_y.b_homed := true;
+   g_axis_manager_z.b_homed := true;
+   g_axis_manager_a.b_homed := true;
+   g_axis_manager_b.b_homed := true;
+   g_axis_manager_c.b_homed := true;
+
+   g_axis_manager_x.b_home_probe := true;
+   g_axis_manager_y.b_home_probe := true;
+   g_axis_manager_z.b_home_probe := true;
+   g_axis_manager_a.b_home_probe := true;
+   g_axis_manager_b.b_home_probe := true;
+   g_axis_manager_c.b_home_probe := true;
+
+   axis_x.FCFW := false;
+   axis_y.FCFW := false;
+   axis_z.FCFW := false;
+   axis_a.FCFW := false;
+   axis_b.FCFW := false;
+   axis_c.FCFW := false;
+
+   axis_x.FCRV := false;
+   axis_y.FCRV := false;
+   axis_z.FCRV := false;
+   axis_a.FCRV := false;
+   axis_b.FCRV := false;
+   axis_c.FCRV := false;
+
+   g_b_stop_auto := true;
+
+   TARGET_DEB_I0.SIMUL := true;
+   
+   else
+   g_axis_manager_x.b_homed := true;
+   g_axis_manager_y.b_homed := true;
+   g_axis_manager_z.b_homed := true;
+   g_axis_manager_a.b_homed := true;
+   g_axis_manager_b.b_homed := true;
+   g_axis_manager_c.b_homed := true;
+end_if;
+
+cnc_exec_fb.acceleration := axis_x.maxacc;
+cnc_exec_fb.deceleration := axis_x.maxacc;
+cnc_exec_fb.rapidSpeed   := axis_x.maxSpeed;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

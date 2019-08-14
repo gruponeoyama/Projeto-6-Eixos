@@ -1,0 +1,4839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <globalVars>
+         <globalVars >
+           <variable name="TARGET_DEB_I0">
+            <type>
+             <derived name="TARGET_DEB_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="INSTALLED">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AIN6">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="REFRESHAIN6">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="DEBPOWEROK">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="DEBOK">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SIMUL">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="FWVER">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="SWVER">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="REQUIREDVERSION">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="CONTROLWORD">
+            <type>
+             <WORD/>
+            </type>
+            <initialValue>
+               <simpleValue value="16#3C0"/>
+            </initialValue>
+           </variable>
+           <variable name="STATUSWORD">
+            <type>
+             <WORD/>
+            </type>
+           </variable>
+           <variable name="INPLEV">
+            <type>
+             <DWORD/>
+            </type>
+            <initialValue>
+               <simpleValue value="16#00156800"/>
+            </initialValue>
+           </variable>
+           <variable name="COMERR">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="COMOK">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="DI_STRUCT" ref_to="true">
+            <type>
+             <derived name="TARGET_DEB_DI_T"/>
+            </type>
+            <initialValue>
+               <simpleValue value="LOCAL_DI"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Data types address]]>
+           </documentation>
+           </variable>
+           <variable name="EI_STRUCT" ref_to="true">
+            <type>
+             <derived name="TARGET_DEB_EI_T"/>
+            </type>
+            <documentation>
+<![CDATA[Data types address]]>
+           </documentation>
+           </variable>
+           <variable name="AI_STRUCT" ref_to="true">
+            <type>
+             <derived name="TARGET_DEB_AI_T"/>
+            </type>
+            <initialValue>
+               <simpleValue value="LOCAL_AI"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Data types address]]>
+           </documentation>
+           </variable>
+           <variable name="DO_STRUCT" ref_to="true">
+            <type>
+             <derived name="TARGET_DEB_DO_T"/>
+            </type>
+            <initialValue>
+               <simpleValue value="LOCAL_DO"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Data types address]]>
+           </documentation>
+           </variable>
+           <variable name="AO_STRUCT" ref_to="true">
+            <type>
+             <derived name="TARGET_DEB_AO_T"/>
+            </type>
+            <initialValue>
+               <simpleValue value="LOCAL_AO"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Data types address]]>
+           </documentation>
+           </variable>
+           <variable name="PWM_STRUCT" ref_to="true">
+            <type>
+             <derived name="TARGET_DEB_PWM_T"/>
+            </type>
+            <initialValue>
+               <simpleValue value="LOCAL_PWM"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Data types address]]>
+           </documentation>
+           </variable>
+           <variable name="LT_STRUCT" ref_to="true">
+            <type>
+             <derived name="TARGET_DEB_LT_T"/>
+            </type>
+            <documentation>
+<![CDATA[Data types address]]>
+           </documentation>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="AXIS_X">
+            <type>
+             <derived name="AXIS_REF_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="AXISNAME">
+            <type>
+             <string/>
+            </type>
+            <initialValue>
+               <simpleValue value="X"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Name]]>
+           </documentation>
+           </variable>
+           <variable name="AXISIDX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Index]]>
+           </documentation>
+           </variable>
+           <variable name="ABSPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Absolute position]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWIN" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Encoder]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWOUT" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Reference encoder]]>
+           </documentation>
+           </variable>
+           <variable name="VERBOSE">
+            <type>
+             <SINT/>
+            </type>
+            <documentation>
+<![CDATA[0=severe, 1=middle, 2=every condition]]>
+           </documentation>
+           </variable>
+           <variable name="SIMUL">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Simulated]]>
+           </documentation>
+           </variable>
+           <variable name="MAXSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Max speed (Units per second)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx acceleration (Units per second squared)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXJERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx jerk (Units per second cubic)]]>
+           </documentation>
+           </variable>
+           <variable name="ISTPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Final position accuracy]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOS">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Timeout final position]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOSOK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Time in final position before stop]]>
+           </documentation>
+           </variable>
+           <variable name="REALSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Real speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPA">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual distance]]>
+           </documentation>
+           </variable>
+           <variable name="INTRATE">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="SEGTIME">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ABPID">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Feedback active]]>
+           </documentation>
+           </variable>
+           <variable name="ABPROF">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="MODEPROF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Profile mode 0=position, 1=velocity]]>
+           </documentation>
+           </variable>
+           <variable name="DIFPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Position difference]]>
+           </documentation>
+           </variable>
+           <variable name="COE_ENC">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder coefficient]]>
+           </documentation>
+           </variable>
+           <variable name="EN_ENC">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder enabling]]>
+           </documentation>
+           </variable>
+           <variable name="MODULE">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder rotation degrees]]>
+           </documentation>
+           </variable>
+           <variable name="DIRECTION">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="DRVOK">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver enabled]]>
+           </documentation>
+           </variable>
+           <variable name="OFSPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Offset position]]>
+           </documentation>
+           </variable>
+           <variable name="RELPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Relative position]]>
+           </documentation>
+           </variable>
+           <variable name="RELSIGN">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AUXSTT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="FCFW">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="FCRV">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="POSFW">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="POSRV">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="SPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="DEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="JERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Jerk]]>
+           </documentation>
+           </variable>
+           <variable name="ERRPID">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[PID error]]>
+           </documentation>
+           </variable>
+           <variable name="ERRDIN">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Dinamic error]]>
+           </documentation>
+           </variable>
+           <variable name="FKPA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Proportional]]>
+           </documentation>
+           </variable>
+           <variable name="FKFFA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Derivative]]>
+           </documentation>
+           </variable>
+           <variable name="FKIA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Integral]]>
+           </documentation>
+           </variable>
+           <variable name="FLSIA">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="OUTI">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="REF_TO_LREF" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence]]>
+           </documentation>
+           </variable>
+           <variable name="AO_RES">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence resolution]]>
+           </documentation>
+           </variable>
+           <variable name="HOMESTT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search state]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROLSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search limit switch speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="ZERODEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="PROBEOFF">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search reference (digital)]]>
+           </documentation>
+           </variable>
+           <variable name="DELAYPROBEOFF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search timeout]]>
+           </documentation>
+           </variable>
+           <variable name="ABSOFF">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ZERODIR">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search direction]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROED">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search done]]>
+           </documentation>
+           </variable>
+           <variable name="ENABLEPOSITIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="ENABLENEGATIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORID">
+            <type>
+             <WORD/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORSTR">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="MOTION_STATE">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Axis state]]>
+           </documentation>
+           </variable>
+           <variable name="STTJERK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Jerk state]]>
+           </documentation>
+           </variable>
+           <variable name="CURRENT_FB">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="QUICKSTOP">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Drive in quick-stop mode]]>
+           </documentation>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="AXIS_Y">
+            <type>
+             <derived name="AXIS_REF_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="AXISNAME">
+            <type>
+             <string/>
+            </type>
+            <initialValue>
+               <simpleValue value="Y"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Name]]>
+           </documentation>
+           </variable>
+           <variable name="AXISIDX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Index]]>
+           </documentation>
+           </variable>
+           <variable name="ABSPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Absolute position]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWIN" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Encoder]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWOUT" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Reference encoder]]>
+           </documentation>
+           </variable>
+           <variable name="VERBOSE">
+            <type>
+             <SINT/>
+            </type>
+            <documentation>
+<![CDATA[0=severe, 1=middle, 2=every condition]]>
+           </documentation>
+           </variable>
+           <variable name="SIMUL">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Simulated]]>
+           </documentation>
+           </variable>
+           <variable name="MAXSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Max speed (Units per second)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx acceleration (Units per second squared)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXJERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx jerk (Units per second cubic)]]>
+           </documentation>
+           </variable>
+           <variable name="ISTPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Final position accuracy]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOS">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Timeout final position]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOSOK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Time in final position before stop]]>
+           </documentation>
+           </variable>
+           <variable name="REALSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Real speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPA">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual distance]]>
+           </documentation>
+           </variable>
+           <variable name="INTRATE">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="SEGTIME">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ABPID">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Feedback active]]>
+           </documentation>
+           </variable>
+           <variable name="ABPROF">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="MODEPROF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[0 = with feedback, 1 = in velocity]]>
+           </documentation>
+           </variable>
+           <variable name="DIFPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Position difference]]>
+           </documentation>
+           </variable>
+           <variable name="COE_ENC">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder coefficient]]>
+           </documentation>
+           </variable>
+           <variable name="EN_ENC">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder enabling]]>
+           </documentation>
+           </variable>
+           <variable name="MODULE">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder rotation degrees]]>
+           </documentation>
+           </variable>
+           <variable name="DIRECTION">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="DRVOK">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver enabled]]>
+           </documentation>
+           </variable>
+           <variable name="OFSPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Offset position]]>
+           </documentation>
+           </variable>
+           <variable name="RELPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Relative position]]>
+           </documentation>
+           </variable>
+           <variable name="RELSIGN">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AUXSTT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="FCFW">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="FCRV">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="POSFW">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="POSRV">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="SPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="DEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="JERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Jerk]]>
+           </documentation>
+           </variable>
+           <variable name="ERRPID">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[PID error]]>
+           </documentation>
+           </variable>
+           <variable name="ERRDIN">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Dinamic error]]>
+           </documentation>
+           </variable>
+           <variable name="FKPA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Proportional]]>
+           </documentation>
+           </variable>
+           <variable name="FKFFA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Derivative]]>
+           </documentation>
+           </variable>
+           <variable name="FKIA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Integral]]>
+           </documentation>
+           </variable>
+           <variable name="FLSIA">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="OUTI">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="REF_TO_LREF" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence]]>
+           </documentation>
+           </variable>
+           <variable name="AO_RES">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence resolution]]>
+           </documentation>
+           </variable>
+           <variable name="HOMESTT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search state]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROLSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search limit switch speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="ZERODEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="PROBEOFF">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search reference (digital)]]>
+           </documentation>
+           </variable>
+           <variable name="DELAYPROBEOFF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search timeout]]>
+           </documentation>
+           </variable>
+           <variable name="ABSOFF">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ZERODIR">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search direction]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROED">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search done]]>
+           </documentation>
+           </variable>
+           <variable name="ENABLEPOSITIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="ENABLENEGATIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORID">
+            <type>
+             <WORD/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORSTR">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="MOTION_STATE">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Axis state]]>
+           </documentation>
+           </variable>
+           <variable name="STTJERK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Jerk state]]>
+           </documentation>
+           </variable>
+           <variable name="CURRENT_FB">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="QUICKSTOP">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Drive in quick-stop mode]]>
+           </documentation>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="AXIS_Z">
+            <type>
+             <derived name="AXIS_REF_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="AXISNAME">
+            <type>
+             <string/>
+            </type>
+            <initialValue>
+               <simpleValue value="Z"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Name]]>
+           </documentation>
+           </variable>
+           <variable name="AXISIDX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Index]]>
+           </documentation>
+           </variable>
+           <variable name="ABSPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Absolute position]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWIN" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Encoder]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWOUT" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Reference encoder]]>
+           </documentation>
+           </variable>
+           <variable name="VERBOSE">
+            <type>
+             <SINT/>
+            </type>
+            <documentation>
+<![CDATA[0=severe, 1=middle, 2=every condition]]>
+           </documentation>
+           </variable>
+           <variable name="SIMUL">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Simulated]]>
+           </documentation>
+           </variable>
+           <variable name="MAXSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Max speed (Units per second)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx acceleration (Units per second squared)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXJERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx jerk (Units per second cubic)]]>
+           </documentation>
+           </variable>
+           <variable name="ISTPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Final position accuracy]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOS">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Timeout final position]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOSOK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Time in final position before stop]]>
+           </documentation>
+           </variable>
+           <variable name="REALSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Real speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPA">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual distance]]>
+           </documentation>
+           </variable>
+           <variable name="INTRATE">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="SEGTIME">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ABPID">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Feedback active]]>
+           </documentation>
+           </variable>
+           <variable name="ABPROF">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="MODEPROF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[0 = with feedback, 1 = in velocity]]>
+           </documentation>
+           </variable>
+           <variable name="DIFPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Position difference]]>
+           </documentation>
+           </variable>
+           <variable name="COE_ENC">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder coefficient]]>
+           </documentation>
+           </variable>
+           <variable name="EN_ENC">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder enabling]]>
+           </documentation>
+           </variable>
+           <variable name="MODULE">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder rotation degrees]]>
+           </documentation>
+           </variable>
+           <variable name="DIRECTION">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="DRVOK">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver enabled]]>
+           </documentation>
+           </variable>
+           <variable name="OFSPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Offset position]]>
+           </documentation>
+           </variable>
+           <variable name="RELPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Relative position]]>
+           </documentation>
+           </variable>
+           <variable name="RELSIGN">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AUXSTT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="FCFW">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="FCRV">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="POSFW">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="POSRV">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="SPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="DEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="JERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Jerk]]>
+           </documentation>
+           </variable>
+           <variable name="ERRPID">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[PID error]]>
+           </documentation>
+           </variable>
+           <variable name="ERRDIN">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Dinamic error]]>
+           </documentation>
+           </variable>
+           <variable name="FKPA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Proportional]]>
+           </documentation>
+           </variable>
+           <variable name="FKFFA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Derivative]]>
+           </documentation>
+           </variable>
+           <variable name="FKIA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Integral]]>
+           </documentation>
+           </variable>
+           <variable name="FLSIA">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="OUTI">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="REF_TO_LREF" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence]]>
+           </documentation>
+           </variable>
+           <variable name="AO_RES">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence resolution]]>
+           </documentation>
+           </variable>
+           <variable name="HOMESTT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search state]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROLSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search limit switch speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="ZERODEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="PROBEOFF">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search reference (digital)]]>
+           </documentation>
+           </variable>
+           <variable name="DELAYPROBEOFF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search timeout]]>
+           </documentation>
+           </variable>
+           <variable name="ABSOFF">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ZERODIR">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search direction]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROED">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search done]]>
+           </documentation>
+           </variable>
+           <variable name="ENABLEPOSITIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="ENABLENEGATIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORID">
+            <type>
+             <WORD/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORSTR">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="MOTION_STATE">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Axis state]]>
+           </documentation>
+           </variable>
+           <variable name="STTJERK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Jerk state]]>
+           </documentation>
+           </variable>
+           <variable name="CURRENT_FB">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="QUICKSTOP">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Drive in quick-stop mode]]>
+           </documentation>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="AXIS_A">
+            <type>
+             <derived name="AXIS_REF_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="AXISNAME">
+            <type>
+             <string/>
+            </type>
+            <initialValue>
+               <simpleValue value="A"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Name]]>
+           </documentation>
+           </variable>
+           <variable name="AXISIDX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Index]]>
+           </documentation>
+           </variable>
+           <variable name="ABSPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Absolute position]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWIN" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Encoder]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWOUT" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Reference encoder]]>
+           </documentation>
+           </variable>
+           <variable name="VERBOSE">
+            <type>
+             <SINT/>
+            </type>
+            <documentation>
+<![CDATA[0=severe, 1=middle, 2=every condition]]>
+           </documentation>
+           </variable>
+           <variable name="SIMUL">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Simulated]]>
+           </documentation>
+           </variable>
+           <variable name="MAXSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Max speed (Units per second)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx acceleration (Units per second squared)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXJERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx jerk (Units per second cubic)]]>
+           </documentation>
+           </variable>
+           <variable name="ISTPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Final position accuracy]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOS">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Timeout final position]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOSOK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Time in final position before stop]]>
+           </documentation>
+           </variable>
+           <variable name="REALSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Real speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPA">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual distance]]>
+           </documentation>
+           </variable>
+           <variable name="INTRATE">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="SEGTIME">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ABPID">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Feedback active]]>
+           </documentation>
+           </variable>
+           <variable name="ABPROF">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="MODEPROF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[0 = with feedback, 1 = in velocity]]>
+           </documentation>
+           </variable>
+           <variable name="DIFPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Position difference]]>
+           </documentation>
+           </variable>
+           <variable name="COE_ENC">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder coefficient]]>
+           </documentation>
+           </variable>
+           <variable name="EN_ENC">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder enabling]]>
+           </documentation>
+           </variable>
+           <variable name="MODULE">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder rotation degrees]]>
+           </documentation>
+           </variable>
+           <variable name="DIRECTION">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="DRVOK">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver enabled]]>
+           </documentation>
+           </variable>
+           <variable name="OFSPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Offset position]]>
+           </documentation>
+           </variable>
+           <variable name="RELPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Relative position]]>
+           </documentation>
+           </variable>
+           <variable name="RELSIGN">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AUXSTT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="FCFW">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="FCRV">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="POSFW">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="POSRV">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="SPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="DEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="JERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Jerk]]>
+           </documentation>
+           </variable>
+           <variable name="ERRPID">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[PID error]]>
+           </documentation>
+           </variable>
+           <variable name="ERRDIN">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Dinamic error]]>
+           </documentation>
+           </variable>
+           <variable name="FKPA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Proportional]]>
+           </documentation>
+           </variable>
+           <variable name="FKFFA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Derivative]]>
+           </documentation>
+           </variable>
+           <variable name="FKIA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Integral]]>
+           </documentation>
+           </variable>
+           <variable name="FLSIA">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="OUTI">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="REF_TO_LREF" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence]]>
+           </documentation>
+           </variable>
+           <variable name="AO_RES">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence resolution]]>
+           </documentation>
+           </variable>
+           <variable name="HOMESTT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search state]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROLSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search limit switch speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="ZERODEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="PROBEOFF">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search reference (digital)]]>
+           </documentation>
+           </variable>
+           <variable name="DELAYPROBEOFF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search timeout]]>
+           </documentation>
+           </variable>
+           <variable name="ABSOFF">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ZERODIR">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search direction]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROED">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search done]]>
+           </documentation>
+           </variable>
+           <variable name="ENABLEPOSITIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="ENABLENEGATIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORID">
+            <type>
+             <WORD/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORSTR">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="MOTION_STATE">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Axis state]]>
+           </documentation>
+           </variable>
+           <variable name="STTJERK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Jerk state]]>
+           </documentation>
+           </variable>
+           <variable name="CURRENT_FB">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="QUICKSTOP">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Drive in quick-stop mode]]>
+           </documentation>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="AXIS_B">
+            <type>
+             <derived name="AXIS_REF_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="AXISNAME">
+            <type>
+             <string/>
+            </type>
+            <initialValue>
+               <simpleValue value="B"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Name]]>
+           </documentation>
+           </variable>
+           <variable name="AXISIDX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Index]]>
+           </documentation>
+           </variable>
+           <variable name="ABSPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Absolute position]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWIN" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Encoder]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWOUT" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Reference encoder]]>
+           </documentation>
+           </variable>
+           <variable name="VERBOSE">
+            <type>
+             <SINT/>
+            </type>
+            <documentation>
+<![CDATA[0=severe, 1=middle, 2=every condition]]>
+           </documentation>
+           </variable>
+           <variable name="SIMUL">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Simulated]]>
+           </documentation>
+           </variable>
+           <variable name="MAXSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Max speed (Units per second)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx acceleration (Units per second squared)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXJERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx jerk (Units per second cubic)]]>
+           </documentation>
+           </variable>
+           <variable name="ISTPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Final position accuracy]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOS">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Timeout final position]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOSOK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Time in final position before stop]]>
+           </documentation>
+           </variable>
+           <variable name="REALSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Real speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPA">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual distance]]>
+           </documentation>
+           </variable>
+           <variable name="INTRATE">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="SEGTIME">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ABPID">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Feedback active]]>
+           </documentation>
+           </variable>
+           <variable name="ABPROF">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="MODEPROF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[0 = with feedback, 1 = in velocity]]>
+           </documentation>
+           </variable>
+           <variable name="DIFPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Position difference]]>
+           </documentation>
+           </variable>
+           <variable name="COE_ENC">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder coefficient]]>
+           </documentation>
+           </variable>
+           <variable name="EN_ENC">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder enabling]]>
+           </documentation>
+           </variable>
+           <variable name="MODULE">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder rotation degrees]]>
+           </documentation>
+           </variable>
+           <variable name="DIRECTION">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="DRVOK">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver enabled]]>
+           </documentation>
+           </variable>
+           <variable name="OFSPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Offset position]]>
+           </documentation>
+           </variable>
+           <variable name="RELPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Relative position]]>
+           </documentation>
+           </variable>
+           <variable name="RELSIGN">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AUXSTT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="FCFW">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="FCRV">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="POSFW">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="POSRV">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="SPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="DEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="JERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Jerk]]>
+           </documentation>
+           </variable>
+           <variable name="ERRPID">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[PID error]]>
+           </documentation>
+           </variable>
+           <variable name="ERRDIN">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Dinamic error]]>
+           </documentation>
+           </variable>
+           <variable name="FKPA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Proportional]]>
+           </documentation>
+           </variable>
+           <variable name="FKFFA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Derivative]]>
+           </documentation>
+           </variable>
+           <variable name="FKIA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Integral]]>
+           </documentation>
+           </variable>
+           <variable name="FLSIA">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="OUTI">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="REF_TO_LREF" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence]]>
+           </documentation>
+           </variable>
+           <variable name="AO_RES">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence resolution]]>
+           </documentation>
+           </variable>
+           <variable name="HOMESTT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search state]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROLSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search limit switch speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="ZERODEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="PROBEOFF">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search reference (digital)]]>
+           </documentation>
+           </variable>
+           <variable name="DELAYPROBEOFF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search timeout]]>
+           </documentation>
+           </variable>
+           <variable name="ABSOFF">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ZERODIR">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search direction]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROED">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search done]]>
+           </documentation>
+           </variable>
+           <variable name="ENABLEPOSITIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="ENABLENEGATIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORID">
+            <type>
+             <WORD/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORSTR">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="MOTION_STATE">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Axis state]]>
+           </documentation>
+           </variable>
+           <variable name="STTJERK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Jerk state]]>
+           </documentation>
+           </variable>
+           <variable name="CURRENT_FB">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="QUICKSTOP">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Drive in quick-stop mode]]>
+           </documentation>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="AXIS_C">
+            <type>
+             <derived name="AXIS_REF_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="AXISNAME">
+            <type>
+             <string/>
+            </type>
+            <initialValue>
+               <simpleValue value="C"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Name]]>
+           </documentation>
+           </variable>
+           <variable name="AXISIDX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Index]]>
+           </documentation>
+           </variable>
+           <variable name="ABSPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Absolute position]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWIN" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Encoder]]>
+           </documentation>
+           </variable>
+           <variable name="REF_TO_RAWOUT" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Reference encoder]]>
+           </documentation>
+           </variable>
+           <variable name="VERBOSE">
+            <type>
+             <SINT/>
+            </type>
+            <documentation>
+<![CDATA[0=severe, 1=middle, 2=every condition]]>
+           </documentation>
+           </variable>
+           <variable name="SIMUL">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Simulated]]>
+           </documentation>
+           </variable>
+           <variable name="MAXSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Max speed (Units per second)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx acceleration (Units per second squared)]]>
+           </documentation>
+           </variable>
+           <variable name="MAXJERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[MAx jerk (Units per second cubic)]]>
+           </documentation>
+           </variable>
+           <variable name="ISTPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Final position accuracy]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOS">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Timeout final position]]>
+           </documentation>
+           </variable>
+           <variable name="TIMPOSOK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Time in final position before stop]]>
+           </documentation>
+           </variable>
+           <variable name="REALSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Real speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACTSPA">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Actual distance]]>
+           </documentation>
+           </variable>
+           <variable name="INTRATE">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="SEGTIME">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ABPID">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Feedback active]]>
+           </documentation>
+           </variable>
+           <variable name="ABPROF">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="MODEPROF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[0 = with feedback, 1 = in velocity]]>
+           </documentation>
+           </variable>
+           <variable name="DIFPOS">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Position difference]]>
+           </documentation>
+           </variable>
+           <variable name="COE_ENC">
+            <type>
+             <LREAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder coefficient]]>
+           </documentation>
+           </variable>
+           <variable name="EN_ENC">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder enabling]]>
+           </documentation>
+           </variable>
+           <variable name="MODULE">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Encoder rotation degrees]]>
+           </documentation>
+           </variable>
+           <variable name="DIRECTION">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="DRVOK">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver enabled]]>
+           </documentation>
+           </variable>
+           <variable name="OFSPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Offset position]]>
+           </documentation>
+           </variable>
+           <variable name="RELPOS">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Relative position]]>
+           </documentation>
+           </variable>
+           <variable name="RELSIGN">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AUXSTT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="FCFW">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="FCRV">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Digital)]]>
+           </documentation>
+           </variable>
+           <variable name="POSFW">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch forward (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="POSRV">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Limit switch reverse (Position)]]>
+           </documentation>
+           </variable>
+           <variable name="SPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Speed]]>
+           </documentation>
+           </variable>
+           <variable name="ACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="DEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="JERK">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Jerk]]>
+           </documentation>
+           </variable>
+           <variable name="ERRPID">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[PID error]]>
+           </documentation>
+           </variable>
+           <variable name="ERRDIN">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Dinamic error]]>
+           </documentation>
+           </variable>
+           <variable name="FKPA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Proportional]]>
+           </documentation>
+           </variable>
+           <variable name="FKFFA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Derivative]]>
+           </documentation>
+           </variable>
+           <variable name="FKIA">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Integral]]>
+           </documentation>
+           </variable>
+           <variable name="FLSIA">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="OUTI">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="REF_TO_LREF" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence]]>
+           </documentation>
+           </variable>
+           <variable name="AO_RES">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Analog refence resolution]]>
+           </documentation>
+           </variable>
+           <variable name="HOMESTT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search state]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROLSPEED">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search limit switch speed]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROACC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search acceleration]]>
+           </documentation>
+           </variable>
+           <variable name="ZERODEC">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search deceleration]]>
+           </documentation>
+           </variable>
+           <variable name="PROBEOFF">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search reference (digital)]]>
+           </documentation>
+           </variable>
+           <variable name="DELAYPROBEOFF">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Zero search timeout]]>
+           </documentation>
+           </variable>
+           <variable name="ABSOFF">
+            <type>
+             <REAL/>
+            </type>
+           </variable>
+           <variable name="ZERODIR">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search direction]]>
+           </documentation>
+           </variable>
+           <variable name="ZEROED">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Zero search done]]>
+           </documentation>
+           </variable>
+           <variable name="ENABLEPOSITIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="ENABLENEGATIVE">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVRESET">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SENDPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="RECVPOWER">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORID">
+            <type>
+             <WORD/>
+            </type>
+           </variable>
+           <variable name="AXIS_ERRORSTR">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="MOTION_STATE">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Axis state]]>
+           </documentation>
+           </variable>
+           <variable name="STTJERK">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Jerk state]]>
+           </documentation>
+           </variable>
+           <variable name="CURRENT_FB">
+            <type>
+             <string/>
+            </type>
+           </variable>
+           <variable name="QUICKSTOP">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Drive in quick-stop mode]]>
+           </documentation>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="SIRIUS_CANBUS_I0">
+            <type>
+             <derived name="SIRIUS_CANBUS_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="CANALE">
+            <type>
+             <INT/>
+            </type>
+            <initialValue>
+               <simpleValue value="0"/>
+            </initialValue>
+            <documentation>
+<![CDATA[CAN BUS channel ID]]>
+           </documentation>
+           </variable>
+           <variable name="COB_ID">
+            <type>
+             <INT/>
+            </type>
+            <initialValue>
+               <simpleValue value="127"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Channel COB_ID]]>
+           </documentation>
+           </variable>
+           <variable name="SYNC">
+            <type>
+             <BOOL/>
+            </type>
+            <initialValue>
+               <simpleValue value="1"/>
+            </initialValue>
+            <documentation>
+<![CDATA[1=enable sync generation]]>
+           </documentation>
+           </variable>
+           <variable name="CANOK">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Channel ok flag]]>
+           </documentation>
+           </variable>
+           <variable name="ERRORELEM">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[Show ID on error]]>
+           </documentation>
+           </variable>
+           <variable name="ERRORRX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Number of no answer]]>
+           </documentation>
+           </variable>
+           <variable name="ERRORFLUSHQUEUE">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="BUS_TX_ERROR">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="SYNC_OVERLOAD_CNT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="TXFQFULL">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Number of tx buffer full reached]]>
+           </documentation>
+           </variable>
+           <variable name="CANRXERR">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Receiver CAN error [0=ok, 1..127=quality degradation]]>
+           </documentation>
+           </variable>
+           <variable name="CANTXERR">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Transmitter CAN error [0=ok, 1..127=quality degradation]]>
+           </documentation>
+           </variable>
+           <variable name="GHOST_PDO">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[SDO received but not]]>
+           </documentation>
+           </variable>
+           <variable name="SYNC_TIMESTAMP">
+            <type>
+             <LREAL/>
+            </type>
+           </variable>
+           <variable name="QUEUE_TAIL_IN">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="QUEUE_HEAD_IN">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="QUEUE_SIZE_IN">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="QUEUE_TAIL_OUT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="QUEUE_HEAD_OUT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="QUEUE_SIZE_OUT">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+           <variable name="NUMRXINT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Number of received packet]]>
+           </documentation>
+           </variable>
+           <variable name="NUMTXINT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Number of sended packet]]>
+           </documentation>
+           </variable>
+           <variable name="PEAKRXINT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Peak of received packet]]>
+           </documentation>
+           </variable>
+           <variable name="PEAKTXINT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Peak of sended packet]]>
+           </documentation>
+           </variable>
+           <variable name="NUMRXSDO">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Number of received SDO]]>
+           </documentation>
+           </variable>
+           <variable name="NUMTXSDO">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Number of sended SDO]]>
+           </documentation>
+           </variable>
+           <variable name="CANBAUDE">
+            <type>
+             <INT/>
+            </type>
+            <initialValue>
+               <simpleValue value="1000"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Baud rate [125, 250, 500, 1000]]]>
+           </documentation>
+           </variable>
+           <variable name="CANTIC">
+            <type>
+             <INT/>
+            </type>
+            <initialValue>
+               <simpleValue value="1"/>
+            </initialValue>
+            <documentation>
+<![CDATA[System Task/CAN sync]]>
+           </documentation>
+           </variable>
+           <variable name="CANELAP">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[CAN elapsed time feedback]]>
+           </documentation>
+           </variable>
+           <variable name="CANSIM">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[1=CAN simulation]]>
+           </documentation>
+           </variable>
+           <variable name="CLRCOUNT">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[1=reset statistic counters]]>
+           </documentation>
+           </variable>
+           <variable name="CMDTEST">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Reserved]]>
+           </documentation>
+           </variable>
+           <variable name="DATATEST">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Reserved]]>
+           </documentation>
+           </variable>
+           <variable name="REGISTERNDX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Device registers index preset]]>
+           </documentation>
+           </variable>
+           <variable name="REGISTERBUF">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[Device registers data answer]]>
+           </documentation>
+           </variable>
+           <variable name="MODEINIT">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[0=independent initialization, 1=initialize all before sync]]>
+           </documentation>
+           </variable>
+           <variable name="STTINIT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[State of initialization]]>
+           </documentation>
+           </variable>
+           <variable name="FNZPTR">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="SIO15">
+            <type>
+             <derived name="CAN_NODE_T"/>
+            </type>
+           <addData>
+             <data>
+                      <baseType>
+             <struct>
+           <variable name="AUXOK">
+            <type>
+             <BOOL/>
+            </type>
+            <initialValue>
+               <simpleValue value="1"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Power on input]]>
+           </documentation>
+           </variable>
+           <variable name="CANALE">
+            <type>
+             <INT/>
+            </type>
+            <initialValue>
+               <simpleValue value="0"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Channel [0..n]]]>
+           </documentation>
+           </variable>
+           <variable name="COBID">
+            <type>
+             <INT/>
+            </type>
+            <initialValue>
+               <simpleValue value="2"/>
+            </initialValue>
+            <documentation>
+<![CDATA[ID [1..127]]]>
+           </documentation>
+           </variable>
+           <variable name="CANOK">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[ID estabilished connection]]>
+           </documentation>
+           </variable>
+           <variable name="CANOKWITHAUXOK">
+            <type>
+             <BOOL/>
+            </type>
+            <initialValue>
+               <simpleValue value="0"/>
+            </initialValue>
+           </variable>
+           <variable name="TPDO" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <initialValue>
+               <simpleValue value="SIO15_TPDO"/>
+            </initialValue>
+            <documentation>
+<![CDATA[TPDO data types address]]>
+           </documentation>
+           </variable>
+           <variable name="RPDO" ref_to="true">
+            <type>
+             <ANY/>
+            </type>
+            <initialValue>
+               <simpleValue value="SIO15_RPDO"/>
+            </initialValue>
+            <documentation>
+<![CDATA[RPDO data types address]]>
+           </documentation>
+           </variable>
+           <variable name="STTINIT">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[Initialization state]]>
+           </documentation>
+           </variable>
+           <variable name="STTNODE">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[Node state]]>
+           </documentation>
+           </variable>
+           <variable name="ERRORRX">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Number of no answer]]>
+           </documentation>
+           </variable>
+           <variable name="SDO_ERROR_RX">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Number of SDO error]]>
+           </documentation>
+           </variable>
+           <variable name="RESETNODE">
+            <type>
+             <INT/>
+            </type>
+            <initialValue>
+               <simpleValue value="2"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Reset node mode [0=reset comunication, 1=reset node, 2=bypass]]]>
+           </documentation>
+           </variable>
+           <variable name="HEARTBTMR">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Heartbeat timeout preset [0=no heartbeat]]]>
+           </documentation>
+           </variable>
+           <variable name="HEARTBFAULT">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Heartbeat timeout counter]]>
+           </documentation>
+           </variable>
+           <variable name="EMERGENCYOBJ">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[Emergency object]]>
+           </documentation>
+           </variable>
+           <variable name="ANSWERTMO">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Answer sync timeout preset [0=no timeout to sync]]]>
+           </documentation>
+           </variable>
+           <variable name="TMBOOTUP">
+            <type>
+             <INT/>
+            </type>
+            <initialValue>
+               <simpleValue value="1000"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Bootup response timeout]]>
+           </documentation>
+           </variable>
+           <variable name="FILENAME">
+            <type>
+             <string/>
+            </type>
+            <initialValue>
+               <simpleValue value="SIO15_CONFIG.bin"/>
+            </initialValue>
+            <documentation>
+<![CDATA[Initialization filename]]>
+           </documentation>
+           </variable>
+           <variable name="NAME">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[Name file]]>
+           </documentation>
+           </variable>
+           <variable name="MAPPEDTPDO">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Master receive PDO]]>
+           </documentation>
+           </variable>
+           <variable name="MAPPEDRPDO">
+            <type>
+             <INT/>
+            </type>
+            <documentation>
+<![CDATA[Master send PDO]]>
+           </documentation>
+           </variable>
+           <variable name="DEVICE_NAME">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[16#1008 manufacturer device name]]>
+           </documentation>
+           </variable>
+           <variable name="HARDWARE_VERSION">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[16#1009 manufacturer hardware version]]>
+           </documentation>
+           </variable>
+           <variable name="SORTWARE_VERSION">
+            <type>
+             <string/>
+            </type>
+            <documentation>
+<![CDATA[16#100A manufacturer software version]]>
+           </documentation>
+           </variable>
+           <variable name="FNZ_PTR">
+            <type>
+             <INT/>
+            </type>
+           </variable>
+             </struct>
+           </baseType>
+             </data>
+           </addData>
+           </variable>
+           <variable name="local_di">
+            <type>
+             <derived name="TARGET_DEB_DI_T"/>
+            </type>
+            <documentation>
+<![CDATA[DEB Digital input]]>
+           </documentation>
+           </variable>
+           <variable name="local_ai">
+            <type>
+             <derived name="TARGET_DEB_AI_T"/>
+            </type>
+            <documentation>
+<![CDATA[DEB analog input]]>
+           </documentation>
+           </variable>
+           <variable name="local_do">
+            <type>
+             <derived name="TARGET_DEB_DO_T"/>
+            </type>
+            <documentation>
+<![CDATA[DEB digital output]]>
+           </documentation>
+           </variable>
+           <variable name="local_ao">
+            <type>
+             <derived name="TARGET_DEB_AO_T"/>
+            </type>
+            <documentation>
+<![CDATA[DEB analog output]]>
+           </documentation>
+           </variable>
+           <variable name="local_pwm">
+            <type>
+             <derived name="TARGET_DEB_PWM_T"/>
+            </type>
+            <documentation>
+<![CDATA[DEB stepper motor]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_simulation">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[PLC in simulation mode]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawOutX">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis X set point, raw target position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawInX">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis X actual raw position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawOutY">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis Y set point, raw target position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawInY">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis Y actual raw position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawOutZ">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis Z set point, raw target position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawInZ">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis Z actual raw position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawOutA">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis A set point, raw target position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawInA">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis A actual raw position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawOutB">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis B set point, raw target position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawInB">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis B actual raw position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawOutC">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis C set point, raw target position]]>
+           </documentation>
+           </variable>
+           <variable name="g_di_rawInC">
+            <type>
+             <DINT/>
+            </type>
+            <documentation>
+<![CDATA[Axis C actual raw position]]>
+           </documentation>
+           </variable>
+           <variable name="fb_reset_axis_x">
+            <type>
+             <derived name="FB_RESET_AXIS"/>
+            </type>
+            <documentation>
+<![CDATA[Axis X reset/power management function bclock]]>
+           </documentation>
+           </variable>
+           <variable name="fb_reset_axis_y">
+            <type>
+             <derived name="FB_RESET_AXIS"/>
+            </type>
+            <documentation>
+<![CDATA[Axis X reset/power management function bclock]]>
+           </documentation>
+           </variable>
+           <variable name="fb_reset_axis_z">
+            <type>
+             <derived name="FB_RESET_AXIS"/>
+            </type>
+            <documentation>
+<![CDATA[Axis X reset/power management function bclock]]>
+           </documentation>
+           </variable>
+           <variable name="fb_reset_axis_a">
+            <type>
+             <derived name="FB_RESET_AXIS"/>
+            </type>
+            <documentation>
+<![CDATA[Axis X reset/power management function bclock]]>
+           </documentation>
+           </variable>
+           <variable name="fb_reset_axis_b">
+            <type>
+             <derived name="FB_RESET_AXIS"/>
+            </type>
+            <documentation>
+<![CDATA[Axis X reset/power management function bclock]]>
+           </documentation>
+           </variable>
+           <variable name="fb_reset_axis_c">
+            <type>
+             <derived name="FB_RESET_AXIS"/>
+            </type>
+            <documentation>
+<![CDATA[Axis X reset/power management function bclock]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_driverXOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[X driver OK]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_driverYOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Y driver OK]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_driverZOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Z driver OK]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_driverAOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[A driver OK]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_driverBOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[B driver OK]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_driverCOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[C driver OK]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_powerOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Machine is powerd on]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_powerOn">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Digital output to enable power ON]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_machineOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[machine is ready to operate]]>
+           </documentation>
+           </variable>
+           <variable name="g_r_gui_x_spd">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[X axis actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="g_r_gui_y_spd">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Y axis actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="g_r_gui_z_spd">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[Z axis actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="g_r_gui_a_spd">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[A axis actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="g_r_gui_b_spd">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[B axis actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="g_r_gui_c_spd">
+            <type>
+             <REAL/>
+            </type>
+            <documentation>
+<![CDATA[C axis actual speed]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_homing_x">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[X homing cicle commanded]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_homing_y">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Y homing cicle commanded]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_homing_z">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Z homing cicle commanded]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_homing_a">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[A homing cicle commanded]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_homing_b">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[B homing cicle commanded]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_homing_c">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[C homing cicle commanded]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_reset_axis">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Commanded axes reset]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_auto">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Machine is executing an automatic cycle]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_power_off">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Power off alarm active]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_errorstop">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[PLC Motion error occured during an automatic cycle]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_disabled">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[PLC Motion Axis was disabled during an automatic cycle]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_probeX">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[X axis homing probe reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_probeY">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Y axis homing probe reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_probeZ">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Z axis homing probe reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_probeA">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[A axis homing probe reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_probeB">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[B axis homing probe reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_probeC">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[C axis homing probe reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_rv_ls_X">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[X axis backwards limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_rv_ls_Y">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Y axis backwards limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_rv_ls_Z">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Z axis backwards limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_rv_ls_A">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[A axis backwards limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_rv_ls_B">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[B axis backwards limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_rv_ls_C">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[C axis backwards limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_fw_ls_X">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[X axis forward limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_fw_ls_Y">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Y axis forward limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_fw_ls_Z">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Z axis forward limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_fw_ls_A">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[A axis forward limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_fw_ls_B">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[B axis forward limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_fw_ls_C">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[C axis forward limit switch reached]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_reset_stop_causes">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Reset all automatic cycles stop cause/reason]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_reset_alarms">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Reset all active alarms]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_start_auto">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Start a comamnded  automatic cycle]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_auto">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stop the last comamnded automatic cycle (NC)]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_stop_auto">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stop commanded and start commanded together]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_moving">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Start cycle commanded when axis not stopped]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_on_auto_x">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Next commanded movement will b use X axis]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_on_auto_y">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Next commanded movement will b use Y axis]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_on_auto_z">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Next commanded movement will b use Z axis]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_on_auto_a">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Next commanded movement will b use A axis]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_on_auto_b">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Next commanded movement will b use B axis]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_on_auto_c">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Next commanded movement will b use C axis]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_auto_triggered">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[g_b_stop_auto triggered]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_driversEnable">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Digital output enable drivers]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_driverXOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver X not ok]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_driverYOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver Y not ok]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_driverZOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver Z not ok]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_driverAOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver A not ok]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_driverBOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver B not ok]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_alarm_driverCOk">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Driver C not ok]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_man">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="cnc_parser_fb">
+            <type>
+             <derived name="CNC_PARSER"/>
+            </type>
+            <documentation>
+<![CDATA[GCode interpreter]]>
+           </documentation>
+           </variable>
+           <variable name="cnc_read_fb">
+            <type>
+             <derived name="CNC_READFILE"/>
+            </type>
+            <documentation>
+<![CDATA[Read preinterpreted GCode]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_start_cnc">
+            <type>
+             <BOOL/>
+            </type>
+           </variable>
+           <variable name="SIO15_RPDO">
+            <type>
+             <derived name="RPDO_SIO15_T"/>
+            </type>
+           </variable>
+           <variable name="SIO15_TPDO">
+            <type>
+             <derived name="TPDO_SIO15_T"/>
+            </type>
+           </variable>
+         </globalVars>
+         <globalVars retain="true">
+           <variable name="g_si_verbose">
+            <type>
+             <SINT/>
+            </type>
+            <documentation>
+<![CDATA[Verbose PLC MOTION errors]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_moving_x">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Y axis in movement]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_moving_y">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Y axis in movement]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_moving_z">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Z axis in movement]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_moving_a">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[A axis in movement]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_moving_b">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[B axis in movement]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_moving_c">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[C axis in movement]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_power_off">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Machine cycle stopped by a power off]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_errorstop">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Machine cycle stopped by a PLC Motion error]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_disabled">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Machine cycle stopped by a PLC Motion axis disabled]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_probeX">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_probeX]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_probeY">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_probeY]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_probeZ">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_probeZ]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_probeA">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_probeA]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_probeB">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_probeB]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_probeC">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_probeC]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_rv_ls_X">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_rv_ls_X]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_rv_ls_Y">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_rv_ls_Y]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_rv_ls_Z">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_rv_ls_Z]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_rv_ls_A">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_rv_ls_A]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_rv_ls_B">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_rv_ls_B]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_rv_ls_C">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_rv_ls_C]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_fw_ls_X">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_fw_ls_X]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_fw_ls_Y">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_fw_ls_Y]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_fw_ls_Z">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_fw_ls_Z]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_fw_ls_A">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_fw_ls_A]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_fw_ls_B">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_fw_ls_B]]>
+           </documentation>
+           </variable>
+           <variable name="g_b_stop_fw_ls_C">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Stopped by g_b_alarm_fw_ls_C]]>
+           </documentation>
+           </variable>
+           <variable name="g_axis_manager_x">
+            <type>
+             <derived name="FB_AXIS_MANAGER"/>
+            </type>
+           </variable>
+           <variable name="g_axis_manager_y">
+            <type>
+             <derived name="FB_AXIS_MANAGER"/>
+            </type>
+           </variable>
+           <variable name="g_axis_manager_z">
+            <type>
+             <derived name="FB_AXIS_MANAGER"/>
+            </type>
+           </variable>
+           <variable name="g_axis_manager_a">
+            <type>
+             <derived name="FB_AXIS_MANAGER"/>
+            </type>
+           </variable>
+           <variable name="g_axis_manager_b">
+            <type>
+             <derived name="FB_AXIS_MANAGER"/>
+            </type>
+           </variable>
+           <variable name="g_axis_manager_c">
+            <type>
+             <derived name="FB_AXIS_MANAGER"/>
+            </type>
+           </variable>
+           <variable name="cnc_exec_fb">
+            <type>
+             <derived name="CNC_EXECGCODE"/>
+            </type>
+           </variable>
+           <variable name="g_b_need_reset">
+            <type>
+             <BOOL/>
+            </type>
+            <documentation>
+<![CDATA[Reset work needed]]>
+           </documentation>
+           </variable>
+         </globalVars>
+    </globalVars>

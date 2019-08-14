@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="slow_cnc" pouType="program">
+     <addData>
+        <parentFolder name="cnc" />
+     </addData>
+     <interface>
+       <localVars>
+         <variable name="b_cnc_load">
+          <type>
+           <BOOL/>
+          </type>
+          <initialValue>
+             <simpleValue value="true"/>
+          </initialValue>
+          <documentation>
+<![CDATA[Load GCode binary file]]>
+         </documentation>
+         </variable>
+         <variable name="low_bounds">
+          <type>
+           <derived name="CNC_AXES_POSITIONS"/>
+          </type>
+         </variable>
+         <variable name="high_bounds">
+          <type>
+           <derived name="CNC_AXES_POSITIONS"/>
+          </type>
+         </variable>
+         <variable name="i">
+          <type>
+           <INT/>
+          </type>
+         </variable>
+         <variable name="cnc_translate_fb">
+          <type>
+           <derived name="CNC_TRANSLATE"/>
+          </type>
+         </variable>
+         <variable name="b_cnc_reset">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_alarm_cnc_not_load">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_alarm_bound">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </localVars>
+       <localVars retain="true">
+         <variable name="cnc_filename">
+          <type>
+           <string/>
+          </type>
+          <documentation>
+<![CDATA[GCode source file]]>
+         </documentation>
+         </variable>
+         <variable name="s_gCode_boundary_x">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="s_gCode_boundary_y">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="s_gCode_boundary_z">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="s_gCode_boundary_a">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="s_gCode_boundary_b">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="s_gCode_boundary_c">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="s_cnc_line_1">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="s_cnc_line_2">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="s_cnc_line_3">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="displaceOrigin">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </localVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* https://en.wikipedia.org/wiki/G-code *)
+
+(* 
+GCode intepreter start from HMI
+refer to :
+filesystem.js -&gt; buttonCliched
+*)
+if cnc_parser_fb.execute then
+   cnc_parser_fb.filename := cnc_filename;
+   cnc_parser_fb();
+
+   (* 
+     g_b_need_reset = true means what whe have to reset the work
+     refer to :
+     default_800x480.ui -&gt; QHmiButtonResetWork
+    *)
+   g_b_need_reset := true;   
+   
+   cnc_parser_fb.execute := false;
+   cnc_parser_fb();
+   
+   (* succesfully parsed ? *)
+   b_cnc_load := cnc_parser_fb.done;
+end_if;
+   
+(* load preinterpreted binay file *)
+if b_cnc_load then
+   (* logical GCode movement to physical axis *)
+   cnc_exec_fb.axes[0] := axis_x.axisIdx;
+   cnc_exec_fb.axes[1] := axis_y.axisIdx;
+   cnc_exec_fb.axes[2] := axis_z.axisIdx;
+   cnc_exec_fb.axes[3] := axis_a.axisIdx;
+   cnc_exec_fb.axes[4] := axis_b.axisIdx;
+   cnc_exec_fb.axes[5] := axis_c.axisIdx;
+
+   cnc_read_fb.filename := cnc_filename;
+   cnc_read_fb.execute  := true;
+   cnc_read_fb();
+ 
+   cnc_read_fb.execute := false;
+   cnc_read_fb();
+   
+   b_cnc_load := false;
+end_if;
+
+if b_cnc_reset then
+  b_cnc_reset := false;
+  (* succesfully load *)
+  if cnc_read_fb.done then
+     if displaceOrigin then
+        (* translate the GCode to the actual position *)
+        cnc_translate_fb.LINEINFO     := cnc_read_fb.lineinfo;
+        cnc_translate_fb.LINEINFO_LEN := cnc_read_fb.lineinfo_len;
+        cnc_translate_fb.TRANSLATETO[0] := lreal_to_real(axis_x.abspos);
+        cnc_translate_fb.TRANSLATETO[1] := lreal_to_real(axis_y.abspos);
+        cnc_translate_fb.TRANSLATETO[2] := lreal_to_real(axis_z.abspos);
+        cnc_translate_fb.TRANSLATETO[3] := lreal_to_real(axis_a.abspos);
+        cnc_translate_fb.TRANSLATETO[4] := lreal_to_real(axis_b.abspos);
+        cnc_translate_fb.TRANSLATETO[5] := lreal_to_real(axis_c.abspos);
+        cnc_translate_fb(EXECUTE := true);
+        cnc_translate_fb(EXECUTE := false);
+     end_if;
+     
+     (* calculate machining bounding box *)
+     for  i:= 0 to 8 by 1 do
+       low_bounds[i]  := cnc_read_fb.LOWBOUND[i] + cnc_translate_fb.TRANSLATETO[i];
+       high_bounds[i] := cnc_read_fb.HIGHBOUND[i] + cnc_translate_fb.TRANSLATETO[i];
+     end_for;
+     
+     b_alarm_bound := false;
+     
+     (* 
+       fill string with bounding box for HMI
+       refer to:
+       alarms.ui -&gt; cnc TAB -&gt; GCode boundaries sections
+     *)
+     s_gCode_boundary_x := real_to_string(low_bounds[0]);
+     s_gCode_boundary_x := concat(s_gCode_boundary_x, &apos; &lt;-&gt; &apos;);
+     s_gCode_boundary_x := concat(s_gCode_boundary_x, real_to_string(high_bounds[0]));
+     (* check if machining is inside software limit switch *)
+     if ((low_bounds[0]  &lt; axis_x.posRv) or
+        (low_bounds[0]  &gt; axis_x.posFw) or
+        (high_bounds[0] &lt; axis_x.posRv) or
+        (high_bounds[0] &gt; axis_x.posFw)) then
+        b_alarm_bound := true;
+     end_if;
+     
+     s_gCode_boundary_y := real_to_string(low_bounds[1]);
+     s_gCode_boundary_y := concat(s_gCode_boundary_y, &apos; &lt;-&gt; &apos;);
+     s_gCode_boundary_y := concat(s_gCode_boundary_y, real_to_string(high_bounds[1]));
+     if ((low_bounds[1]  &lt; axis_y.posRv) or
+        (low_bounds[1]  &gt; axis_y.posFw) or
+        (high_bounds[1] &lt; axis_y.posRv) or
+        (high_bounds[1] &gt; axis_y.posFw)) then
+        b_alarm_bound := true;
+     end_if;
+     
+     s_gCode_boundary_z := real_to_string(low_bounds[2]);
+     s_gCode_boundary_z := concat(s_gCode_boundary_z, &apos; &lt;-&gt; &apos;);
+     s_gCode_boundary_z := concat(s_gCode_boundary_z, real_to_string(high_bounds[2]));
+     if ((low_bounds[2]  &lt; axis_z.posRv) or
+        (low_bounds[2]  &gt; axis_z.posFw) or
+        (high_bounds[2] &lt; axis_z.posRv) or
+        (high_bounds[2] &gt; axis_z.posFw)) then
+        b_alarm_bound := true;
+     end_if;
+     
+     s_gCode_boundary_a := real_to_string(low_bounds[3]);
+     s_gCode_boundary_a := concat(s_gCode_boundary_a, &apos; &lt;-&gt; &apos;);
+     s_gCode_boundary_a := concat(s_gCode_boundary_a, real_to_string(high_bounds[3]));
+     if ((low_bounds[3]  &lt; axis_a.posRv) or
+        (low_bounds[3]  &gt; axis_a.posFw) or
+        (high_bounds[3] &lt; axis_a.posRv) or
+        (high_bounds[3] &gt; axis_a.posFw)) then
+        b_alarm_bound := true;
+     end_if;
+     
+     s_gCode_boundary_b := real_to_string(low_bounds[4]);
+     s_gCode_boundary_b := concat(s_gCode_boundary_b, &apos; &lt;-&gt; &apos;);
+     s_gCode_boundary_b := concat(s_gCode_boundary_b, real_to_string(high_bounds[4]));
+     if ((low_bounds[4]  &lt; axis_b.posRv) or
+        (low_bounds[4]  &gt; axis_b.posFw) or
+        (high_bounds[4] &lt; axis_b.posRv) or
+        (high_bounds[4] &gt; axis_b.posFw)) then
+        b_alarm_bound := true;
+     end_if;
+     
+     s_gCode_boundary_c := real_to_string(low_bounds[5]);
+     s_gCode_boundary_c := concat(s_gCode_boundary_c, &apos; &lt;-&gt; &apos;);
+     s_gCode_boundary_c := concat(s_gCode_boundary_c, real_to_string(high_bounds[5]));
+     if ((low_bounds[5]  &lt; axis_c.posRv) or
+        (low_bounds[5]  &gt; axis_c.posFw) or
+        (high_bounds[5] &lt; axis_c.posRv) or
+        (high_bounds[5] &gt; axis_c.posFw)) then
+        b_alarm_bound := true;
+     end_if;
+     
+     if (b_alarm_bound = false) then
+        g_b_need_reset := false;
+        cnc_exec_fb.reset := true;
+     end_if;
+  else
+     b_alarm_cnc_not_load := true;
+  end_if;
+end_if;
+
+(* pass to GCode execute FB the readed program *)
+cnc_exec_fb.lineInfo     := cnc_read_fb.lineInfo;
+cnc_exec_fb.lineInfo_len := cnc_read_fb.lineInfo_len;
+cnc_exec_fb();
+if cnc_exec_fb.error then
+   g_b_auto := false;
+end_if;
+cnc_exec_fb.execute := false;
+cnc_exec_fb.stop := false;
+
+(* 
+  fill three string with the GCode we are executing for HMI
+  refer to :
+  alarms.ui -&gt; cnc TAB
+*)
+s_cnc_line_1 := CNC_GETLINESTRING(ref(cnc_exec_fb), cnc_exec_fb.gCodeLine - 1);
+s_cnc_line_2 := CNC_GETLINESTRING(ref(cnc_exec_fb), cnc_exec_fb.gCodeLine);
+s_cnc_line_3 := CNC_GETLINESTRING(ref(cnc_exec_fb), cnc_exec_fb.gCodeLine + 1);
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>
