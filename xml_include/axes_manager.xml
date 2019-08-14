@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="axes_manager" pouType="program">
+     <addData>
+        <parentFolder name="axes movement" />
+     </addData>
+     <interface>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+g_axis_manager_x.b_axisOk := (not fb_reset_axis_x.fb_status.errorstop) and (not fb_reset_axis_x.fb_status.disabled);
+g_axis_manager_x.b_man    := g_b_man;
+g_axis_manager_x ();
+
+g_axis_manager_y.b_axisOk := (not fb_reset_axis_y.fb_status.errorstop) and (not fb_reset_axis_y.fb_status.disabled);
+g_axis_manager_y.b_man    := g_b_man;
+g_axis_manager_y ();
+
+g_axis_manager_z.b_axisOk := (not fb_reset_axis_z.fb_status.errorstop) and (not fb_reset_axis_z.fb_status.disabled);
+g_axis_manager_z.b_man    := g_b_man;
+g_axis_manager_z ();
+
+g_axis_manager_a.b_axisOk := (not fb_reset_axis_a.fb_status.errorstop) and (not fb_reset_axis_a.fb_status.disabled);
+g_axis_manager_a.b_man    := g_b_man;
+g_axis_manager_a ();
+
+g_axis_manager_b.b_axisOk := (not fb_reset_axis_b.fb_status.errorstop) and (not fb_reset_axis_b.fb_status.disabled);
+g_axis_manager_b.b_man    := g_b_man;
+g_axis_manager_b ();
+
+g_axis_manager_c.b_axisOk := (not fb_reset_axis_c.fb_status.errorstop) and (not fb_reset_axis_c.fb_status.disabled);
+g_axis_manager_c.b_man    := g_b_man;
+g_axis_manager_c ();
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

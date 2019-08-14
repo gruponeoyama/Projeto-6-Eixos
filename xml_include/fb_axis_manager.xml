@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="FB_AXIS_MANAGER" pouType="functionBlock">
+     <interface>
+       <localVars>
+         <variable name="homing">
+          <type>
+           <derived name="FB_HOMING"/>
+          </type>
+         </variable>
+         <variable name="rtrig_homing_done">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+         <variable name="jogging">
+          <type>
+           <derived name="FB_JOG"/>
+          </type>
+         </variable>
+         <variable name="transfer">
+          <type>
+           <derived name="FB_TRANSFER"/>
+          </type>
+         </variable>
+         <variable name="rtrig_trasf_done">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="axis_ref" ref_to="true">
+          <type>
+           <derived name="AXIS_REF_T"/>
+          </type>
+         </variable>
+         <variable name="b_man">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[machine is doing an automatic cicle]]>
+         </documentation>
+         </variable>
+         <variable name="b_home_probe">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[Home probe switch]]>
+         </documentation>
+         </variable>
+         <variable name="b_jogFw">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_jogBv">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_axisOk">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </inputVars>
+       <inputVars retain="true">
+         <variable name="r_home_pos">
+          <type>
+           <REAL/>
+          </type>
+          <documentation>
+<![CDATA[Commanded position when home probe is reached]]>
+         </documentation>
+         </variable>
+         <variable name="r_homing_acc">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_homing_dec">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_homing_vel">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_jog_vel">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_jog_acc">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_jog_dec">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="b_abs">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[true = go to absolute position, false = go to relative position]]>
+         </documentation>
+         </variable>
+         <variable name="r_transf_pos">
+          <type>
+           <REAL/>
+          </type>
+          <documentation>
+<![CDATA[Commanded transfer position]]>
+         </documentation>
+         </variable>
+         <variable name="r_transf_acc">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_transf_dec">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_transf_vel">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="b_forward_homing">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[false = homing to negative direction]]>
+         </documentation>
+         </variable>
+       </inputVars>
+       <outputVars>
+         <variable name="r_transf_rel_pos">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+       </outputVars>
+       <inOutVars>
+         <variable name="b_start_homing">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[Start homing cicle]]>
+         </documentation>
+         </variable>
+         <variable name="b_homed">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_start_transf">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[Start transfer cicle]]>
+         </documentation>
+         </variable>
+       </inOutVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* homing *)
+homing.axis_ref       := axis_ref;
+homing.b_start        := b_start_homing and b_axisOk;
+homing.b_probe        := b_home_probe;
+homing.b_direction    := b_forward_homing;
+homing.r_wanted_pos   := r_home_pos;
+homing.r_acceleration := r_homing_acc;
+homing.r_deceleration := r_homing_dec;
+homing.r_velocity     := r_homing_vel;
+homing();
+rtrig_homing_done(clk := not homing.b_active);
+if (rtrig_homing_done.q) then
+   (* succesfully homed *)
+   if b_start_homing then
+     b_homed := homing.b_done;
+   end_if;
+   b_start_homing := false;
+end_if;
+
+(* transfer *)
+transfer.axis_ref        := axis_ref;
+transfer.start           := b_start_transf and b_axisOk;
+transfer.mode_abs        := b_abs;
+(* desidered position *)
+transfer.r_match         := r_transf_pos;
+transfer.r_acceleration  := r_transf_acc;
+transfer.r_deceleration  := r_transf_dec;
+transfer.r_velocity      := r_transf_vel;
+transfer();
+(* posi&#xE7;ao relativa para GUI *)
+r_transf_rel_pos := transfer.rel_pos;
+rtrig_trasf_done(clk := not transfer.b_active);
+if (rtrig_trasf_done.q) then
+   b_start_transf := false;
+end_if;
+
+(* manual jogging *)
+if b_man then
+  jogging.axis_ref := axis_ref;
+  jogging.b_axisOk := b_axisOk;
+  (* start jogging flags *)
+  jogging.bJogPos := b_jogFw;
+  jogging.bJogNeg := b_jogBv;
+  jogging.velocity := r_jog_vel;
+  jogging.acceleration := r_jog_acc;
+  jogging.deceleration := r_jog_dec;
+  jogging();
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

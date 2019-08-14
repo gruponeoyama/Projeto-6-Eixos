@@ -1,0 +1,4 @@
+*.*
+!run_LOADER.sh
+!run_PC.sh
+!.gitignore

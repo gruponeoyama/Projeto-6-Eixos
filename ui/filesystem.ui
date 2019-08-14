@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="TopPage" stdset="0">
+   <cstring></cstring>
+  </property>
+  <property name="EvenRowColor" stdset="0">
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+  </property>
+  <property name="OddRowColor" stdset="0">
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+  </property>
+  <property name="Resizeable" stdset="0">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0" columnstretch="10,0,0">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="1" column="0" colspan="2">
+    <widget class="QHmiFileSystem" name="qHmiFileSystem">
+     <property name="font">
+      <font>
+       <pointsize>26</pointsize>
+      </font>
+     </property>
+     <property name="tabKeyNavigation">
+      <bool>false</bool>
+     </property>
+     <property name="showDropIndicator" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="dragDropOverwriteMode">
+      <bool>false</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="showGrid">
+      <bool>true</bool>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::SolidLine</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="extensions">
+      <stringlist>
+       <string>*.cnc</string>
+       <string>*.tap</string>
+       <string>*.txt</string>
+      </stringlist>
+     </property>
+     <property name="initialPath">
+      <string>C:/nwsirius_IEC/applicat/cnc6axes/ui</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>47</number>
+     </attribute>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QHmiComboBox" name="qHmiComboBox">
+     <property name="font">
+      <font>
+       <pointsize>26</pointsize>
+      </font>
+     </property>
+     <property name="maxVisibleItems">
+      <number>3</number>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QHmiOsInfo" name="qHmiOsInfo">
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" rowspan="3">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QHmiLinkPage" name="QHmiLinkPage">
+       <property name="minimumSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>DejaVu Sans</family>
+         <pointsize>8</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;</string>
+       </property>
+       <property name="destinationPage">
+        <cstring></cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonSelect">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Seleciona</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Rename</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>98</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Copiar</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Colar</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Cut</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>98</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QProgressBar" name="progressBar">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QHmiComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qhmicombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiLinkPage</class>
+   <extends>QToolButton</extends>
+   <header>QHmiLinkPage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiOsInfo</class>
+   <extends>QWidget</extends>
+   <header>qhmiosinfo.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiFileSystem</class>
+   <extends>QTableView</extends>
+   <header>qhmifilesystem.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>qHmiOsInfo</sender>
+   <signal>pathsChanged(QStringList)</signal>
+   <receiver>qHmiComboBox</receiver>
+   <slot>setItems(QStringList)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>670</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>qHmiComboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>qHmiFileSystem</receiver>
+   <slot>setPath(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>172</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>184</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>qHmiFileSystem</receiver>
+   <slot>copySelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>798</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>550</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>qHmiFileSystem</receiver>
+   <slot>pasteSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>756</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>qHmiFileSystem</receiver>
+   <slot>cutSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>767</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>qHmiFileSystem</receiver>
+   <slot>deleteSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>757</x>
+     <y>451</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>512</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>qHmiFileSystem</receiver>
+   <slot>getSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>722</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

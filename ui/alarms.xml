@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AlarmProps WordWrap="FALSE" RevertLog="FALSE" Acknowledge="FALSE" FileName="">
+  <AlarmStyle stylesheet=""/>
+  <Alarms>
+    <Alarm name="CONF1_TARGET_DEB_I0.DEBOK" bit="0" auto_remove="false" auto_hide="false" truth_level="false" popup="false" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_POWER_OFF" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="Potencia Desligada" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_DRIVERXOK" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="Erro Driver Ok X" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_DRIVERYOK" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="Erro Driver Ok Y" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_DRIVERZOK" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="Erro Driver Ok Z" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_DRIVERAOK" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="Erro Driver Ok A" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_DRIVERBOK" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="Erro Driver Ok B" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_DRIVERCOK" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="Erro Driver Ok C" stylesheet=""/>
+    <Alarm name="CONF1__FB_RESET_AXIS_X.FB_STATUS.ERRORSTOP" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="false" table="false" text="Parada Eixo X" stylesheet=""/>
+    <Alarm name="CONF1__FB_RESET_AXIS_Y.FB_STATUS.ERRORSTOP" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="false" table="true" text="Parada Eixo Y" stylesheet=""/>
+    <Alarm name="CONF1__FB_RESET_AXIS_Z.FB_STATUS.ERRORSTOP" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="false" table="true" text="Parada Eixo Z" stylesheet=""/>
+    <Alarm name="CONF1__FB_RESET_AXIS_A.FB_STATUS.ERRORSTOP" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="false" table="true" text="Parada Eixo A" stylesheet=""/>
+    <Alarm name="CONF1__FB_RESET_AXIS_B.FB_STATUS.ERRORSTOP" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="false" table="true" text="Parada Eixo B" stylesheet=""/>
+    <Alarm name="CONF1__FB_RESET_AXIS_C.FB_STATUS.ERRORSTOP" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="false" table="true" text="Parada Eixo C" stylesheet=""/>
+    <Alarm name="CONF1__G_AXIS_MANAGER_X.B_HOMED" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="true" log="false" table="true" text="REFERENCIANDO EIXO X" stylesheet=""/>
+    <Alarm name="CONF1__G_AXIS_MANAGER_Y.B_HOMED" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="false" table="true" text="REFERENCIANDO EIXO Y" stylesheet=""/>
+    <Alarm name="CONF1__G_AXIS_MANAGER_Z.B_HOMED" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="false" table="true" text="REFERENCIANDO EIXO Z" stylesheet=""/>
+    <Alarm name="CONF1__G_AXIS_MANAGER_A.B_HOMED" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="false" table="true" text="REFERENCIANDO EIXO A" stylesheet=""/>
+    <Alarm name="CONF1__G_AXIS_MANAGER_B.B_HOMED" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="false" table="true" text="REFERENCIANDO EIXO B" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_ERRORSTOP" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_DISABLED" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_PROBEX" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_PROBEY" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_PROBEZ" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_PROBEA" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_PROBEB" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_RV_LS_X" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="FIM DE CURSO NEGATIVO X ATIVO" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_RV_LS_Y" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="FIM DE CURSO NEGATIVO Y ATIVO" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_RV_LS_Z" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_RV_LS_A" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_RV_LS_B" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_RV_LS_C" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_FW_LS_X" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="FIM DE CURSO POSITIVO X ATIVO" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_FW_LS_Y" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="FIM DE CURSO POSITIVO Y ATIVO" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_FW_LS_Z" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_FW_LS_A" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_FW_LS_B" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="false" log="true" table="true" text="" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_STOP_AUTO" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="Botão Pause Ativo" stylesheet=""/>
+    <Alarm name="CONF1_G_B_ALARM_MOVING" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="false" log="false" table="true" text="Máquina em Movimento " stylesheet=""/>
+    <Alarm name="RES1__POU_SLOW_CNC.B_ALARM_CNC_NOT_LOAD" bit="0" auto_remove="true" auto_hide="false" truth_level="true" popup="true" log="false" table="false" text="Carregar Arquivo" stylesheet=""/>
+    <Alarm name="RES1__POU_SLOW_CNC.B_ALARM_BOUND" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="true" log="true" table="true" text="Erro Area Util" stylesheet=""/>
+    <Alarm name="CONF1_G_B_STOP_AUTO" bit="0" auto_remove="false" auto_hide="false" truth_level="true" popup="false" log="false" table="false" text="" stylesheet=""/>
+  </Alarms>
+</AlarmProps>

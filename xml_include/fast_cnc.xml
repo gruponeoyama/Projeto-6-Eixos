@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="fast_cnc" pouType="program">
+     <addData>
+        <parentFolder name="cnc" />
+     </addData>
+     <interface>
+       <localVars>
+         <variable name="r_trig_auto">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+         <variable name="f_trig_auto">
+          <type>
+           <derived name="F_TRIG"/>
+          </type>
+         </variable>
+         <variable name="i_cnc_state">
+          <type>
+           <INT/>
+          </type>
+         </variable>
+         <variable name="b_feedmove">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[Actual GCode line is a feed code]]>
+         </documentation>
+         </variable>
+         <variable name="loc_lineinfo">
+          <type>
+           <derived name="CNC_LINEINFO"/>
+          </type>
+         </variable>
+         <variable name="f_trig_active">
+          <type>
+           <derived name="F_TRIG"/>
+          </type>
+         </variable>
+         <variable name="r_pos_to_go_x">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_pos_to_go_y">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_pos_to_go_z">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_pos_to_go_a">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_pos_to_go_b">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_pos_to_go_c">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="ton_execgcode">
+          <type>
+           <derived name="TON"/>
+          </type>
+         </variable>
+       </localVars>
+       <localVars retain="true">
+         <variable name="b_spindle_on">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[M3\M5 active]]>
+         </documentation>
+         </variable>
+         <variable name="b_dwell">
+          <type>
+           <BOOL/>
+          </type>
+          <documentation>
+<![CDATA[G4 active]]>
+         </documentation>
+         </variable>
+       </localVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+r_trig_auto(clk := g_b_start_cnc);
+f_trig_auto(clk := g_b_start_cnc);
+f_trig_active(clk := cnc_exec_fb.active);
+
+if cnc_exec_fb.interpolating then
+   (* from GCode virtual positions to physical axes *)
+   axis_x.actspa := real_to_lreal(cnc_exec_fb.actPos[0]);
+   axis_y.actspa := real_to_lreal(cnc_exec_fb.actPos[1]);
+   axis_z.actspa := real_to_lreal(cnc_exec_fb.actPos[2]);
+   axis_a.actspa := real_to_lreal(cnc_exec_fb.actPos[3]);
+   axis_b.actspa := real_to_lreal(cnc_exec_fb.actPos[4]);
+   axis_c.actspa := real_to_lreal(cnc_exec_fb.actPos[5]);
+end_if;
+
+(* check for errors *)
+if (i_cnc_state &lt;&gt; 0) and
+   (cnc_exec_fb.error) then
+   cnc_exec_fb.stop := true; 
+   i_cnc_state := 0;
+   g_b_auto := false;
+end_if;
+
+(* get information about actual GCode execution *)
+CNC_GETLINEINFO(LINEINFO_PTR := ref(loc_lineinfo), LINEINFO_ARRAY := cnc_exec_fb.lineInfo, LINE := cnc_exec_fb.gCodeLine);
+if cnc_exec_fb.active then
+  b_feedmove := (loc_lineinfo.CMDTYPE = QSTRAIGHT_FEED) or (loc_lineinfo.CMDTYPE = QARC_FEED);
+else  
+  b_feedmove := false;
+end_if;                                                
+
+(* started now *)
+if r_trig_auto.q then
+   (* not valid line, require a reset *)
+   if ((cnc_exec_fb.gCodeLine &lt; 0) or (cnc_exec_fb.gCodeLine &gt; cnc_exec_fb.lineInfo_len)) then
+      cnc_exec_fb.gCodeLine := 0;
+      i_cnc_state := 0;
+      g_b_need_reset := true;
+   end_if;
+   
+   if g_b_need_reset then
+      g_b_start_cnc := false;
+   else
+      (* restart from current pos *)
+      (* from physical axes positions to GCode virtual positions *)
+      cnc_exec_fb.actPos[0] := lreal_to_real(axis_x.actSpa);
+      cnc_exec_fb.actPos[1] := lreal_to_real(axis_y.actSpa);
+      cnc_exec_fb.actPos[2] := lreal_to_real(axis_z.actSpa);
+      cnc_exec_fb.actPos[3] := lreal_to_real(axis_a.actSpa);
+      cnc_exec_fb.actPos[4] := lreal_to_real(axis_b.actSpa);
+      cnc_exec_fb.actPos[5] := lreal_to_real(axis_c.actSpa);
+      cnc_exec_fb.execute := true;
+   end_if;
+end_if;
+
+(* GCode is working, look at extGCodeNeed boolean flag *)
+if cnc_exec_fb.active then
+   b_dwell := (loc_lineinfo.CMDTYPE = QDWELL);
+   if cnc_exec_fb.extGCodeNeed then
+      (* delay for spindle ON/OFF *)
+      ton_execgcode.pt := t#2s;
+      (* need to stop spindle *)
+      if loc_lineinfo.cmdType = QSTOP_SPINDLE then
+         ton_execgcode(IN := cnc_exec_fb.extGCodeNeed);
+         cnc_exec_fb.extGCodeDone := ton_execgcode.q;
+         if cnc_exec_fb.extGCodeDone then
+           b_spindle_on := false;
+         end_if;
+      (* need to start spindle *)
+      elsif (loc_lineinfo.cmdType = QSTART_SPINDLE_CW) or
+            (loc_lineinfo.cmdType = QSTART_SPINDLE_CCW) then
+         ton_execgcode(IN := cnc_exec_fb.extGCodeNeed);
+         cnc_exec_fb.extGCodeDone := ton_execgcode.q;
+         b_spindle_on := true;
+      else
+         ton_execgcode(IN := false);
+         cnc_exec_fb.extGCodeDone := true;
+      end_if;
+   else
+      ton_execgcode(IN := false);
+   end_if;
+end_if;
+
+(* Stopped now *)
+if f_trig_auto.q then 
+   i_cnc_state := 0;
+   if cnc_exec_fb.active then
+      cnc_exec_fb.stop := true;
+   end_if;
+end_if;
+
+if cnc_exec_fb.group_state = NEED_RESET then
+   if (not cnc_exec_fb.reset) then
+     (* need reset from HMI *)
+     g_b_need_reset := true;
+   end_if;
+end_if;
+
+(* GCode execution finished or stopped *)
+if f_trig_active.q then 
+   if g_b_start_cnc then
+      g_b_start_cnc := false;
+   end_if;
+end_if;
+
+(* 
+  position to reach for HMI 
+  refer to:
+  default_800x480.ui -&gt; qHmiLabel_23
+*)
+if ((loc_lineinfo.CMDTYPE = QSTRAIGHT_TRAVERSE) or 
+    (loc_lineinfo.CMDTYPE = QSTRAIGHT_FEED) or 
+    (loc_lineinfo.CMDTYPE = QARC_FEED)) then
+  r_pos_to_go_x := loc_lineinfo.endPos[0];
+  r_pos_to_go_y := loc_lineinfo.endPos[1];
+  r_pos_to_go_z := loc_lineinfo.endPos[2];
+  r_pos_to_go_a := loc_lineinfo.endPos[3];
+  r_pos_to_go_b := loc_lineinfo.endPos[4];
+  r_pos_to_go_c := loc_lineinfo.endPos[5];
+else
+  r_pos_to_go_x := 0.0;
+  r_pos_to_go_y := 0.0;
+  r_pos_to_go_z := 0.0;
+  r_pos_to_go_a := 0.0;
+  r_pos_to_go_b := 0.0;
+  r_pos_to_go_c := 0.0;
+end_if;
+
+if b_spindle_on then
+   (* first line, we are starting a new job, forget machining status *)
+   if (cnc_exec_fb.gCodeLine = 0) then
+     b_spindle_on := false;
+     b_dwell      := false;
+   end_if;
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

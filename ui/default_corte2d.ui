@@ -1,0 +1,6071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1030</width>
+    <height>772</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>DejaVu Sans</family>
+    <pointsize>8</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Form
+{
+color: rgb(255, 255, 255);
+	background-color: rgb(27, 27, 27);
+}
+
+QToolButton {
+color: #fff;
+border: 2px solid #eee;
+border-top-right-radius:10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius:10px;
+border-bottom-left-radius: 10px;
+background: rgb(74,74,74);
+}
+QHmiLinkPage
+{
+background: rgb(60,110,200);
+}
+</string>
+  </property>
+  <property name="TopPage" stdset="0">
+   <cstring>alarms.ui</cstring>
+  </property>
+  <property name="Resizeable" stdset="0">
+   <bool>false</bool>
+  </property>
+  <widget class="QHmiLinkPage" name="QHmiLinkPage_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>620</y>
+     <width>351</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>14</pointsize>
+     <weight>9</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 0);
+color: rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Alarmes</string>
+   </property>
+   <property name="destinationPage">
+    <cstring>alarms.ui</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiMovableObject" name="qHmiMovableObject_12">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>120</y>
+     <width>40</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>8</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="lineWidth">
+    <number>1</number>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../res/freccia.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="offset_x">
+    <cstring></cstring>
+   </property>
+   <property name="offset_y">
+    <cstring></cstring>
+   </property>
+   <property name="grow_y">
+    <cstring></cstring>
+   </property>
+   <property name="rotation">
+    <cstring>RES1__TASK_SYSTEM_FAST_CNC.SETA_BAIXA_VINCO</cstring>
+   </property>
+   <property name="counterClockWise">
+    <bool>true</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>70</y>
+     <width>81</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(27, 27, 27);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Sirius-ES/res/w128_Zoom Out.png</normaloff>../../Sirius-ES/res/w128_Zoom Out.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>70</y>
+     <width>81</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(27, 27, 27);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Sirius-ES/res/w128_Zoom In.png</normaloff>../../Sirius-ES/res/w128_Zoom In.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>70</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(27, 27, 27);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Sirius-ES/res/w128_Zoom All.png</normaloff>../../Sirius-ES/res/w128_Zoom All.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>70</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(27, 27, 27);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string notr="true">Deslocamento
+  Corte</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="modo_trabalho">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>300</y>
+     <width>311</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Panel</enum>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>281</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>AJUSTES MANUAL / SIMULAÇÃO</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_25">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>250</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Média</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButtonResetWork_6">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>280</y>
+       <width>64</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(196, 196, 196);</string>
+     </property>
+     <property name="text">
+      <string>Inicia</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../res/toggle_round_128_O_off - Copia.png</normaloff>
+       <normalon>../res/toggle_round_128_O_on - Copia.png</normalon>../res/toggle_round_128_O_off - Copia.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_SELECT_VEL_JOG.B_VEL_MEDIA</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::Set</enum>
+     </property>
+     <property name="stateField">
+      <cstring></cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Enable</enum>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_14">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>250</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Baixa</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButtonResetWork_7">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>280</y>
+       <width>64</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(196, 196, 196);</string>
+     </property>
+     <property name="text">
+      <string>Inicia</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../res/toggle_round_128_R_off - Copia.png</normaloff>
+       <normalon>../res/toggle_round_128_R_on - Copia.png</normalon>../res/toggle_round_128_R_off - Copia.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_SELECT_VEL_JOG.B_VEL_ALTA</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::Set</enum>
+     </property>
+     <property name="stateField">
+      <cstring></cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Enable</enum>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_26">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>250</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Alta</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButtonResetWork_5">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>280</y>
+       <width>64</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(196, 196, 196);</string>
+     </property>
+     <property name="text">
+      <string>Inicia</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../res/toggle_round_128_G_off - Copia.png</normaloff>
+       <normalon>../res/toggle_round_128_G_on - Copia.png</normalon>../res/toggle_round_128_G_off - Copia.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_SELECT_VEL_JOG.B_VEL_BAIXA</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::Set</enum>
+     </property>
+     <property name="stateField">
+      <cstring></cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Enable</enum>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_9">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>40</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+       <kerning>false</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Y+</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1__G_AXIS_MANAGER_Y.BT_IHM_JOGFW</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::SetReset</enum>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_JOG_TOUCH</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Visible</enum>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_10">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>170</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+       <kerning>false</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Y-</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1__G_AXIS_MANAGER_Y.BT_IHM_JOGBV</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::SetReset</enum>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_JOG_TOUCH</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Visible</enum>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_11">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>110</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+       <kerning>false</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>X+</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1__G_AXIS_MANAGER_X.BT_IHM_JOGFW</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::SetReset</enum>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_JOG_TOUCH</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Visible</enum>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_12">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+       <kerning>false</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>X-</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1__G_AXIS_MANAGER_X.BT_IHM_JOGBV</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::SetReset</enum>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_JOG_TOUCH</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Visible</enum>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3">
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string> THC PLASMA</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QTabWidget" name="tabWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>37</y>
+       <width>301</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);</string>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Triangular</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="elideMode">
+      <enum>Qt::ElideMiddle</enum>
+     </property>
+     <property name="movable">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Parametros</string>
+      </attribute>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Altura Corte</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>120</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>mm</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>70</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>V</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Tempo Perfuração</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Tensao Ideal</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>20</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>V</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiLabel" name="qHmiLabel_3">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>10</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 85, 0);
+font: 75 14pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_TENSAO_REAL</cstring>
+       </property>
+       <property name="fieldValue">
+        <cstring>100</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>160</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(27, 27, 27);</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>RES1__POU_THC_PLS_M3.POSICAO_PERFURACAO</cstring>
+       </property>
+       <property name="decimalCount">
+        <cstring>1</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>RES1__POU_THC_PLS_M3.POSICAO_CORTE</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>150</cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>220</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>s</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>170</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>mm</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Altura Perfuração</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_4">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>110</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(27, 27, 27);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>RES1__POU_THC_PLS_M3.POSICAO_CORTE</cstring>
+       </property>
+       <property name="fieldValue">
+        <cstring></cstring>
+       </property>
+       <property name="decimalCount">
+        <cstring>1</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>1</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>15</cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Tensao Real</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_3">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>210</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(27, 27, 27);</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_G_TP_PERFURACAO</cstring>
+       </property>
+       <property name="decimalCount">
+        <cstring>1</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>0.1</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>25.0</cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>270</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>mm</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_6">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>260</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(27, 27, 27);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>123.321</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_G_R_DIAMETRO_KERF</cstring>
+       </property>
+       <property name="decimalCount">
+        <cstring>2</cstring>
+       </property>
+       <property name="stateField">
+        <cstring>CONF1_G_B_MAN</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>0</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>10</cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>270</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Kerf</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>270</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>mm</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_14">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>60</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 170, 0);
+color: rgb(255, 255, 255);
+gridline-color: rgb(255, 255, 0);</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_G_TENSAO_CORTE</cstring>
+       </property>
+       <property name="fieldValue">
+        <cstring></cstring>
+       </property>
+       <property name="decimalCount">
+        <cstring></cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>50</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>208</cstring>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Status E/S</string>
+      </attribute>
+      <widget class="QHmiButton" name="QHmiButton_2">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>20</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../res/leds/led_round_040_G_off.png</normaloff>
+         <normalon>../res/leds/led_round_040_G_on.png</normalon>../res/leds/led_round_040_G_off.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_TOQUE_CHAPA</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QHmiButton" name="QHmiButton_3">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>60</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../res/leds/led_round_040_G_off.png</normaloff>
+         <normalon>../res/leds/led_round_040_G_on.png</normalon>../res/leds/led_round_040_G_off.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_MOV_CNC_OK</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QHmiButton" name="QHmiButton_4">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>100</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../res/leds/led_round_040_G_off.png</normaloff>
+         <normalon>../res/leds/led_round_040_G_on.png</normalon>../res/leds/led_round_040_G_off.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_G_B_COLISAO_THC</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Entrada Chapa</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Entrada Mov_Pls</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entrada Colisão Tocha&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Liga Tocha&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiButton" name="QHmiButton_5">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>180</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../res/leds/led_round_040_R_off.png</normaloff>
+         <normalon>../res/leds/led_round_040_R_on.png</normalon>
+         <disabledoff>../res/leds/led_round_040_R_off.png</disabledoff>
+         <disabledon>../res/leds/led_round_040_R_on.png</disabledon>../res/leds/led_round_040_R_off.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_B_TOCHA</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QHmiButton" name="QHmiButton_6">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>220</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../res/leds/led_round_040_R_off.png</normaloff>
+         <normalon>../res/leds/led_round_040_R_on.png</normalon>
+         <disabledoff>../res/leds/led_round_040_R_off.png</disabledoff>
+         <disabledon>../res/leds/led_round_040_R_on.png</disabledon>../res/leds/led_round_040_R_off.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_G_B_RELE_OHMICO</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>230</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Habilita Sensor Ohmico&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Corner</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiButton" name="QHmiButton_22">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>140</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../res/leds/led_round_040_R_off.png</normaloff>
+         <normalon>../res/leds/led_round_040_R_on.png</normalon>
+         <disabledoff>../res/leds/led_round_040_R_off.png</disabledoff>
+         <disabledon>../res/leds/led_round_040_R_on.png</disabledon>../res/leds/led_round_040_R_off.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_CORNER</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Align left" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Ajustes (mm)</string>
+      </attribute>
+      <widget class="QHmiEdit" name="qHmiEdit_8">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>110</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(27, 27, 27);</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>RES1__POU_THC_PLS_M3.VEL_TOQUE_CHAPA</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>3</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>300</cstring>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_9">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>60</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(27, 27, 27);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="maxLength">
+        <number>1000</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>RES1__POU_THC_PLS_M3.ALTURA_REDUCAO_Z</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>CONF1_G_R_MAX_NEGATIVO_Z</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>CONF1_G_R_MAX_POSITIVO_Z</cstring>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_10">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>160</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(27, 27, 27);</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>RES1__POU_THC_PLS_M3.VEL_DESCIDA_Z</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>3</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>1500</cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Altura Limite Z</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Velocidade Toque&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Velocidade Descida Z&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_11">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>210</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="fieldName">
+        <cstring>RES1__POU_CTRL_THC.VEL_AUTO_THC</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring></cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring></cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Velocidade THC&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_12">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>260</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="fieldName">
+        <cstring>RES1__POU_THC_PLS_M3.VEL_PERF_CORTE</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring></cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring></cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Velocidade Perf/Corte&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QHmiEdit" name="qHmiEdit_5">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>20</y>
+         <width>71</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(27, 27, 27);</string>
+       </property>
+       <property name="maxLength">
+        <number>1000</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="fieldName">
+        <cstring>CONF1_POSICAO_REPOUSO</cstring>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="Min value" stdset="0">
+        <cstring>CONF1_G_R_MAX_NEGATIVO_Z</cstring>
+       </property>
+       <property name="Max value" stdset="0">
+        <cstring>CONF1_G_R_MAX_POSITIVO_Z</cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Altura Recuo Z</string>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>10</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>AJUSTES OXICORTE</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>670</y>
+     <width>301</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: rgb(255, 255, 255);
+gridline-color: rgb(255, 255, 255);
+selection-color: rgb(255, 255, 255);
+selection-background-color: rgb(255, 255, 255);
+border-left-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <widget class="QHmiButton" name="QHmiButtonResetWork_4">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Pausa</string>
+    </property>
+    <property name="fieldName">
+     <cstring>CONF1_G_B_BT_STOP</cstring>
+    </property>
+    <property name="buttonAction">
+     <enum>QHmiButton::SetReset</enum>
+    </property>
+    <property name="stateAction">
+     <enum>QHmiButton::Enable</enum>
+    </property>
+    <property name="PasswordLevel" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="Hide" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="Align left" stdset="0">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QHmiButton" name="QHmiButtonResetWork_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 85, 0);</string>
+    </property>
+    <property name="text">
+     <string>Inicia</string>
+    </property>
+    <property name="fieldName">
+     <cstring>CONF1_G_B_BT_STARTP</cstring>
+    </property>
+    <property name="buttonAction">
+     <enum>QHmiButton::SetReset</enum>
+    </property>
+    <property name="stateField">
+     <cstring>CONF1_G_B_MAN</cstring>
+    </property>
+    <property name="stateAction">
+     <enum>QHmiButton::Visible</enum>
+    </property>
+    <property name="confirmMessage">
+     <cstring>Deseja Iniciar Processo?</cstring>
+    </property>
+    <property name="PasswordLevel" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="Hide" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="Align left" stdset="0">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QHmiLabel" name="qHmiLabel_15">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>491</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1__CNC_READ_FB.FILENAME</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QHmiLabel" name="qHmiLabel_16">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>6</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Arquivo:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>0</y>
+     <width>311</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Panel</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="page_4">
+    <widget class="QHmiLabel" name="qHmiLabel_4">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>5</y>
+       <width>151</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>20</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>123.4</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1_G_R_AXIS_X_POS_REL</cstring>
+     </property>
+     <property name="fieldValue">
+      <cstring>123.4</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>2</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_6">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>50</y>
+       <width>151</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>123.4</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1_G_R_AXIS_Y_POS_REL</cstring>
+     </property>
+     <property name="fieldValue">
+      <cstring>123.4</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>2</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_7">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>95</y>
+       <width>151</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>123.4</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1_AXIS_Z.ABSPOS</cstring>
+     </property>
+     <property name="fieldValue">
+      <cstring>123.4</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>1</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLinkPage" name="QHmiLinkPage">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>5</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>X (mm) </string>
+     </property>
+     <property name="destinationPage">
+      <cstring>x_management.ui</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLinkPage" name="QHmiLinkPage_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Y (mm) </string>
+     </property>
+     <property name="destinationPage">
+      <cstring>y_management.ui</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLinkPage" name="QHmiLinkPage_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>95</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Z (mm) </string>
+     </property>
+     <property name="destinationPage">
+      <cstring>z_management.ui</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5">
+    <widget class="QHmiRoundProgressBar" name="qhmiroundprogressbar">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>151</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1_REAL_SPEED_AUTO</cstring>
+     </property>
+     <property name="stateField">
+      <cstring>0</cstring>
+     </property>
+     <property name="barStyle">
+      <enum>QHmiRoundProgressBar::StyleExpand</enum>
+     </property>
+     <property name="outlinePenWidth">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="dataPenWidth">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="gradientStart">
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="gradientMiddle">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="gradientEnd">
+      <color>
+       <red>255</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="screenCenter">
+      <bool>true</bool>
+     </property>
+     <property name="whereIAm">
+      <bool>false</bool>
+     </property>
+     <property name="maximum">
+      <double>100.000000000000000</double>
+     </property>
+     <property name="textVisible">
+      <bool>true</bool>
+     </property>
+     <property name="format">
+      <string>%mm/min%</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStackedWidget" name="tela_vel_dados">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>150</y>
+     <width>311</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="Velocidade">
+    <widget class="QHmiLabel" name="qHmiLabel_11">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>60</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>mm/min</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_12">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>90</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_13">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string>Velocidade</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiEdit" name="qHmiEdit_13">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>20</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1_G_B_VEL_WORK</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Min value" stdset="0">
+      <cstring>100</cstring>
+     </property>
+     <property name="Max value" stdset="0">
+      <cstring>7000</cstring>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_FAST_CNC.G_VAR_PORC</cstring>
+     </property>
+     <property name="fieldValue">
+      <cstring>123.3</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>0</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Dados_maquina">
+    <widget class="QHmiEdit" name="qHmiEdit_16">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>60</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_FAST_CNC.ACUMULADOR_BICO</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>0</cstring>
+     </property>
+     <property name="Min value" stdset="0">
+      <cstring></cstring>
+     </property>
+     <property name="Max value" stdset="0">
+      <cstring></cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>9</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);
+font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Tempo Corte Automático</string>
+     </property>
+     <property name="popupMode">
+      <enum>QToolButton::DelayedPopup</enum>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonFollowStyle</enum>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_FAST_CNC.BT_RESET_TEMPO</cstring>
+     </property>
+     <property name="confirmMessage">
+      <cstring>Deseja Reiniciar Tempo?</cstring>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_18">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);
+font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Número Start's Bico</string>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonFollowStyle</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>false</bool>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_FAST_CNC.BT_RESET_BICO</cstring>
+     </property>
+     <property name="confirmMessage">
+      <cstring>Deseja Reiniciar Contagem?</cstring>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiEdit" name="qHmiEdit_18">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>100</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1_G_R_IHM_PMT</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>1</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Min value" stdset="0">
+      <cstring></cstring>
+     </property>
+     <property name="Max value" stdset="0">
+      <cstring></cstring>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_21">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);
+font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Perimetro Total (m)</string>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonFollowStyle</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>false</bool>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1_G_B_RESET_PERIMETRO</cstring>
+     </property>
+     <property name="confirmMessage">
+      <cstring>Deseja Zerar Valores?</cstring>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_9">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>9</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 9pt &quot;DejaVu Sans&quot;;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_FAST_CNC.HORAS</cstring>
+     </property>
+     <property name="fieldValue">
+      <cstring>1</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>0</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_17">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>DejaVu Sans</family>
+       <pointsize>9</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 9pt &quot;DejaVu Sans&quot;;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_FAST_CNC.MINUTO</cstring>
+     </property>
+     <property name="fieldValue">
+      <cstring>1</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>0</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>225</x>
+       <y>20</y>
+       <width>21</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(27, 27, 27);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Mesa 
+  ou 
+Corte </string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiCncWork" name="qHmiCncWork">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>170</y>
+     <width>561</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"># {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: rgb(0,0,0);
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
+stop: 0 #f3f5c6, 
+stop: 1 #e1eb8c);
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}
+
+QProgressBar {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}</string>
+   </property>
+   <property name="ON_WORK">
+    <cstring>CONF1_G_B_START_CNC</cstring>
+   </property>
+   <property name="GCODELINE">
+    <cstring>CONF1__CNC_EXEC_FB.GCODELINE</cstring>
+   </property>
+   <property name="DRAWNAME">
+    <cstring>CONF1__CNC_READ_FB.FILENAME</cstring>
+   </property>
+   <property name="TOOLDIAMETER">
+    <cstring>CONF1_G_R_DIAMETRO_KERF</cstring>
+   </property>
+   <property name="TOOLCUTTING">
+    <cstring>RES1__POU_FAST_CNC.B_FEEDMOVE</cstring>
+   </property>
+   <property name="SHOWREALWORK">
+    <cstring></cstring>
+   </property>
+   <property name="ABSPOSX">
+    <cstring>CONF1_AXIS_X.ABSPOS</cstring>
+   </property>
+   <property name="ABSPOSY">
+    <cstring>CONF1_AXIS_Y.ABSPOS</cstring>
+   </property>
+   <property name="POSRVX">
+    <cstring>CONF1_AXIS_X.POSRV</cstring>
+   </property>
+   <property name="POSRVY">
+    <cstring>CONF1_AXIS_Y.POSRV</cstring>
+   </property>
+   <property name="POSFWX">
+    <cstring>CONF1_AXIS_X.POSFW</cstring>
+   </property>
+   <property name="POSFWY">
+    <cstring>CONF1_AXIS_Y.POSFW</cstring>
+   </property>
+   <property name="ROTATION">
+    <cstring></cstring>
+   </property>
+   <property name="WORKING">
+    <cstring>CONF1_G_B_WORKING</cstring>
+   </property>
+   <property name="WORKINGPERCENT">
+    <cstring>CONF1_G_US_WORKING_PERCENT</cstring>
+   </property>
+   <property name="RELOAD">
+    <cstring>RES1__POU_SLOW_CNC.CNC_RELOAD</cstring>
+   </property>
+  </widget>
+  <widget class="QHmiAlarms" name="qHmiAlarms_2">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>200</y>
+     <width>381</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string>font: 9pt &quot;DejaVu Sans&quot;;
+</string>
+   </property>
+   <property name="rowCount">
+    <number>51</number>
+   </property>
+   <property name="simple_text" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>999</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <column/>
+   <item row="0" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="1" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="2" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="3" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="4" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="5" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="6" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="7" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="8" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="9" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="10" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="11" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="12" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="13" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="14" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="15" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="16" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="17" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="18" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="19" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="20" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="21" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="22" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="23" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="24" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="25" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="26" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="27" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="28" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="29" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="30" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="31" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="32" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="33" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="34" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="35" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="36" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="37" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="38" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="39" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="40" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="41" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="42" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="43" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="44" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="45" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="46" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="47" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="48" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="49" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+   <item row="50" column="0">
+    <property name="font">
+     <font>
+      <family>DejaVu Sans</family>
+     </font>
+    </property>
+   </item>
+  </widget>
+  <widget class="QHmiStackedWidget" name="QHmiStackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>670</y>
+     <width>561</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Panel</enum>
+   </property>
+   <property name="lineWidth">
+    <number>1</number>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <property name="speed">
+    <number>250</number>
+   </property>
+   <property name="animation">
+    <enum>QEasingCurve::SineCurve</enum>
+   </property>
+   <property name="verticalMode">
+    <bool>false</bool>
+   </property>
+   <property name="wrap">
+    <bool>true</bool>
+   </property>
+   <property name="stateField">
+    <cstring>CONF1_G_B_MAN</cstring>
+   </property>
+   <property name="stateAction">
+    <enum>QHmiStackedWidget::Visible</enum>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="page_9">
+    <widget class="QHmiButton" name="QHmiButton_16">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>10</y>
+       <width>81</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string notr="true"/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../res/b128_Arrow Left 1.png</normaloff>../res/b128_Arrow Left 1.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>60</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_MAN</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Visible</enum>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiLabel" name="qHmiLabel_27">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>20</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(27, 27, 27);
+font: 75 14pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Panel</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1_TENSAO_IDEAL</cstring>
+     </property>
+     <property name="fieldValue">
+      <cstring>100</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>1</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>99</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiEdit" name="qHmiEdit_15">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>40</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_CTRL_THC.POSICIONA_THC_Z.VELOCITY</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>1</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>99</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Min value" stdset="0">
+      <cstring></cstring>
+     </property>
+     <property name="Max value" stdset="0">
+      <cstring></cstring>
+     </property>
+    </widget>
+    <widget class="QHmiEdit" name="qHmiEdit_7">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>0</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_FAST_CNC.PORC_VEL_WORK</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>99</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Min value" stdset="0">
+      <cstring></cstring>
+     </property>
+     <property name="Max value" stdset="0">
+      <cstring></cstring>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="Corte_Manual_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>91</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="fieldName">
+      <cstring></cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::SetReset</enum>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Enable</enum>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="Laser_Pointer">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>10</y>
+       <width>91</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="fieldName">
+      <cstring></cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::SetReset</enum>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Enable</enum>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_8">
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>451</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>-1</number>
+      </property>
+      <item>
+       <widget class="QHmiLinkPage" name="QHmiLinkPage_13">
+        <property name="font">
+         <font>
+          <family>DejaVu Sans</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);</string>
+        </property>
+        <property name="text">
+         <string>Alinhamento</string>
+        </property>
+        <property name="destinationPage">
+         <cstring>alignment.ui</cstring>
+        </property>
+        <property name="PasswordLevel" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="Hide" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="Align left" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QHmiLinkPage" name="QHmiLinkPage_16">
+        <property name="font">
+         <font>
+          <family>DejaVu Sans</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(27, 27, 27);</string>
+        </property>
+        <property name="text">
+         <string>Arranjo
+ Básico</string>
+        </property>
+        <property name="destinationPage">
+         <cstring>07_cnc_repeat.ui</cstring>
+        </property>
+        <property name="PasswordLevel" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="Hide" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="Align left" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QHmiButton" name="Recua">
+        <property name="styleSheet">
+         <string notr="true">font:10pt &quot;DejaVu Sans&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Recua</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>false</bool>
+        </property>
+        <property name="arrowType">
+         <enum>Qt::NoArrow</enum>
+        </property>
+        <property name="fieldName">
+         <cstring>RES1__POU_SELECT_VEL_JOG.BT_ATIVA_RECUA</cstring>
+        </property>
+        <property name="buttonAction">
+         <enum>QHmiButton::SetReset</enum>
+        </property>
+        <property name="stateField">
+         <cstring>CONF1_G_B_MAN</cstring>
+        </property>
+        <property name="stateAction">
+         <enum>QHmiButton::Enable</enum>
+        </property>
+        <property name="confirmMessage">
+         <cstring></cstring>
+        </property>
+        <property name="reset_when_unfocus" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PasswordLevel" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="Hide" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="Align left" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QHmiButton" name="Recua_4">
+        <property name="styleSheet">
+         <string notr="true">font:10pt &quot;DejaVu Sans&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Avança</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>false</bool>
+        </property>
+        <property name="arrowType">
+         <enum>Qt::NoArrow</enum>
+        </property>
+        <property name="fieldName">
+         <cstring>RES1__POU_SELECT_VEL_JOG.BT_ATIVA_AVANCA</cstring>
+        </property>
+        <property name="buttonAction">
+         <enum>QHmiButton::SetReset</enum>
+        </property>
+        <property name="stateField">
+         <cstring>CONF1_G_B_MAN</cstring>
+        </property>
+        <property name="stateAction">
+         <enum>QHmiButton::Enable</enum>
+        </property>
+        <property name="confirmMessage">
+         <cstring></cstring>
+        </property>
+        <property name="reset_when_unfocus" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PasswordLevel" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="Hide" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="Align left" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_14">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>10</y>
+       <width>81</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string notr="true"/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../res/b128_Arrow Left 1.png</normaloff>../res/b128_Arrow Left 1.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>60</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_MAN</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Visible</enum>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_10">
+    <widget class="QHmiLabel" name="qHmiLabel_5">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>30</y>
+       <width>81</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1__CNC_EXEC_FB.BLOCKSNUM</cstring>
+     </property>
+     <property name="fieldValue">
+      <cstring>123.3</cstring>
+     </property>
+     <property name="decimalCount">
+      <cstring>1</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="Recua_3">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>30</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../res/b128_Button End.png</normaloff>../res/b128_Button End.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>false</bool>
+     </property>
+     <property name="arrowType">
+      <enum>Qt::NoArrow</enum>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_SLOW_CNC.B_NEXT_BLOCK</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::SetReset</enum>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_MAN</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Enable</enum>
+     </property>
+     <property name="confirmMessage">
+      <cstring></cstring>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="Recua_2">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>30</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../res/b128_Button First.png</normaloff>../res/b128_Button First.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>false</bool>
+     </property>
+     <property name="arrowType">
+      <enum>Qt::NoArrow</enum>
+     </property>
+     <property name="fieldName">
+      <cstring>RES1__POU_SLOW_CNC.B_PREV_BLOCK</cstring>
+     </property>
+     <property name="buttonAction">
+      <enum>QHmiButton::SetReset</enum>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_MAN</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Enable</enum>
+     </property>
+     <property name="confirmMessage">
+      <cstring></cstring>
+     </property>
+     <property name="reset_when_unfocus" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QHmiButton" name="QHmiButton_15">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>10</y>
+       <width>81</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string notr="true"/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../res/b128_Arrow Left 1.png</normaloff>../res/b128_Arrow Left 1.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>60</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="stateField">
+      <cstring>CONF1_G_B_MAN</cstring>
+     </property>
+     <property name="stateAction">
+      <enum>QHmiButton::Visible</enum>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Align left" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Corte Atual</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_33">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Total Cortes</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_34">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>10</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Proximo</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_35">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>10</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Anterior</string>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QHmiEdit" name="qHmiEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>81</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="fieldName">
+      <cstring>CONF1__CNC_EXEC_FB.CURRENTBLOCK</cstring>
+     </property>
+     <property name="PasswordLevel" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="Hide" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="Min value" stdset="0">
+      <cstring>1</cstring>
+     </property>
+     <property name="Max value" stdset="0">
+      <cstring>CONF1__CNC_EXEC_FB.BLOCKSNUM</cstring>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QHmiLabel" name="qHmiLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>580</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1_REAL_SPEED_AUTO</cstring>
+   </property>
+   <property name="fieldValue">
+    <cstring>123.3</cstring>
+   </property>
+   <property name="decimalCount">
+    <cstring>1</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiButton" name="QHmiButton_17">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>590</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(27, 27, 27);</string>
+   </property>
+   <property name="text">
+    <string>Set variable</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../res/leds/led_round_128_R_on.png</normaloff>
+     <normalon>../res/leds/led_round_128_G_on.png</normalon>
+     <disabledoff>../res/leds/led_round_128_R_on.png</disabledoff>
+     <disabledon>../res/leds/led_round_128_G_on.png</disabledon>../res/leds/led_round_128_R_on.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>45</width>
+     <height>45</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="popupMode">
+    <enum>QToolButton::DelayedPopup</enum>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <property name="autoRaise">
+    <bool>false</bool>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::NoArrow</enum>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1_CORNER</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>99</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiLabel" name="qHmiLabel_8">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>10</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>123.4</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="fieldName">
+    <cstring>RES1__POU_FAST_CNC.R_POS_TO_GO_X</cstring>
+   </property>
+   <property name="fieldValue">
+    <cstring>123.4</cstring>
+   </property>
+   <property name="decimalCount">
+    <cstring>2</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>999</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QHmiLabel" name="qHmiLabel_19">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>40</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;DejaVu Sans&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>123.4</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="fieldName">
+    <cstring>RES1__POU_FAST_CNC.R_POS_TO_GO_Y</cstring>
+   </property>
+   <property name="fieldValue">
+    <cstring>123.4</cstring>
+   </property>
+   <property name="decimalCount">
+    <cstring>2</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>999</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QHmiButton" name="QHmiButton_19">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>630</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(27, 27, 27);</string>
+   </property>
+   <property name="text">
+    <string>Set variable</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../res/leds/led_round_128_R_on.png</normaloff>
+     <normalon>../res/leds/led_round_128_G_on.png</normalon>
+     <disabledoff>../res/leds/led_round_128_R_on.png</disabledoff>
+     <disabledon>../res/leds/led_round_128_G_on.png</disabledon>../res/leds/led_round_128_R_on.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>45</width>
+     <height>45</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="popupMode">
+    <enum>QToolButton::DelayedPopup</enum>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <property name="autoRaise">
+    <bool>false</bool>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::NoArrow</enum>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1_THC_SOBE</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>99</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiButton" name="QHmiButton_20">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>630</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(27, 27, 27);</string>
+   </property>
+   <property name="text">
+    <string>Set variable</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../res/leds/led_round_128_R_on.png</normaloff>
+     <normalon>../res/leds/led_round_128_G_on.png</normalon>
+     <disabledoff>../res/leds/led_round_128_R_on.png</disabledoff>
+     <disabledon>../res/leds/led_round_128_G_on.png</disabledon>../res/leds/led_round_128_R_on.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>45</width>
+     <height>45</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="popupMode">
+    <enum>QToolButton::DelayedPopup</enum>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <property name="autoRaise">
+    <bool>false</bool>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::NoArrow</enum>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1_THC_DESCE</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>99</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiButton" name="Reset_Axes">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>620</y>
+     <width>81</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(255, 255, 0);</string>
+   </property>
+   <property name="text">
+    <string>Reseta
+Eixos/Alarmes</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../res/buttons/reset_32.png</normaloff>../res/buttons/reset_32.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="fieldName">
+    <cstring></cstring>
+   </property>
+   <property name="buttonAction">
+    <enum>QHmiButton::SetReset</enum>
+   </property>
+   <property name="stateField">
+    <cstring></cstring>
+   </property>
+   <property name="stateAction">
+    <enum>QHmiButton::Enable</enum>
+   </property>
+   <property name="confirmMessage">
+    <cstring></cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>10</y>
+     <width>121</width>
+     <height>751</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
+    </property>
+    <item>
+     <widget class="QHmiLinkPage" name="QHmiLinkPage_14">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(0, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string>Seleciona
+Trabalho</string>
+      </property>
+      <property name="destinationPage">
+       <cstring>filesystem.ui</cstring>
+      </property>
+      <property name="stateField">
+       <cstring></cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiLinkPage::Visible</enum>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiLinkPage" name="QHmiLinkPage_17">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(0, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string>Parametrica</string>
+      </property>
+      <property name="destinationPage">
+       <cstring>shape.ui</cstring>
+      </property>
+      <property name="stateField">
+       <cstring>CONF1_G_B_MAN</cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiLinkPage::Visible</enum>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiButton" name="QHmiButtonResetWork">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(0, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string>Carrega
+Trabalho</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.B_CNC_RESET</cstring>
+      </property>
+      <property name="buttonAction">
+       <enum>QHmiButton::Set</enum>
+      </property>
+      <property name="stateField">
+       <cstring>CONF1_G_B_MAN</cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiButton::Visible</enum>
+      </property>
+      <property name="confirmMessage">
+       <cstring>Deseja Carregar?</cstring>
+      </property>
+      <property name="reset_when_unfocus" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiLinkPage" name="QHmiLinkPage_15">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(0, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string>Fonte Plasma</string>
+      </property>
+      <property name="destinationPage">
+       <cstring>Banco_Fontes.ui</cstring>
+      </property>
+      <property name="stateField">
+       <cstring>CONF1_G_B_MAN</cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiLinkPage::Visible</enum>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiButton" name="QHmiButton_7">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(27, 27, 27);</string>
+      </property>
+      <property name="text">
+       <string>Ponto Zero</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>56</width>
+        <height>56</height>
+       </size>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="fieldName">
+       <cstring>CONF1_G_R_BT_ZERO_AXIS</cstring>
+      </property>
+      <property name="buttonAction">
+       <enum>QHmiButton::SetReset</enum>
+      </property>
+      <property name="stateField">
+       <cstring>CONF1_G_B_MAN</cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiButton::Visible</enum>
+      </property>
+      <property name="confirmMessage">
+       <cstring>Deseja Referenciar?</cstring>
+      </property>
+      <property name="reset_when_unfocus" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiButton" name="QHmiButton">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(27, 27, 27);</string>
+      </property>
+      <property name="text">
+       <string>Referencia
+ Eixos</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>56</width>
+        <height>56</height>
+       </size>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="fieldName">
+       <cstring>CONF1_G_B_HOME_GERAL</cstring>
+      </property>
+      <property name="buttonAction">
+       <enum>QHmiButton::Set</enum>
+      </property>
+      <property name="stateField">
+       <cstring>CONF1_G_B_MAN</cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiButton::Visible</enum>
+      </property>
+      <property name="confirmMessage">
+       <cstring>Deseja Referenciar?</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiButton" name="QHmiButton_13">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(27, 27, 27);</string>
+      </property>
+      <property name="text">
+       <string>Retorna Ponto
+  Zero</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>56</width>
+        <height>56</height>
+       </size>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_RETORNO_ZERO.BT_RETORNO_ORIGIN</cstring>
+      </property>
+      <property name="buttonAction">
+       <enum>QHmiButton::Set</enum>
+      </property>
+      <property name="stateField">
+       <cstring>CONF1_G_B_MAN</cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiButton::Visible</enum>
+      </property>
+      <property name="confirmMessage">
+       <cstring>Deseja Retornar?</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiButton" name="Modo">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(255, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string>Modo de
+Trabalho</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="toolButtonStyle">
+       <enum>Qt::ToolButtonTextUnderIcon</enum>
+      </property>
+      <property name="autoRaise">
+       <bool>false</bool>
+      </property>
+      <property name="arrowType">
+       <enum>Qt::NoArrow</enum>
+      </property>
+      <property name="buttonAction">
+       <enum>QHmiButton::SetReset</enum>
+      </property>
+      <property name="stateField">
+       <cstring>CONF1_G_B_MAN</cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiButton::Visible</enum>
+      </property>
+      <property name="confirmMessage">
+       <cstring></cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiLinkPage" name="QHmiLinkPage_12">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(27, 27, 27);</string>
+      </property>
+      <property name="text">
+       <string>Menu</string>
+      </property>
+      <property name="destinationPage">
+       <cstring>menu.ui</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiButton" name="bt_maquina">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:10pt &quot;DejaVu Sans&quot;;
+background-color: rgb(27, 27, 27);</string>
+      </property>
+      <property name="text">
+       <string>Dados de
+Máquina</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="toolButtonStyle">
+       <enum>Qt::ToolButtonTextUnderIcon</enum>
+      </property>
+      <property name="autoRaise">
+       <bool>false</bool>
+      </property>
+      <property name="arrowType">
+       <enum>Qt::NoArrow</enum>
+      </property>
+      <property name="buttonAction">
+       <enum>QHmiButton::SetReset</enum>
+      </property>
+      <property name="stateField">
+       <cstring></cstring>
+      </property>
+      <property name="stateAction">
+       <enum>QHmiButton::Visible</enum>
+      </property>
+      <property name="confirmMessage">
+       <cstring></cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QHmiLabel</class>
+   <extends>QLabel</extends>
+   <header>qhmilabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qhmiedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiLinkPage</class>
+   <extends>QToolButton</extends>
+   <header>QHmiLinkPage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiButton</class>
+   <extends>QToolButton</extends>
+   <header>qhmibutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiRoundProgressBar</class>
+   <extends>QWidget</extends>
+   <header location="global">QHmiRoundProgressBar/qhmiroundprogressbar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiAlarms</class>
+   <extends>QTableWidget</extends>
+   <header>qhmialarms.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiMovableObject</class>
+   <extends>QLabel</extends>
+   <header>qhmimovableobject.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiCncWork</class>
+   <extends>QWidget</extends>
+   <header>qhmicncwork.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header>qhmistackedwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>qHmiCncWork</receiver>
+   <slot>set_auto_pan(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>514</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>qHmiCncWork</receiver>
+   <slot>zoom_all()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>530</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>115</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>qHmiCncWork</receiver>
+   <slot>zoom_in()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>qHmiCncWork</receiver>
+   <slot>set_show_bounds(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>473</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>qHmiCncWork</receiver>
+   <slot>zoom_out()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>410</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>qHmiAlarms_2</sender>
+   <signal>firstactiveAlarm(QString)</signal>
+   <receiver>QHmiLinkPage_2</receiver>
+   <slot>setButtonText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>404</x>
+     <y>391</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>550</x>
+     <y>620</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>QHmiButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>QHmiStackedWidget</receiver>
+   <slot>slideInNext()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>495</x>
+     <y>719</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>560</x>
+     <y>708</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>QHmiButton_15</sender>
+   <signal>clicked()</signal>
+   <receiver>QHmiStackedWidget</receiver>
+   <slot>slideInNext()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>492</x>
+     <y>726</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>705</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>QHmiButton_16</sender>
+   <signal>clicked()</signal>
+   <receiver>QHmiStackedWidget</receiver>
+   <slot>slideInNext()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>474</x>
+     <y>724</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>554</x>
+     <y>686</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

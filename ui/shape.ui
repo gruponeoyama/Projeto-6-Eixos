@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Form
+{
+color: rgb(255, 255, 255);
+background-color: rgb(74, 74, 74);
+}
+
+QToolButton {
+color: #fff;
+border: 2px solid #eee;
+border-top-right-radius:10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius:10px;
+border-bottom-left-radius: 10px;
+background: rgb(74,74,74);
+}
+QHmiLinkPage
+{
+background: rgb(60,110,200);
+}
+
+QProgressBar {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+</string>
+  </property>
+  <property name="TopPage" stdset="0">
+   <cstring></cstring>
+  </property>
+  <property name="Resizeable" stdset="0">
+   <bool>false</bool>
+  </property>
+  <widget class="QHmiLinkPage" name="QHmiLinkPage">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>10</y>
+     <width>140</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>20</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="action">
+    <enum>QHmiLinkPage::jumpAndDestroy</enum>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiPreviewTable" name="qHmiPreviewTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>79</y>
+     <width>771</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: black;
+}
+
+#qHmiPreviewTable {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: rgb(74, 74, 74);
+}
+
+QListView {
+border: none;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: transparent;
+}
+
+QScrollBar:vertical {
+	border-left: 2px solid #eee;
+	background-color:  transparent;
+    width: 55px;
+    margin: -4px 0px -2px 0px;
+}
+QScrollBar::handle:vertical {
+border-left: 2px solid #ccc;
+border-right: 2px solid #ccc;
+border-bottom: 2px solid #ccc;
+border-top: 2px solid #ccc;
+border-radius: 10px;
+background: #333333;
+min-height: 50px;
+margin: 10px 5px 10px 5px;
+}
+   
+QScrollBar::add-line:vertical {
+ width: 0px;  
+ height: 0px;
+}
+ 
+QScrollBar::sub-line:vertical {
+    width: 0px;  
+    height: 0px;
+}
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+      width: 0px;
+      height: 0px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+      background: none;
+}
+
+</string>
+   </property>
+   <property name="gridSize">
+    <number>120</number>
+   </property>
+   <property name="extensions">
+    <stringlist/>
+   </property>
+   <property name="defaultFeedRate" stdset="0">
+    <cstring>CONF1_G_R_AUTO_SPEED</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>230</y>
+     <width>498</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>18</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="invertedAppearance">
+    <bool>false</bool>
+   </property>
+   <property name="textDirection">
+    <enum>QProgressBar::TopToBottom</enum>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QHmiLabel" name="qHmiLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>24</y>
+     <width>611</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="fieldName">
+    <cstring>RES1__POU_SLOW_CNC.SOURCE_FILENAME</cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QHmiLabel</class>
+   <extends>QLabel</extends>
+   <header>qhmilabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiLinkPage</class>
+   <extends>QToolButton</extends>
+   <header>QHmiLinkPage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiPreviewTable</class>
+   <extends>QScrollArea</extends>
+   <header>qhmipreviewtable.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>qHmiPreviewTable</sender>
+   <signal>hideBar()</signal>
+   <receiver>progressBar</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>465</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>qHmiPreviewTable</sender>
+   <signal>update_percent(int)</signal>
+   <receiver>progressBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>291</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>308</x>
+     <y>466</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>qHmiPreviewTable</sender>
+   <signal>showBar()</signal>
+   <receiver>progressBar</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>587</x>
+     <y>342</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>536</x>
+     <y>47</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>qHmiPreviewTable</sender>
+   <signal>selected_file(QString)</signal>
+   <receiver>qHmiLabel</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>59</x>
+     <y>46</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

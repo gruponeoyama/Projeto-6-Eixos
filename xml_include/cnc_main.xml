@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="cnc_main" pouType="program">
+     <addData>
+        <parentFolder name="cnc" />
+     </addData>
+     <interface>
+       <localVars>
+         <variable name="i_calculation_percent">
+          <type>
+           <USINT/>
+          </type>
+         </variable>
+         <variable name="i_calculation_in_progress">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </localVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* 
+HMI progressbar on &quot;work in progress&quot;, 
+refer to :
+  default_800x480.ui -&gt; qhmiroundprogressbar 
+*)
+if cnc_parser_fb.execute then
+   i_calculation_in_progress := true;
+   i_calculation_percent := cnc_parser_fb.percent;
+elsif cnc_read_fb.execute then
+   i_calculation_in_progress := true;
+   i_calculation_percent := cnc_read_fb.percent;
+else
+   i_calculation_in_progress := false;
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

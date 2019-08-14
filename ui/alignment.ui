@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QToolButton {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QToolButton {
+color: #fff;
+border: 4px solid #fff;
+border-radius: 40px;
+background: rgb(74,74,74);
+}
+
+QToolButton:pressed {
+border: 8px solid #fff;
+background: rgb(154,154,154);
+}
+
+QToolButton:checked {
+background: rgb(0, 255, 0);
+color: rgb(0, 0, 0);
+}
+
+QToolButton:disabled {
+border: 2px solid #ccc;
+background: rgb(108,108,108);
+}
+
+QHmiButton {
+color: #fff;
+border: 2px solid #eee;
+border-top-right-radius:10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius:10px;
+border-bottom-left-radius: 10px;
+background: rgb(74,74,74);
+}
+
+QHmiButton:pressed {
+background: rgb(154,154,154);
+}
+
+QHmiButton:disabled {
+background: rgb(170, 170, 127);
+}
+
+QHmiButton:checked {
+background: #d40000;
+}
+
+</string>
+  </property>
+  <property name="TopPage" stdset="0">
+   <cstring></cstring>
+  </property>
+  <property name="Resizeable" stdset="0">
+   <bool>false</bool>
+  </property>
+  <widget class="QHmiLinkPage" name="QHmiLinkPage">
+   <property name="geometry">
+    <rect>
+     <x>738</x>
+     <y>8</y>
+     <width>60</width>
+     <height>63</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;</string>
+   </property>
+   <property name="destinationPage">
+    <cstring></cstring>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiCanvas" name="qHmiCanvas">
+   <property name="geometry">
+    <rect>
+     <x>59</x>
+     <y>10</y>
+     <width>400</width>
+     <height>400</height>
+    </rect>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButtonP1">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>410</y>
+     <width>59</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>P1</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButtonP2">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>10</y>
+     <width>59</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>P2</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButtonP3">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>410</y>
+     <width>59</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>P3</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButtonApply">
+   <property name="geometry">
+    <rect>
+     <x>478</x>
+     <y>388</y>
+     <width>142</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Apply</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButtonReset">
+   <property name="geometry">
+    <rect>
+     <x>632</x>
+     <y>388</y>
+     <width>150</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Reset</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiButton" name="QHmiButton_6">
+   <property name="geometry">
+    <rect>
+     <x>594</x>
+     <y>232</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+     <kerning>false</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Y-</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1__G_AXIS_MANAGER_Y.BT_IHM_JOGFW</cstring>
+   </property>
+   <property name="buttonAction">
+    <enum>QHmiButton::SetReset</enum>
+   </property>
+   <property name="reset_when_unfocus" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiButton" name="QHmiButton_5">
+   <property name="geometry">
+    <rect>
+     <x>594</x>
+     <y>163</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+     <kerning>false</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Y+</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1__G_AXIS_MANAGER_Y.BT_IHM_JOGBV</cstring>
+   </property>
+   <property name="buttonAction">
+    <enum>QHmiButton::SetReset</enum>
+   </property>
+   <property name="reset_when_unfocus" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiButton" name="QHmiButton_7">
+   <property name="geometry">
+    <rect>
+     <x>516</x>
+     <y>196</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+     <kerning>false</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>X-</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1__G_AXIS_MANAGER_X.BT_IHM_JOGFW</cstring>
+   </property>
+   <property name="buttonAction">
+    <enum>QHmiButton::SetReset</enum>
+   </property>
+   <property name="reset_when_unfocus" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QHmiButton" name="QHmiButton_8">
+   <property name="geometry">
+    <rect>
+     <x>672</x>
+     <y>196</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+     <kerning>false</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>X+</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="fieldName">
+    <cstring>CONF1__G_AXIS_MANAGER_X.BT_IHM_JOGBV</cstring>
+   </property>
+   <property name="buttonAction">
+    <enum>QHmiButton::SetReset</enum>
+   </property>
+   <property name="reset_when_unfocus" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QHmiLinkPage</class>
+   <extends>QToolButton</extends>
+   <header>QHmiLinkPage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiButton</class>
+   <extends>QToolButton</extends>
+   <header>qhmibutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiCanvas</class>
+   <extends>QFrame</extends>
+   <header>qhmicanvas.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

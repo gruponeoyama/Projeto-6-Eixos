@@ -1,0 +1,1647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>MS Shell Dlg 2</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Repeat</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Form {
+border : none;
+background: rgb(74,74,74);
+}
+
+#topFrame QToolButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 30px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+}
+
+#topFrame QToolButton:pressed {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, 
+stop: 0 #fff, 
+stop: 1 #bbb);
+}
+
+#topFrame {
+border: none;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #a6a6a6, 
+stop: 0.08 #7f7f7f,
+stop: 0.39999 #717171, 
+stop: 0.4 #626262,
+stop: 0.9 #4c4c4c, 
+stop: 1 #333333);
+}
+
+QLCDNumber {
+border-radius: 5px;
+border: 2px solid #000000;
+background-color: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
+stop: 0 #f3f5c6, 
+stop: 1 #e1eb8c);
+}</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="TopPage" stdset="0">
+   <cstring></cstring>
+  </property>
+  <property name="Resizeable" stdset="0">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="widget_2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>85</y>
+     <width>140</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: #e1eb8c;
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Linhas</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiEdit" name="qHmiFieldEdit_5">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>12345</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.I_ROWS</cstring>
+      </property>
+      <property name="decimalCount">
+       <cstring>0</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Min value" stdset="0">
+       <cstring></cstring>
+      </property>
+      <property name="Max value" stdset="0">
+       <cstring></cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widget_7" native="true">
+   <property name="geometry">
+    <rect>
+     <x>685</x>
+     <y>285</y>
+     <width>110</width>
+     <height>190</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: rgb(74,74,74);
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #ffffff;
+background-color: #f3f5f6;
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <property name="spacing">
+     <number>5</number>
+    </property>
+    <property name="margin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_11">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Dimensions</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_10">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Height</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiLabel" name="qHmiLabel_22">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>1234.56</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.R_SIZE_Y</cstring>
+      </property>
+      <property name="decimalCount">
+       <cstring>2</cstring>
+      </property>
+      <property name="readOnly" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Min value" stdset="0">
+       <cstring></cstring>
+      </property>
+      <property name="Max value" stdset="0">
+       <cstring></cstring>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_9">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Width</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiLabel" name="qHmiLabel_21">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>1234.56</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.R_SIZE_X</cstring>
+      </property>
+      <property name="decimalCount">
+       <cstring>2</cstring>
+      </property>
+      <property name="inputMask" stdset="0">
+       <string/>
+      </property>
+      <property name="readOnly" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Min value" stdset="0">
+       <cstring></cstring>
+      </property>
+      <property name="Max value" stdset="0">
+       <cstring></cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widget_4" native="true">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>245</y>
+     <width>140</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: #e1eb8c;
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Offset Y</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiEdit" name="qHmiFieldEdit_8">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>1234.56</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.R_ROW_OFF</cstring>
+      </property>
+      <property name="decimalCount">
+       <cstring>1</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Min value" stdset="0">
+       <cstring></cstring>
+      </property>
+      <property name="Max value" stdset="0">
+       <cstring></cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widget_6" native="true">
+   <property name="geometry">
+    <rect>
+     <x>685</x>
+     <y>185</y>
+     <width>110</width>
+     <height>95</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QHmiButton {
+border: none;
+background: transparent;
+border-radius: none;
+padding: 0;
+}
+QHmiButton:pressed {
+border: none;
+background: transparent;
+padding: 0;
+}
+
+QHmiButton:checked {
+border: none;
+background: transparent;
+padding: 0;
+}
+
+QLabel {
+border: none;
+}
+</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>999</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <property name="spacing">
+     <number>5</number>
+    </property>
+    <property name="leftMargin">
+     <number>5</number>
+    </property>
+    <property name="topMargin">
+     <number>5</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_6">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Espelho Y</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiButton" name="QHmiButton_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>90</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../res/toggle_round_128_B_off.png</normaloff>
+        <normalon>../res/toggle_round_128_B_on.png</normalon>../res/toggle_round_128_B_off.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="fieldName">
+       <cstring></cstring>
+      </property>
+      <property name="buttonAction">
+       <enum>QHmiButton::Negate</enum>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>5</y>
+     <width>140</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: #e1eb8c;
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Colunas</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiEdit" name="qHmiFieldEdit_3">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>12345</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.I_COLS</cstring>
+      </property>
+      <property name="decimalCount">
+       <cstring>0</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Min value" stdset="0">
+       <cstring></cstring>
+      </property>
+      <property name="Max value" stdset="0">
+       <cstring></cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QHmiLinkPage" name="linkCNCPage">
+   <property name="geometry">
+    <rect>
+     <x>685</x>
+     <y>5</y>
+     <width>110</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QHmiLinkPage {
+color: #fff;
+border: 2px solid #eee;
+border-top-right-radius:10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius:10px;
+border-bottom-left-radius: 10px;
+background: rgb(74,74,74);
+}
+
+QHmiLinkPage:pressed {
+background: rgb(154,154,154);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../res/b128_Home.png</normaloff>../res/b128_Home.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="destinationPage">
+    <cstring>default_corte2d.ui</cstring>
+   </property>
+   <property name="action">
+    <enum>QHmiLinkPage::jumpAndDestroy</enum>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="Align left" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_5" native="true">
+   <property name="geometry">
+    <rect>
+     <x>685</x>
+     <y>85</y>
+     <width>110</width>
+     <height>95</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QHmiButton {
+border: none;
+background: transparent;
+border-radius: none;
+padding: 0;
+}
+QHmiButton:pressed {
+border: none;
+background: transparent;
+padding: 0;
+}
+
+QHmiButton:checked {
+border: none;
+background: transparent;
+padding: 0;
+}
+
+QLabel {
+border: none;
+}
+</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>999</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <property name="spacing">
+     <number>5</number>
+    </property>
+    <property name="leftMargin">
+     <number>5</number>
+    </property>
+    <property name="topMargin">
+     <number>5</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Espelho X</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiButton" name="QHmiButton_4">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>90</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../res/toggle_round_128_B_off.png</normaloff>
+        <normalon>../res/toggle_round_128_B_on.png</normalon>../res/toggle_round_128_B_off.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="fieldName">
+       <cstring></cstring>
+      </property>
+      <property name="buttonAction">
+       <enum>QHmiButton::Negate</enum>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Align left" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widget_3" native="true">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>165</y>
+     <width>140</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: #e1eb8c;
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Offset X</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiEdit" name="qHmiFieldEdit_7">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>1234.56</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.R_COL_OFF</cstring>
+      </property>
+      <property name="decimalCount">
+       <cstring>1</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Min value" stdset="0">
+       <cstring></cstring>
+      </property>
+      <property name="Max value" stdset="0">
+       <cstring></cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widget_8" native="true">
+   <property name="geometry">
+    <rect>
+     <x>156</x>
+     <y>4</y>
+     <width>525</width>
+     <height>474</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: rgb(0,0,0);
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
+stop: 0 #f3f5c6, 
+stop: 1 #e1eb8c);
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_8">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>6</number>
+    </property>
+    <item>
+     <widget class="QHmiCncWork" name="qHmiCncWork">
+      <property name="styleSheet">
+       <string notr="true"># {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: rgb(0,0,0);
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
+stop: 0 #f3f5c6, 
+stop: 1 #e1eb8c);
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}
+
+QProgressBar {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+</string>
+      </property>
+      <property name="ON_WORK">
+       <cstring></cstring>
+      </property>
+      <property name="GCODELINE">
+       <cstring></cstring>
+      </property>
+      <property name="DRAWNAME">
+       <cstring>RES1__POU_SLOW_CNC.CNC_FILENAME</cstring>
+      </property>
+      <property name="TOOLDIAMETER">
+       <cstring></cstring>
+      </property>
+      <property name="TOOLCUTTING">
+       <cstring></cstring>
+      </property>
+      <property name="SHOWREALWORK">
+       <cstring></cstring>
+      </property>
+      <property name="ABSPOSX">
+       <cstring>CONF1_POS_MOM_AXIS_X</cstring>
+      </property>
+      <property name="ABSPOSY">
+       <cstring>CONF1_POS_MOM_AXIS_Y</cstring>
+      </property>
+      <property name="POSRVX">
+       <cstring></cstring>
+      </property>
+      <property name="POSRVY">
+       <cstring></cstring>
+      </property>
+      <property name="POSFWX">
+       <cstring></cstring>
+      </property>
+      <property name="POSFWY">
+       <cstring></cstring>
+      </property>
+      <property name="WORKING">
+       <cstring></cstring>
+      </property>
+      <property name="WORKINGPERCENT">
+       <cstring></cstring>
+      </property>
+      <property name="RELOAD">
+       <cstring>RES1__POU_SLOW_CNC.CNC_RELOAD</cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widget_9" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>320</y>
+     <width>131</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: #e1eb8c;
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_9">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_7">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Scala</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiEdit" name="qHmiFieldEdit_9">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>1234.56</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.R_SCALEFACTOR</cstring>
+      </property>
+      <property name="decimalCount">
+       <cstring>1</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Min value" stdset="0">
+       <cstring></cstring>
+      </property>
+      <property name="Max value" stdset="0">
+       <cstring></cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widget_10" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>400</y>
+     <width>140</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+border: 2px solid #eee;
+border-top-left-radius:10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background: #cccccc;
+}
+
+QLineEdit {
+border-radius: 10px;
+border: 2px solid #000000;
+background-color: #e1eb8c;
+}
+
+QLabel {
+color: white;
+border: none;
+background-color: transparent;
+}</string>
+   </property>
+   <property name="PasswordLevel" stdset="0">
+    <number>0</number>
+   </property>
+   <property name="Hide" stdset="0">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_10">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Rotação</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QHmiEdit" name="qHmiFieldEdit_10">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>1234.56</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="fieldName">
+       <cstring>RES1__POU_SLOW_CNC.R_ROTATE</cstring>
+      </property>
+      <property name="decimalCount">
+       <cstring>1</cstring>
+      </property>
+      <property name="PasswordLevel" stdset="0">
+       <number>0</number>
+      </property>
+      <property name="Hide" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="Min value" stdset="0">
+       <cstring></cstring>
+      </property>
+      <property name="Max value" stdset="0">
+       <cstring></cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QHmiLabel</class>
+   <extends>QLabel</extends>
+   <header>qhmilabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qhmiedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiLinkPage</class>
+   <extends>QToolButton</extends>
+   <header>QHmiLinkPage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiButton</class>
+   <extends>QToolButton</extends>
+   <header>qhmibutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiCncWork</class>
+   <extends>QWidget</extends>
+   <header>qhmicncwork.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

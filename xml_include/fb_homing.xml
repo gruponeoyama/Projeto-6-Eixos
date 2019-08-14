@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="FB_HOMING" pouType="functionBlock">
+     <interface>
+       <localVars>
+         <variable name="FB_Stop">
+          <type>
+           <derived name="MC_STOP"/>
+          </type>
+         </variable>
+         <variable name="FB_MoveVel">
+          <type>
+           <derived name="MC_MOVEVELOCITY"/>
+          </type>
+         </variable>
+         <variable name="FB_SETPOS">
+          <type>
+           <derived name="MC_SETPOSITION"/>
+          </type>
+         </variable>
+         <variable name="i_State">
+          <type>
+           <INT/>
+          </type>
+          <initialValue>
+             <simpleValue value="0"/>
+          </initialValue>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="axis_ref" ref_to="true">
+          <type>
+           <derived name="AXIS_REF_T"/>
+          </type>
+         </variable>
+         <variable name="b_run">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="r_acceleration">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_deceleration">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_velocity">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="r_wanted_pos">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="b_direction">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_start">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_probe">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_set_fc">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </inputVars>
+       <outputVars>
+         <variable name="b_done">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_active">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </outputVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+if (axis_ref &lt;&gt; null) then
+  case i_state of
+    0: (* start *)
+      if b_start then
+         b_done := false;
+         b_active := true;
+         fb_movevel.axis         := axis_ref^.axisidx;
+         fb_movevel.acceleration := r_acceleration;
+         fb_movevel.deceleration := r_deceleration;
+         fb_movevel.velocity     := r_velocity;
+         if b_direction then
+            fb_movevel.direction := 1;
+         else
+            fb_movevel.direction := -1;
+         end_if;
+         fb_movevel.execute := true;
+         i_state := 1;
+      end_if;
+
+    1:
+      if not b_start or not b_probe then (* probe found, stop axis *)
+         fb_stop.axis := fb_movevel.axis;
+         fb_stop.deceleration := fb_movevel.deceleration;
+         fb_stop.execute := true;
+         i_state := 2;
+      end_if;
+
+     if not fb_movevel.active then
+         b_active := false;
+         i_state := 0;
+      end_if;
+
+    2:
+      if fb_stop.error then
+         b_active := false;
+         i_state := 0;
+      end_if;
+
+      if fb_stop.done then
+         if not b_start then
+            b_active := false;
+            i_state := 0;
+         else
+            fb_movevel.velocity  := r_velocity * 0.2;
+            fb_movevel.direction := fb_movevel.direction * -1;
+            fb_movevel.execute   := true;
+
+            (* probe lost during stopping, came back to probe *)
+            if b_probe then
+               i_state := 5;
+            else
+               i_state := 3;
+            end_if;
+         end_if;
+      end_if;
+
+    3:
+      if not b_start or b_probe then
+         if b_start then
+            if b_set_fc then
+               if b_direction then
+                  axis_ref^.POSFW := r_wanted_pos;
+               else
+                  axis_ref^.POSRV := r_wanted_pos;
+               end_if;
+            else
+               fb_setpos.axis := fb_movevel.axis;
+               fb_setpos.position := r_wanted_pos;
+               fb_setpos.execute := true;
+            end_if;
+         end_if;
+         fb_stop.execute := true;
+         i_state := 4;
+      end_if;
+
+      if not fb_movevel.active then
+         b_active := false;
+         i_state := 0;
+      end_if;
+
+    4:
+      if fb_stop.error then
+         b_active := false;
+         i_state := 0;
+      end_if;
+
+      if fb_stop.done then
+         if b_start then
+            b_done := true;
+         end_if;
+         b_active := false;
+         i_state := 0;
+      end_if;
+
+    5:
+      if not b_start then
+         fb_stop.execute := true;
+         i_state := 4;
+      end_if;
+
+      if not b_probe then
+         i_state := 3;
+      end_if;
+
+      if not fb_movevel.active then
+         b_active := false;
+         i_state := 0;
+      end_if;
+
+  end_case;
+end_if;
+
+fb_movevel();
+fb_movevel.execute := false;
+
+fb_stop();
+fb_stop.execute := false;
+
+fb_setpos();
+fb_setpos.execute := false;
+
+b_active := i_state &lt;&gt; 0;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

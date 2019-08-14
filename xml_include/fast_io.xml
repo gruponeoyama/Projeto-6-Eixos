@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="fast_io" pouType="program">
+     <interface>
+       <localVars>
+         <variable name="b_enable_io">
+          <type>
+           <BOOL/>
+          </type>
+          <initialValue>
+             <simpleValue value="true"/>
+          </initialValue>
+         </variable>
+         <variable name="ui_raw_diff">
+          <type>
+           <UINT/>
+          </type>
+         </variable>
+         <variable name="raw_in_b">
+          <type>
+           <DINT/>
+          </type>
+         </variable>
+         <variable name="raw_out_b">
+          <type>
+           <DINT/>
+          </type>
+         </variable>
+         <variable name="raw_diff_b">
+          <type>
+           <DINT/>
+          </type>
+         </variable>
+       </localVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* input/output management *)
+if g_b_simulation then
+  TARGET_DEB_I0.DEBOK := true;
+
+  axis_x.drvok := true;
+  axis_y.drvok := true;
+  axis_z.drvok := true;
+  axis_a.drvok := true;
+  axis_b.drvok := true;
+  axis_c.drvok := true;
+elsif b_enable_io then
+  g_b_driverXOk := TARGET_DEB_I0.DEBOK and sio15.canok;
+  g_b_driverYOk := TARGET_DEB_I0.DEBOK and sio15.canok;
+  g_b_driverZOk := TARGET_DEB_I0.DEBOK and sio15.canok;
+  g_b_driverAOk := TARGET_DEB_I0.DEBOK and sio15.canok;
+  g_b_driverBOk := TARGET_DEB_I0.DEBOK and sio15.canok;
+  g_b_driverCOk := TARGET_DEB_I0.DEBOK and sio15.canok;
+  g_b_powerOn := TARGET_DEB_I0.DEBOK; 
+end_if;
+
+(* hardware/physical limit switch *)
+axis_x.fcFw   := false;
+axis_x.fcRv   := false;
+(* PLS output generation for stepper motor *)
+ui_raw_diff      := DINT_TO_UINT(g_di_rawOutX - g_di_rawInX);
+local_pwm.m16_17 := local_pwm.m16_17 + ui_raw_diff;
+g_di_rawInX      := g_di_rawOutX;
+
+(* PLS output generation for stepper motor *)
+ui_raw_diff      := DINT_TO_UINT(g_di_rawOutY - g_di_rawInY);
+local_pwm.m18_19 := local_pwm.m18_19 + ui_raw_diff;
+g_di_rawInY      := g_di_rawOutY;
+
+(* PLS output generation for stepper motor *)
+ui_raw_diff      := DINT_TO_UINT(g_di_rawOutZ - g_di_rawInZ);
+local_pwm.m36_37 := local_pwm.m36_37 + ui_raw_diff;
+g_di_rawInZ      := g_di_rawOutZ;
+
+(* PLS output generation for stepper motor *)
+ui_raw_diff      := DINT_TO_UINT(g_di_rawOutA - g_di_rawInA);
+local_pwm.m38_39 := local_pwm.m38_39 + ui_raw_diff;
+g_di_rawInA      := g_di_rawOutA;
+
+(* PLS output generation for stepper motor *)
+raw_in_b := g_di_rawInB;
+raw_out_b := g_di_rawOutB;
+raw_diff_b := g_di_rawOutB - g_di_rawInB;
+ui_raw_diff               := DINT_TO_UINT(g_di_rawOutB - g_di_rawInB);
+sio15_rpdo.pulses_out.pulse_1 := sio15_rpdo.pulses_out.pulse_1 + ui_raw_diff;
+g_di_rawInB               := g_di_rawOutB;  
+
+(* PLS output generation for stepper motor *)
+ui_raw_diff               := DINT_TO_UINT(g_di_rawOutC - g_di_rawInC);
+sio15_rpdo.pulses_out.pulse_2 := sio15_rpdo.pulses_out.pulse_2 + ui_raw_diff;
+g_di_rawInC               := g_di_rawOutC;
+
+                 (* digital output what allow power-on *)
+g_b_machineOk := g_b_powerOn and 
+                 (* digital input machine powerd-on *)
+                 g_b_powerOk and 
+                 (* local I/O ok *)
+                 TARGET_DEB_I0.DEBOK and 
+                 (* remote CAN I/O ok *)
+                 sio15.canok;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

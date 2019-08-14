@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>DejaVu Sans</family>
+    <pointsize>8</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="TopPage" stdset="0">
+   <cstring></cstring>
+  </property>
+  <property name="EvenRowColor" stdset="0">
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+  </property>
+  <property name="OddRowColor" stdset="0">
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,10,0">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="10,0">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>22</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 127, 0, 255), stop:1 rgba(0, 0, 0, 255));
+font:22pt &quot;DejaVu Sans&quot;;</string>
+         </property>
+         <property name="text">
+          <string>C</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="margin">
+          <number>10</number>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QHmiLinkPage" name="QHmiLinkPage">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+         <property name="destinationPage">
+          <cstring></cstring>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="Align left" stdset="0">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0,0,0,0,0,0" columnstretch="10,5,0">
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="1" column="1">
+        <widget class="QHmiEdit" name="qHmiEdit_2">
+         <property name="minimumSize">
+          <size>
+           <width>15</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 20pt &quot;DejaVu Sans&quot;;</string>
+         </property>
+         <property name="text">
+          <string>123</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="fieldName">
+          <cstring>CONF1__G_AXIS_MANAGER_C.R_TRANSF_POS</cstring>
+         </property>
+         <property name="decimalCount">
+          <cstring>1</cstring>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="Min value" stdset="0">
+          <cstring></cstring>
+         </property>
+         <property name="Max value" stdset="0">
+          <cstring></cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font:14pt &quot;DejaVu Sans&quot;;
+background-color: rgb(255, 127, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>Transfer type</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="3">
+        <widget class="QLabel" name="label_2">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font:14pt &quot;DejaVu Sans&quot;;
+background-color: rgb(255, 127, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>AUTO = Transfer - Homing</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QHmiSwitch" name="qHmiSwitch_2">
+         <property name="styleSheet">
+          <string notr="true">font: 75 20pt &quot;DejaVu Sans&quot;;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="onBrushColor">
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </property>
+         <property name="fieldName">
+          <cstring>CONF1_G_B_HOMING_C</cstring>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="Align left" stdset="0">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="3">
+        <widget class="Line" name="line">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);</string>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>10</number>
+         </property>
+         <property name="midLineWidth">
+          <number>5</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_10">
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font:8pt &quot;DejaVu Sans&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>mm</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font:14pt &quot;DejaVu Sans&quot;;
+background-color: rgb(255, 127, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>Homing</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font:14pt &quot;DejaVu Sans&quot;;
+background-color: rgb(255, 127, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>Actual position</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font:14pt &quot;DejaVu Sans&quot;;
+background-color: rgb(255, 127, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>Go to position</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QHmiLabel" name="qHmiLabel_2">
+         <property name="styleSheet">
+          <string notr="true">font: 75 20pt &quot;DejaVu Sans&quot;;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>123</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="fieldName">
+          <cstring>CONF1_AXIS_C.ABSPOS</cstring>
+         </property>
+         <property name="decimalCount">
+          <cstring>1</cstring>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QHmiSwitch" name="qHmiSwitch">
+         <property name="styleSheet">
+          <string notr="true">font: 75 16pt &quot;DejaVu Sans&quot;;</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="text_on" stdset="0">
+          <string>Absolute</string>
+         </property>
+         <property name="onBrushColor">
+          <color>
+           <red>0</red>
+           <green>170</green>
+           <blue>0</blue>
+          </color>
+         </property>
+         <property name="text_off" stdset="0">
+          <string>Relative</string>
+         </property>
+         <property name="offBrushColor">
+          <color>
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </property>
+         <property name="fieldName">
+          <cstring>CONF1__G_AXIS_MANAGER_C.B_ABS</cstring>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="Align left" stdset="0">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="label_12">
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font:8pt &quot;DejaVu Sans&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>mm</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="3">
+        <widget class="Line" name="line_2">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);</string>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>10</number>
+         </property>
+         <property name="midLineWidth">
+          <number>5</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="3">
+        <widget class="QWidget" name="widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="PasswordLevel" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="Hide" stdset="0">
+          <bool>true</bool>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="10,3,3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DejaVu Sans</family>
+              <pointsize>14</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font:14pt &quot;DejaVu Sans&quot;;
+background-color: rgb(255, 127, 0);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string>Jogging</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::RichText</enum>
+            </property>
+            <property name="PasswordLevel" stdset="0">
+             <number>0</number>
+            </property>
+            <property name="Hide" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QHmiButton" name="QHmiButton">
+            <property name="font">
+             <font>
+              <family>DejaVu Sans</family>
+              <pointsize>20</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>&lt;-</string>
+            </property>
+            <property name="fieldName">
+             <cstring>CONF1__G_AXIS_MANAGER_C.B_JOGBV</cstring>
+            </property>
+            <property name="buttonAction">
+             <enum>QHmiButton::SetReset</enum>
+            </property>
+            <property name="reset_when_unfocus" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="PasswordLevel" stdset="0">
+             <number>0</number>
+            </property>
+            <property name="Hide" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="Align left" stdset="0">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QHmiButton" name="QHmiButton_2">
+            <property name="font">
+             <font>
+              <family>DejaVu Sans</family>
+              <pointsize>20</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>-&gt;</string>
+            </property>
+            <property name="fieldName">
+             <cstring>CONF1__G_AXIS_MANAGER_C.B_JOGFW</cstring>
+            </property>
+            <property name="buttonAction">
+             <enum>QHmiButton::SetReset</enum>
+            </property>
+            <property name="reset_when_unfocus" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="PasswordLevel" stdset="0">
+             <number>0</number>
+            </property>
+            <property name="Hide" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="Align left" stdset="0">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QHmiSetWidgetState" name="qhmisetwidgetstate">
+       <property name="fieldName">
+        <cstring>CONF1_G_B_ON_AUTO_C</cstring>
+       </property>
+       <property name="action">
+        <enum>QHmiSetWidgetState::SetOnEnterResetOnExit</enum>
+       </property>
+       <property name="PasswordLevel" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="Hide" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QHmiLabel</class>
+   <extends>QLabel</extends>
+   <header>qhmilabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qhmiedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiLinkPage</class>
+   <extends>QToolButton</extends>
+   <header>QHmiLinkPage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiButton</class>
+   <extends>QToolButton</extends>
+   <header>qhmibutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiSwitch</class>
+   <extends>QToolButton</extends>
+   <header>qhmiswitch.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QHmiSetWidgetState</class>
+   <extends>QWidget</extends>
+   <header>qhmisetwidgetstate.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

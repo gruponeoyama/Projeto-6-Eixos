@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="alarms" pouType="program">
+     <interface>
+       <localVars>
+         <variable name="r_trig_power_on">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+         <variable name="r_trig_power_off">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+         <variable name="r_trig_errorstop">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+         <variable name="r_trig_disabled">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+         <variable name="ton_reset_axis">
+          <type>
+           <derived name="TON"/>
+          </type>
+         </variable>
+         <variable name="b_clk">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </localVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+(* Power ON *)
+r_trig_power_on(clk := g_b_machineOk);
+if r_trig_power_on.q then 
+  ton_reset_axis.PT := t#1s;
+  ton_reset_axis.IN := true;
+  g_b_alarm_power_off := false;
+end_if;
+
+(* Force all axis delayed reset at power on *)
+if ton_reset_axis.q then                    
+  ton_reset_axis.IN := false;
+  g_b_reset_axis := true;
+end_if;
+ton_reset_axis();
+
+if g_b_machineOk then
+   (* Automatic cycle active and active error in PLC Motion *)
+   if g_b_auto then
+      (* active error in PLC Motion *)
+      b_clk := fb_reset_axis_x.fb_status.errorstop or
+               fb_reset_axis_y.fb_status.errorstop or
+               fb_reset_axis_z.fb_status.errorstop or
+               fb_reset_axis_a.fb_status.errorstop or
+               fb_reset_axis_b.fb_status.errorstop or
+               fb_reset_axis_c.fb_status.errorstop;
+      r_trig_errorstop(clk := b_clk);
+      (* Axis is being disabled in PLC Motion *)
+      b_clk := fb_reset_axis_x.fb_status.disabled or
+               fb_reset_axis_y.fb_status.disabled or
+               fb_reset_axis_z.fb_status.disabled or
+               fb_reset_axis_a.fb_status.disabled or
+               fb_reset_axis_b.fb_status.disabled or
+               fb_reset_axis_c.fb_status.disabled;
+      r_trig_disabled(clk := b_clk);
+
+      if r_trig_errorstop.q then
+         g_b_alarm_errorstop := true;
+         g_b_stop_errorstop := true;
+         sh_down(1, g_si_verbose);
+         g_b_powerOn := false;                    
+      end_if;                       
+
+      if r_trig_disabled.q then
+         g_b_alarm_disabled := true;
+         g_b_stop_disabled := true;
+         sh_down(2, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+   end_if;
+   
+   if not g_b_driverXOk then
+     g_b_alarm_driverXOk := true;
+   end_if;
+   (* when not homing, check hardware limit swich *)
+   if not g_axis_manager_x.b_start_homing then
+      (* home probe  *)
+      if not g_axis_manager_x.b_home_probe and (axis_x.realspeed &lt;&gt; 0.0) then
+         g_b_alarm_probeX := true;
+         g_b_stop_probeX := true;
+         sh_down(3, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* backwards limit switch  *)
+      if axis_x.FCRV and (axis_x.realspeed &lt; 0.0) then
+         g_b_alarm_rv_ls_X := true;
+         g_b_stop_rv_ls_X := true;
+         sh_down(4, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* forward limit switch  *)
+      if axis_x.FCFW and (axis_x.realspeed &gt; 0.0) then
+         g_b_alarm_fw_ls_X := true;
+         g_b_stop_fw_ls_X := false;
+         sh_down(5, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+   end_if;
+
+   if not g_b_driverYOk then
+     g_b_alarm_driverYOk := true;
+   end_if;
+   (* when not homing, check hardware limit swich *)
+   if not g_axis_manager_y.b_start_homing then
+      (* home probe  *)
+      if not g_axis_manager_y.b_home_probe and (axis_y.realspeed &lt;&gt; 0.0) then
+         g_b_alarm_probeY := true;
+         g_b_stop_probeY := true;
+         sh_down(6, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* backwards limit switch  *)
+      if axis_y.FCRV and (axis_y.realspeed &lt; 0.0) then
+         g_b_alarm_rv_ls_y := true;
+         g_b_stop_rv_ls_y := true;
+         sh_down(7, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* forward limit switch  *)
+      if axis_y.FCFW and (axis_y.realspeed &gt; 0.0) then
+         g_b_alarm_fw_ls_y := true;
+         g_b_stop_fw_ls_y := false;
+         sh_down(8, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+   end_if;
+
+   if not g_b_driverZOk then
+     g_b_alarm_driverZOk := true;
+   end_if;
+   (* when not homing, check hardware limit swich *)
+   if not g_axis_manager_z.b_start_homing then
+      (* home probe  *)
+      if not g_axis_manager_z.b_home_probe and (axis_z.realspeed &lt;&gt; 0.0) then
+         g_b_alarm_probeZ := true;
+         g_b_stop_probeZ := true;
+         sh_down(9, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* backwards limit switch  *)
+      if axis_z.FCRV and (axis_z.realspeed &lt; 0.0) then
+         g_b_alarm_rv_ls_z := true;
+         g_b_stop_rv_ls_z := true;
+         sh_down(10, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* forward limit switch  *)
+      if axis_z.FCFW and (axis_z.realspeed &gt; 0.0) then
+         g_b_alarm_fw_ls_z := true;
+         g_b_stop_fw_ls_z := false;
+         sh_down(11, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+   end_if;
+
+   if not g_b_driverAOk then
+     g_b_alarm_driverAOk := true;
+   end_if;
+   (* when not homing, check hardware limit swich *)
+   if not g_axis_manager_a.b_start_homing then
+      (* home probe  *)
+      if not g_axis_manager_a.b_home_probe and (axis_a.realspeed &lt;&gt; 0.0) then
+         g_b_alarm_probeA := true;
+         g_b_stop_probeA := true;
+         sh_down(12, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* backwards limit switch  *)
+      if axis_a.FCRV and (axis_a.realspeed &lt; 0.0) then
+         g_b_alarm_rv_ls_a := true;
+         g_b_stop_rv_ls_a := true;
+         sh_down(13, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* forward limit switch  *)
+      if axis_a.FCFW and (axis_a.realspeed &gt; 0.0) then
+         g_b_alarm_fw_ls_a := true;
+         g_b_stop_fw_ls_a := false;
+         sh_down(14, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+   end_if;
+
+   if not g_b_driverBOk then
+     g_b_alarm_driverBOk := true;
+   end_if;
+   (* when not homing, check hardware limit swich *)
+   if not g_axis_manager_b.b_start_homing then
+      (* home probe  *)
+      if not g_axis_manager_b.b_home_probe and (axis_b.realspeed &lt;&gt; 0.0) then
+         g_b_alarm_probeB := true;
+         g_b_stop_probeB := true;
+         sh_down(15, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* backwards limit switch  *)
+      if axis_b.FCRV and (axis_b.realspeed &lt; 0.0) then
+         g_b_alarm_rv_ls_b := true;
+         g_b_stop_rv_ls_b := true;
+         sh_down(16, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* forward limit switch  *)
+      if axis_b.FCFW and (axis_b.realspeed &gt; 0.0) then
+         g_b_alarm_fw_ls_b := true;
+         g_b_stop_fw_ls_b := false;
+         sh_down(14, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+   end_if;
+
+   if not g_b_driverCOk then
+     g_b_alarm_driverCOk := true;
+   end_if;
+   (* when not homing, check hardware limit swich *)
+   if not g_axis_manager_c.b_start_homing then
+      (* home probe  *)
+      if not g_axis_manager_c.b_home_probe and (axis_c.realspeed &lt;&gt; 0.0) then
+         g_b_alarm_probeC := true;
+         g_b_stop_probeC := true;
+         sh_down(16, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* backwards limit switch  *)
+      if axis_c.FCRV and (axis_c.realspeed &lt; 0.0) then
+         g_b_alarm_rv_ls_c := true;
+         g_b_stop_rv_ls_c := true;
+         sh_down(17, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+
+      (* forward limit switch  *)
+      if axis_c.FCFW and (axis_c.realspeed &gt; 0.0) then
+         g_b_alarm_fw_ls_c := true;
+         g_b_stop_fw_ls_c := false;
+         sh_down(18, g_si_verbose);
+         g_b_powerOn := false;
+      end_if;
+   end_if;
+end_if;
+
+ (* reset stop cause/reason *)
+if g_b_reset_stop_causes then
+   g_b_reset_stop_causes := false;
+
+   g_b_stop_errorstop := false;
+   g_b_stop_disabled  := false;
+
+   g_b_stop_probeX  := false;
+   g_b_stop_probeY  := false;
+   g_b_stop_probeZ  := false;
+   g_b_stop_probeA  := false;
+   g_b_stop_probeB  := false;
+   g_b_stop_probeC  := false;
+
+   g_b_stop_rv_ls_X := false;
+   g_b_stop_rv_ls_Y := false;
+   g_b_stop_rv_ls_Z := false;
+   g_b_stop_rv_ls_A := false;
+   g_b_stop_rv_ls_B := false;
+   g_b_stop_rv_ls_C := false;
+
+   g_b_stop_fw_ls_X := false;
+   g_b_stop_fw_ls_Y := false;
+   g_b_stop_fw_ls_Z := false;
+   g_b_stop_fw_ls_A := false;
+   g_b_stop_fw_ls_B := false;
+   g_b_stop_fw_ls_X := false;
+   
+   g_b_stop_auto_triggered := false;
+   g_b_stop_power_off      := false;
+end_if;
+
+(* reset alarms *)
+if g_b_reset_alarms then
+   g_b_reset_alarms := false;
+
+   g_b_alarm_errorstop := false;
+   g_b_alarm_disabled  := false;
+   
+   g_b_alarm_probeX    := false;
+   g_b_alarm_probeY    := false;
+   g_b_alarm_probeZ    := false;
+   g_b_alarm_probeA    := false;
+   g_b_alarm_probeB    := false;
+   g_b_alarm_probeC    := false;
+
+   g_b_alarm_rv_ls_X   := false;
+   g_b_alarm_rv_ls_Y   := false;
+   g_b_alarm_rv_ls_Z   := false;
+   g_b_alarm_rv_ls_A   := false;
+   g_b_alarm_rv_ls_B   := false;
+   g_b_alarm_rv_ls_C   := false;
+
+   g_b_alarm_fw_ls_X   := false;
+   g_b_alarm_fw_ls_Y   := false;
+   g_b_alarm_fw_ls_Z   := false;
+   g_b_alarm_fw_ls_A   := false;
+   g_b_alarm_fw_ls_B   := false;
+   g_b_alarm_fw_ls_C   := false;
+
+   g_b_alarm_driverXOk := false;
+   g_b_alarm_driverYOk := false;
+   g_b_alarm_driverZOk := false;
+   g_b_alarm_driverAOk := false;
+   g_b_alarm_driverBOk := false;
+   g_b_alarm_driverCOk := false;
+   
+   g_b_alarm_stop_auto := false;
+   g_b_alarm_moving    := false;
+end_if;
+
+(* Power loss *)
+r_trig_power_off(clk := not g_b_machineOk);
+if r_trig_power_off.q then
+  g_b_auto           := false;
+
+  g_axis_manager_x.b_start_homing := false;
+  g_axis_manager_y.b_start_homing := false;
+  g_axis_manager_z.b_start_homing := false;
+  g_axis_manager_a.b_start_homing := false;
+  g_axis_manager_b.b_start_homing := false;
+  g_axis_manager_c.b_start_homing := false;
+
+  g_axis_manager_x.b_start_transf := false;
+  g_axis_manager_y.b_start_transf := false;
+  g_axis_manager_z.b_start_transf := false;
+  g_axis_manager_a.b_start_transf := false;
+  g_axis_manager_b.b_start_transf := false;
+  g_axis_manager_c.b_start_transf := false;
+         
+  g_b_start_cnc := false;
+  
+  if g_b_powerOn then
+     g_b_alarm_power_off := true;
+     g_b_stop_power_off := true;
+  end_if;
+   g_b_powerOn := true; 
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <dataTypes>
+     <dataType name="RPDO1_PULSE_T">
+         <baseType>
+           <struct>
+             <variable name="PULSE_1">
+              <type>
+               <UINT/>
+              </type>
+             </variable>
+             <variable name="PULSE_2">
+              <type>
+               <UINT/>
+              </type>
+             </variable>
+             <variable name="PULSE_3">
+              <type>
+               <UINT/>
+              </type>
+             </variable>
+             <variable name="PULSE_4">
+              <type>
+               <UINT/>
+              </type>
+             </variable>
+           </struct>
+         </baseType>
+         <addData>
+           <mapping value="True"/>
+         </addData>
+     </dataType>
+     <dataType name="RPDO_SIO15_T">
+         <baseType>
+           <struct>
+             <variable name="PULSES_OUT">
+              <type>
+               <derived name="RPDO1_PULSE_T"/>
+              </type>
+             </variable>
+           </struct>
+         </baseType>
+         <addData>
+           <mapping value="True"/>
+         </addData>
+     </dataType>
+     <dataType name="TPDO1_PULSE_T">
+         <baseType>
+           <struct>
+             <variable name="PULSE_1">
+              <type>
+               <UINT/>
+              </type>
+             </variable>
+             <variable name="PULSE_2">
+              <type>
+               <UINT/>
+              </type>
+             </variable>
+             <variable name="PULSE_3">
+              <type>
+               <UINT/>
+              </type>
+             </variable>
+             <variable name="PULSE_4">
+              <type>
+               <UINT/>
+              </type>
+             </variable>
+           </struct>
+         </baseType>
+         <addData>
+           <mapping value="True"/>
+         </addData>
+     </dataType>
+     <dataType name="TPDO_SIO15_T">
+         <baseType>
+           <struct>
+             <variable name="PULSES_IN">
+              <type>
+               <derived name="TPDO1_PULSE_T"/>
+              </type>
+             </variable>
+           </struct>
+         </baseType>
+         <addData>
+           <mapping value="True"/>
+         </addData>
+     </dataType>
+ </dataTypes>

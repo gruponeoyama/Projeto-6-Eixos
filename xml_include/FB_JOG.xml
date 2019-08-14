@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <pou name="FB_JOG" pouType="functionBlock">
+     <interface>
+       <localVars>
+         <variable name="FB_Stop">
+          <type>
+           <derived name="MC_STOP"/>
+          </type>
+         </variable>
+         <variable name="FB_MoveAbs">
+          <type>
+           <derived name="MC_MOVEABSOLUTE"/>
+          </type>
+         </variable>
+         <variable name="FB_MoveVel">
+          <type>
+           <derived name="MC_MOVEVELOCITY"/>
+          </type>
+         </variable>
+         <variable name="iState">
+          <type>
+           <INT/>
+          </type>
+          <initialValue>
+             <simpleValue value="0"/>
+          </initialValue>
+         </variable>
+         <variable name="r_trig_standstill">
+          <type>
+           <derived name="R_TRIG"/>
+          </type>
+         </variable>
+       </localVars>
+       <inputVars>
+         <variable name="axis_ref" ref_to="true">
+          <type>
+           <derived name="AXIS_REF_T"/>
+          </type>
+         </variable>
+         <variable name="bJogPos">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="bJogNeg">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="b_axisOk">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="acceleration">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="deceleration">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+         <variable name="velocity">
+          <type>
+           <REAL/>
+          </type>
+         </variable>
+       </inputVars>
+       <outputVars>
+         <variable name="bError">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="sStatus">
+          <type>
+           <string/>
+          </type>
+         </variable>
+         <variable name="bBusy">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+         <variable name="bDone">
+          <type>
+           <BOOL/>
+          </type>
+         </variable>
+       </outputVars>
+     </interface>
+     <body>
+        <ST>
+  <![CDATA[
+if (axis_ref &lt;&gt; null) then
+  fb_moveAbs.axis  := axis_ref^.axisidx;
+  fb_moveVel.axis  := axis_ref^.axisidx;
+  fb_stop.axis     := axis_ref^.axisidx;
+
+  (* refresh variables, velocity can be an analog input such potentiometer *)
+  if (velocity &gt; axis_ref^.MAXSPEED) then
+     velocity := axis_ref^.MAXSPEED;
+  end_if;
+  fb_moveabs.acceleration     := acceleration;
+  fb_moveabs.deceleration     := deceleration;
+  fb_moveabs.velocity         := velocity;
+  fb_moveabs.continuousupdate := true;
+
+  fb_moveVel.acceleration     := acceleration;
+  fb_moveVel.deceleration     := deceleration;
+  fb_moveVel.velocity         := velocity;
+  fb_moveVel.continuousupdate := true;
+
+  fb_stop.deceleration        := fb_moveabs.deceleration;
+
+  (* if the state machine of the axis is in an error mode,
+    and the jog state is not in idle condition:
+    - give out error
+    - kill other flags
+  *)
+  if istate &gt; 1 then
+    if (not b_axisok or fb_moveabs.error or fb_stop.error) then
+      berror := true;
+      bbusy  := false;
+      bdone  := false;
+      istate := 0;
+    end_if;
+  end_if;
+
+  r_trig_standstill(clk := b_axisok);
+  if r_trig_standstill.q then
+    berror := false;
+  end_if;
+
+  case istate of
+  0:
+    if (not bjogpos and not bjogneg) then
+      istate := 1;
+    end_if;
+
+  1:
+    if (bjogpos and not bjogneg) then
+      if axis_ref^.MODULE &lt;&gt; 0.0 then
+         FB_MoveVel.DIRECTION := 1;
+      else
+         fb_moveabs.position := axis_ref^.posfw;
+      end_if;
+      istate := 2;
+    elsif (not bjogpos and bjogneg) then
+      if axis_ref^.MODULE &lt;&gt; 0.0 then
+         FB_MoveVel.DIRECTION := -1;
+      else
+         fb_moveabs.position := axis_ref^.posrv;
+      end_if;
+      istate := 2;
+    end_if;
+
+    (* give busy for at least one cicle, like plcopen want *)
+    if (istate = 2) then
+      bbusy  := true;
+      bdone  := false;
+      berror := false;
+    end_if;
+
+  2:
+    (* after the busy cicle, test if we really can do the job *)
+    if axis_ref^.MODULE &lt;&gt; 0.0 then
+       fb_moveVel.execute := true;
+    else
+       fb_moveabs.execute := true;
+    end_if;
+    istate := 3;
+
+  3:
+     if (not fb_moveabs.active) and (not fb_moveVel.active) then
+        bbusy  := false;
+        bdone  := true;
+        berror := false;
+        fb_stop.execute := true;
+        istate := 4; (* 0 *)
+     elsif (not bjogpos and not bjogneg) then
+        fb_stop.execute := true;
+        istate := 4;
+     end_if;
+
+  4:
+    if fb_stop.done then
+       bbusy  := false;
+       bdone  := true;
+       berror := false;
+       istate := 0;
+    end_if;
+  end_case;
+
+  fb_moveabs();
+  (* kill execute input *)
+  fb_moveabs.execute := false;
+  fb_moveabs();
+
+  fb_moveVel();
+  (* kill execute input *)
+  fb_moveVel.execute := false;
+  fb_moveVel();
+
+  fb_stop();
+  (* kill execute input *)
+  fb_stop.execute := false;
+  fb_stop();
+else
+  sstatus := &apos;axis_ref = null&apos;;
+  berror := true;
+end_if;
+]]>
+       </ST>
+     </body>
+     <documentation>
+     <![CDATA[]]>
+     </documentation>
+     </pou>
